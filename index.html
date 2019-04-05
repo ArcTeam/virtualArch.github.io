@@ -36,43 +36,28 @@
     <link rel="stylesheet" type="text/css" href="js/jquery-mobile/jquery.mobile-1.4.5.min.css">
     <link rel="stylesheet" type="text/css" href="js/leaflet/leaflet.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <title>VirtualArcheo - Ecomuseo dell'Argentario</title>
-  </head>
-  <body>
-    <div class="app">
-      <div class="" data-role='page' id="main">
-        <div data-role = "navbar">
-            <ul>
-               <li><a href = "#second" data-icon = "star">A</a></li>
-               <li><a href = "#" data-icon = "gear">B</a></li>
-               <!-- <li><a href = "#" data-icon = "grid">C</a></li>
-               <li><a href = "#" data-icon = "arrow-l">D</a></li>
-               <li><a href = "#" data-icon = "arrow-r">E</a></li> -->
-            </ul>
-         </div>
-        <div class="ui-body-a ui-body">
-          <div id="map"></div>
-        </div>
-      </div>
-      <div class="" data-role='page' id="second">
-        <div data-role = "navbar">
-            <ul>
-               <li><a href = "#main" data-icon = "star">A</a></li>
-               <li><a href = "#" data-icon = "gear">B</a></li>
-               <li><a href = "#" data-icon = "grid">C</a></li>
-               <li><a href = "#" data-icon = "arrow-l">D</a></li>
-               <li><a href = "#" data-icon = "arrow-r">E</a></li>
-            </ul>
-         </div>
-        <div class="ui-body-a ui-body">
-          <div id="map"></div>
-        </div>
-      </div>
-    </div>
+
     <!-- <script type="text/javascript" src="cordova.js"></script> -->
     <script type="text/javascript" src="js/jquery-mobile/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="js/leaflet/leaflet.js"></script>
+    <title>VirtualArcheo - Ecomuseo dell'Argentario</title>
+  </head>
+  <body>
+    <div class="app">
+      <div data-role='page' id="main">
+        <div id="map-content" data-role="content">
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
     <script type="text/javascript" src="js/map.js"></script>
+    <!-- <script>
+    $(document).bind('mobileinit',function(){
+      $.mobile.changePage.defaults.changeHash = false;
+      $.mobile.hashListeningEnabled = false;
+      $.mobile.pushStateEnabled = false;
+    });
+    </script> -->
   </body>
 </html>
