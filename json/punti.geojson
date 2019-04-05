@@ -1,0 +1,18 @@
+{
+"type": "FeatureCollection",
+"name": "puntiJson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "1", "nome": "Lago di Santa Colomba" }, "geometry": { "type": "Point", "coordinates": [ 11.180427625955133, 46.122779773546661 ] } },
+{ "type": "Feature", "properties": { "id": "7", "nome": "Dos dei Brusadi (belvedere)" }, "geometry": { "type": "Point", "coordinates": [ 11.186559551745335, 46.125893515737786 ] } },
+{ "type": "Feature", "properties": { "id": "8", "nome": "Le grave" }, "geometry": { "type": "Point", "coordinates": [ 11.176480737224084, 46.12463128647083 ] } },
+{ "type": "Feature", "properties": { "id": "4", "nome": "Pozzo di Damocle" }, "geometry": { "type": "Point", "coordinates": [ 11.185623327151651, 46.118314880785142 ] } },
+{ "type": "Feature", "properties": { "id": "3", "nome": "Le Acque (pannelli)" }, "geometry": { "type": "Point", "coordinates": [ 11.18638270811398, 46.11866694765267 ] } },
+{ "type": "Feature", "properties": { "id": "10", "nome": "Canopa del Raita" }, "geometry": { "type": "Point", "coordinates": [ 11.193577401578727, 46.113859879436589 ] } },
+{ "type": "Feature", "properties": { "id": "6", "nome": "Dos dei Brusadi (pannelli)" }, "geometry": { "type": "Point", "coordinates": [ 11.186219763076034, 46.125700436306133 ] } },
+{ "type": "Feature", "properties": { "id": "5", "nome": "Canopa dell'Uccello" }, "geometry": { "type": "Point", "coordinates": [ 11.18597760087037, 46.120843448002724 ] } },
+{ "type": "Feature", "properties": { "id": "11", "nome": "Montepiano" }, "geometry": { "type": "Point", "coordinates": [ 11.19722547451582, 46.120233292930081 ] } },
+{ "type": "Feature", "properties": { "id": "2", "nome": "Canopa del Lago" }, "geometry": { "type": "Point", "coordinates": [ 11.180667900665879, 46.122686910752314 ] } },
+{ "type": "Feature", "properties": { "id": "9", "nome": "Dos del Cuz" }, "geometry": { "type": "Point", "coordinates": [ 11.18868844712032, 46.109839272642631 ] } }
+]
+}
