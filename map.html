@@ -46,15 +46,25 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/leaflet/leaflet.js"></script>
     <title>VirtualArch - Ecomuseo dell'Argentario</title>
+    <style media="screen">
+      #wrapPoiInfo{position:absolute;top:0;bottom:0;right:0; width:80%;z-index:3000;box-shadow: -1rem 0rem 15px rgba(0,0,0,.5)!important;display: none;}
+      .poiBanner{position:relative;width:100%;height:200px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    </style>
   </head>
   <body>
     <div class="navigation bg-white">
-      <nav class="navbar navbar-light bg-white">
-
-      </nav>
+      <nav class="navbar navbar-light bg-white"></nav>
     </div>
-    <div id="map">
-
+    <div id="map"></div>
+    <div id="wrapPoiInfo" class="bg-white">
+      <div class="closePanel px-2 py-1 border-bottom"> <i class="fas fa-times"></i> </div>
+      <div class="poiBanner" style="background-image: url('img/test.jpg');"></div>
+      <section>
+      </section>
     </div>
     <script type="text/javascript" src="js/function.js"></script>
     <script>

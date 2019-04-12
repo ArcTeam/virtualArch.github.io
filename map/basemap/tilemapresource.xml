@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
     <TileMap version="1.0.0" tilemapservice="http://tms.osgeo.org/1.0.0">
-      <Title>baseLayer.tif</Title>
+      <Title>ecomuseo_argentario.tif</Title>
       <Abstract></Abstract>
       <SRS>EPSG:3857</SRS>
-      <BoundingBox minx="11.15254903357296" miny="46.07197030059461" maxx="11.22558005148424" maxy="46.15936578633478"/>
-      <Origin x="11.15254903357296" y="46.07197030059461"/>
+      <BoundingBox minx="11.08906945870950" miny="46.06049727287835" maxx="11.23860566435603" maxy="46.16670863210170"/>
+      <Origin x="11.08906945870950" y="46.06049727287835"/>
       <TileFormat width="256" height="256" mime-type="image/png" extension="png"/>
       <TileSets profile="mercator">
         <TileSet href="12" units-per-pixel="38.21851413574219" order="12"/>
