@@ -38,11 +38,12 @@
     <link rel="stylesheet" type="text/css" href="css/fa.css">
     <!-- <link rel="stylesheet" type="text/css" href="js/jquery-mobile/jquery.mobile-1.4.5.min.css"> -->
     <link rel="stylesheet" type="text/css" href="css/main.css">
-
+    <link rel="manifest" href="manifest.json">
     <!-- <script type="text/javascript" src="cordova.js"></script> -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <!-- <script type="text/javascript" src="js/jquery-mobile/jquery.mobile-1.4.5.min.js"></script> -->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="img/favicon.ico">
     <title>VirtualArch - Ecomuseo dell'Argentario</title>
   </head>
   <body class="splash">
@@ -81,6 +82,17 @@
     </div>
     <script type="text/javascript" src="js/function.js"></script>
     <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('sw.js').then(function(registration) {
+          // Registration was successful
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+          // registration failed :(
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
     $("[name=disclaimer]").on('click', function(){ $(".blk1").fadeOut(500, function(){$(".blk2").fadeIn(500)}); })
     </script>
   </body>
