@@ -3,6 +3,29 @@ $(document).bind('mobileinit',function(){
   $.mobile.hashListeningEnabled = false;
   $.mobile.pushStateEnabled = false;
 });
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('sw.js').then(function(registration) {
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+$(document).ready(function() {
+  $("[name=disclaimer]").on('click', function(){
+    $(".blk1").fadeOut(500, function(){
+      $(this).remove()
+      $(".blk2").fadeIn(500)
+    })
+  })
+  $("[name=okGo]").on('click', function(){
+    $("#splash-content").fadeOut(500, function(){
+      $(this).remove()
+      $("#map-page").fadeIn(500, initMap)
+    })
+  })
+});
 
 function initMap(){
   let punti;
@@ -14,7 +37,14 @@ function initMap(){
     options: { position: 'topright'},
     onAdd: function (map) {
       var container = L.DomUtil.create('div', 'legend');
-      title=$("<p/>",{text:'Sentieri'}).appendTo(container);
+      title = $("<p/>",{text:'Sentieri', class:'p-0 mb-1 border-bottom'})
+      .appendTo(container)
+      .on('click', function(){
+        list.slideToggle(250)
+        $(this).find('i').toggleClass('flip');
+      })
+      $("<i/>",{class:'fas fa-angle-up fa-lg float-right animation'}).appendTo(title)
+      list = $("<ul/>",{id:'sentieri-legend'}).appendTo(container);
       return container;
     }
   })
@@ -42,9 +72,14 @@ function initMap(){
   });
 
   $.getJSON('json/sentieri.geojson',function (data) {
+    $.each(data.features, function(i,v){
+      p = v.properties
+      li = $("<li/>",{text:p.nome+" ("+p.km+" mt.)"}).appendTo('#sentieri-legend')
+      $("<i/>",{class:'fas fa-minus fa-lg pr-2'}).css("color",p.color).prependTo(li)
+    })
     sentieri = L.geoJSON(data,{
       style: function(feature) { return {color: feature.properties.color} }
-    }).addTo(map);
+    }).addTo(map)
   });
 
   map.setMaxBounds(map.getBounds());
