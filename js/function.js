@@ -36,11 +36,8 @@ function initMap(){
     if (!data.features) {
       map.setView(new L.LatLng(46.1220, 11.1876), 13);
     }else {
-      // punti = L.geoJSON(data, { onEachFeature: bindPopUp });
       punti = L.geoJSON(data).addTo(map).on('click',slidePanel);
-      // map.addLayer(punti);
       map.fitBounds(punti.getBounds());
-      // punti.on('click',slidePanel(feature))
     }
   });
 
@@ -52,16 +49,13 @@ function initMap(){
 
   map.setMaxBounds(map.getBounds());
 }
-
-function bindPopUp (feature, layer) {
-  prop = feature.properties;
-  popup="<h5 class='card-title border-bottom'>"+prop.nome+"</h5>";
-  popup += "<a href='poi.php?poi="+prop.id+"' title='view complete poi info' class='text-success card-link'>...more info</a>";
-  slidePanel(popup)
-}
 function slidePanel(e){
   prop = e.layer.feature.properties
-  popup="<h5 class='card-title border-bottom'>"+prop.nome+"</h5>";
-  $("#wrapPoiInfo>section").html(popup)
-  $('#wrapPoiInfo').fadeIn(500);
+  $(".closePanel>h5").html(prop.nome)
+  $(".poi-content").html(prop.desc)
+
+  $('#wrapPoiInfo').fadeIn(500)
+  $("body").on('click', '.closePanel', function() {
+    $('#wrapPoiInfo').fadeOut(500);
+  });
 }
