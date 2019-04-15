@@ -71,7 +71,7 @@ body.splash>div{position:fixed;}
 }
 .splashBottom{top:30%;left:0;width:100%;height:70%;margin:0;padding:0;z-index: 1}
 .splashBottom .disclaimer{position:relative;margin-top:30px; width:100%;}
-.splashBottom .blk2{display:none; width: 100%; height: 400px; overflow: auto;}
+.splashBottom .blk2{display:none; width: 100%; height: 350px; overflow: auto;}
 
 @media screen and (min-aspect-ratio: 1/1) and (min-width:350px) {
 
