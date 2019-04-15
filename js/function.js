@@ -52,8 +52,8 @@ function initMap(){
 function slidePanel(e){
   prop = e.layer.feature.properties
   $(".closePanel>h5").html(prop.nome)
+  $(".poi-banner").css("background-image","url('img/"+prop.banner+"')")
   $(".poi-content").html(prop.desc)
-
   $('#wrapPoiInfo').fadeIn(500)
   $("body").on('click', '.closePanel', function() {
     $('#wrapPoiInfo').fadeOut(500);
