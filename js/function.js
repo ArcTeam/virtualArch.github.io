@@ -3,6 +3,12 @@ $(document).bind('mobileinit',function(){
   $.mobile.hashListeningEnabled = false;
   $.mobile.pushStateEnabled = false;
 });
+window.addEventListener('load', function() {
+  if (localStorage.disclaimer && localStorage.go) {
+    $("#splash-content").remove()
+    $("#map-page").fadeIn(500, initMap)
+  }
+})
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
     navigator.serviceWorker.register('sw.js').then(function(registration) {
@@ -14,12 +20,14 @@ if ('serviceWorker' in navigator) {
 }
 $(document).ready(function() {
   $("[name=disclaimer]").on('click', function(){
+    localStorage.setItem("disclaimer","ok")
     $(".blk1").fadeOut(500, function(){
       $(this).remove()
       $(".blk2").fadeIn(500)
     })
   })
   $("[name=okGo]").on('click', function(){
+    localStorage.setItem("go","ok")
     $("#splash-content").fadeOut(500, function(){
       $(this).remove()
       $("#map-page").fadeIn(500, initMap)
@@ -74,7 +82,7 @@ function initMap(){
   $.getJSON('json/sentieri.geojson',function (data) {
     $.each(data.features, function(i,v){
       p = v.properties
-      li = $("<li/>",{text:p.nome+" ("+p.km+" mt.)"}).appendTo('#sentieri-legend')
+      li = $("<li/>",{text:p.nome+" ("+p.km+" km.)"}).appendTo('#sentieri-legend')
       $("<i/>",{class:'fas fa-minus fa-lg pr-2'}).css("color",p.color).prependTo(li)
     })
     sentieri = L.geoJSON(data,{
