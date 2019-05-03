@@ -87,7 +87,7 @@ function initMap(){
     })
     sentieri = L.geoJSON(data,{
       style: function(feature) { return {color: feature.properties.color} }
-    }).addTo(map)
+    }).addTo(map).on('click',slideTrackInfo);
   });
 
   map.setMaxBounds(map.getBounds());
@@ -95,10 +95,15 @@ function initMap(){
 function slidePanel(e){
   prop = e.layer.feature.properties
   $(".closePanel>h5").html(prop.nome)
-  $(".poi-banner").css("background-image","url('img/"+prop.banner+"')")
+  $(".poi-banner").css("background-image","url('img/poi/banner/"+prop.banner+"')")
   $(".poi-content").html(prop.desc)
   $('#wrapPoiInfo').fadeIn(500)
-  $("body").on('click', '.closePanel', function() {
-    $('#wrapPoiInfo').fadeOut(500);
-  });
+  $("body").on('click', '.closePanel', function() { $('#wrapPoiInfo').fadeOut(500); });
+}
+function slideTrackInfo(e){
+  prop = e.layer.feature.properties
+  console.log(prop);
+  $(".closeTrackPanel>h5").html(prop.nome)
+  $('#wrapTrackInfo').fadeIn(500)
+  $("body").on('click', '.closeTrackPanel', function() { $('#wrapTrackInfo').fadeOut(500); });
 }
