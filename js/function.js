@@ -3,6 +3,35 @@ $(document).bind('mobileinit',function(){
   $.mobile.hashListeningEnabled = false;
   $.mobile.pushStateEnabled = false;
 });
+
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent Chrome 67 and earlier from automatically showing the prompt
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
+  // Update UI notify the user they can add to home screen
+  btnAdd.style.display = 'block';
+
+  btnAdd.addEventListener('click', (e) => {
+    // hide our user interface that shows our A2HS button
+    btnAdd.style.display = 'none';
+    // Show the prompt
+    deferredPrompt.prompt();
+    // Wait for the user to respond to the prompt
+    deferredPrompt.userChoice
+      .then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the A2HS prompt');
+        } else {
+          console.log('User dismissed the A2HS prompt');
+        }
+        deferredPrompt = null;
+      });
+  });
+});
+
+
 window.addEventListener('load', function() {
   if (localStorage.disclaimer && localStorage.go) {
     $("#splash-content").remove()
@@ -100,132 +129,37 @@ function slidePanel(e){
   content = $(".poi-content").html(prop.desc)
   $('#wrapPoiInfo').fadeIn(500)
   $("body").on('click', '.closePanel', function() { $('#wrapPoiInfo').fadeOut(500); });
-  if (prop.slider === 'si') {initSlider()}
+  if (prop.slider) {initSlider(e)}
 }
+
+function initSlider(e){
+  dati = e.layer.feature.properties
+  slider = '<div class="js-img-compare">';
+  slider += '<div style="display: none;">';
+  slider += '<span class="images-compare-label">'+dati.slider.bgLabel+'</span>';
+  slider += '<img src="img/poi/slider/'+dati.slider.bgImg+'" alt="'+dati.slider.bgLabel+'">';
+  slider += '</div>';
+  slider += '<div>';
+  slider += '<span class="images-compare-label">'+dati.slider.frontLabel+'</span>';
+  slider += '<img src="img/poi/slider/'+dati.slider.frontImg+'" alt="'+dati.slider.frontLabel+'">';
+  slider += '</div>';
+  slider += '</div>';
+  $('.poi-content').html($('.poi-content').html().replace('SLIDER',slider));
+  $('.js-img-compare').imagesCompare({
+    initVisibleRatio: 0.5,
+    interactionMode: "drag",
+    animationDuration: 400,
+    animationEasing: "swing",
+    addSeparator: true,
+    addDragHandle: true,
+    precision: 4
+  });
+}
+
 function slideTrackInfo(e){
   prop = e.layer.feature.properties
   $(".closeTrackPanel>h5").html(prop.nome)
   $(".track-banner").css("background-image","url('img/sentieri/banner/"+prop.banner+"')")
   $('#wrapTrackInfo').fadeIn(500)
   $("body").on('click', '.closeTrackPanel', function() { $('#wrapTrackInfo').fadeOut(500); });
-}
-
-function initSlider(){
-  var dragging = false, scrolling = false, resizing = false;
-  var slider = $('.slider');
-  slider.html('')
-  bg = $("<img/>",{src:'img/poi/slider/'+slider.data('bg')}).appendTo(slider)
-  bgLabel = $("<span/>",{class:'cd-image-label firstLab',text:slider.data('altbg')}).attr('data-type','original').appendTo(slider)
-  divMask = $("<div/>",{class:'cd-resize-img'}).appendTo(slider)
-  mask = $("<img/>",{src:'img/poi/slider/'+slider.data('mask')}).appendTo(divMask)
-  maskLabel = $("<span/>",{class:'cd-image-label lastLab',text:slider.data('altmask')}).attr('data-type','modified').appendTo(divMask)
-  handle = $("<span/>",{class:'cd-handle'}).appendTo(slider)
-
-  checkPosition(slider);
-  $(window).on('scroll', function(){
-    if( !scrolling) {
-      scrolling =  true;
-      ( !window.requestAnimationFrame )
-      ? setTimeout(function(){checkPosition(slider);}, 100)
-      : requestAnimationFrame(function(){checkPosition(slider);});
-    }
-  });
-
-  slider.each(function(){
-    var actual = $(this);
-    drags(actual.find('.cd-handle'), actual.find('.cd-resize-img'), actual, actual.find('.cd-image-label[data-type="original"]'), actual.find('.cd-image-label[data-type="modified"]'));
-  });
-
-  //upadate images label visibility
-  $(window).on('resize', function(){
-    if( !resizing) {
-      resizing =  true;
-      ( !window.requestAnimationFrame )
-      ? setTimeout(function(){checkLabel(slider);}, 100)
-      : requestAnimationFrame(function(){checkLabel(slider);});
-    }
-  });
-
-}
-function checkPosition(container) {
-  container.each(function(){
-    var actualContainer = $(this);
-    if( $(window).scrollTop() + $(window).height()*0.5 > actualContainer.offset().top) {
-      actualContainer.addClass('is-visible');
-    }
-  });
-  scrolling = false;
-}
-
-function checkLabel(container) {
-  container.each(function(){
-    var actual = $(this);
-    updateLabel(actual.find('.cd-image-label[data-type="modified"]'), actual.find('.cd-resize-img'), 'left');
-    updateLabel(actual.find('.cd-image-label[data-type="original"]'), actual.find('.cd-resize-img'), 'right');
-  });
-  resizing = false;
-}
-function updateLabel(label, resizeElement, position) {
-  if(position == 'left') {
-    ( label.offset().left + label.outerWidth() < resizeElement.offset().left + resizeElement.outerWidth() )
-    ? label.removeClass('is-hidden')
-    : label.addClass('is-hidden') ;
-  } else {
-    (label.offset().left > resizeElement.offset().left + resizeElement.outerWidth())
-    ? label.removeClass('is-hidden')
-    : label.addClass('is-hidden') ;
-  }
-}
-
-function drags(dragElement, resizeElement, container, labelContainer, labelResizeElement) {
-  dragElement.on("mousedown vmousedown", function(e) {
-    dragElement.addClass('draggable');
-    resizeElement.addClass('resizable');
-    var dragWidth = dragElement.outerWidth()
-    var xPosition = dragElement.offset().left + dragWidth - e.pageX
-    var containerOffset = container.offset().left
-    var containerWidth = container.outerWidth()
-    var minLeft = containerOffset + 10
-    var maxLeft = containerOffset + containerWidth - dragWidth - 10
-
-    dragElement.parents().on("mousemove vmousemove", function(e) {
-      if( !dragging) {
-        dragging =  true;
-        ( !window.requestAnimationFrame )
-        ? setTimeout(function(){
-          animateDraggedHandle(e, xPosition, dragWidth, minLeft, maxLeft, containerOffset, containerWidth, resizeElement, labelContainer, labelResizeElement);
-        }, 100)
-        : requestAnimationFrame(function(){
-          animateDraggedHandle(e, xPosition, dragWidth, minLeft, maxLeft, containerOffset, containerWidth, resizeElement, labelContainer, labelResizeElement);
-        });
-      }
-    }).on("mouseup vmouseup", function(e){
-      dragElement.removeClass('draggable');
-      resizeElement.removeClass('resizable');
-    });
-    e.preventDefault();
-  }).on("mouseup vmouseup", function(e) {
-    dragElement.removeClass('draggable');
-    resizeElement.removeClass('resizable');
-  });
-}
-
-function animateDraggedHandle(e, xPosition, dragWidth, minLeft, maxLeft, containerOffset, containerWidth, resizeElement, labelContainer, labelResizeElement) {
-  var leftValue = e.pageX + xPosition - dragWidth;
-  //constrain the draggable element to move inside his container
-  if(leftValue < minLeft ) {
-    leftValue = minLeft;
-  } else if ( leftValue > maxLeft) {
-    leftValue = maxLeft;
-  }
-  var widthValue = (leftValue + dragWidth/2 - containerOffset)*100/containerWidth+'%';
-  $('.draggable').css('left', widthValue).on("mouseup vmouseup", function() {
-    $(this).removeClass('draggable');
-    resizeElement.removeClass('resizable');
-  });
-  $('.resizable').css('width', widthValue);
-
-  updateLabel(labelResizeElement, resizeElement, 'left');
-  updateLabel(labelContainer, resizeElement, 'right');
-  dragging =  false;
 }
