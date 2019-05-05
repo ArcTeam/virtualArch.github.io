@@ -13,8 +13,8 @@
       "type": "image/png"
     }
   ],
-  "scope": "/",
-  "start_url": "/index.html",
+  "scope": "/virtualArch.github.io/",
+  "start_url": "/virtualArch.github.io/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#98c222",
