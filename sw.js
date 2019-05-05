@@ -1,6 +1,3 @@
-importScripts('/virtualArch.github.io/cache-polyfill.js');
-
-
 self.addEventListener('install', function(e) {
  e.waitUntil(
    caches.open('VirtualArch').then(function(cache) {
