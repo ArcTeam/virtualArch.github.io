@@ -3,12 +3,12 @@
   "name": "VirtualArch - Medieval mines of Civezzano",
   "icons": [
     {
-      "src": "img/launcher-icon-192.png",
+      "src": "img/ico/launcher-icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "img/launcher-icon-512.png",
+      "src": "img/ico/launcher-icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
