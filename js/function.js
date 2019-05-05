@@ -4,32 +4,77 @@ $(document).bind('mobileinit',function(){
   $.mobile.pushStateEnabled = false;
 });
 
-let deferredPrompt;
-window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevent Chrome 67 and earlier from automatically showing the prompt
-  e.preventDefault();
-  // Stash the event so it can be triggered later.
-  deferredPrompt = e;
-  // Update UI notify the user they can add to home screen
-  btnAdd.style.display = 'block';
+// let deferredPrompt;
+// window.addEventListener('beforeinstallprompt', (e) => {
+//   // Prevent Chrome 67 and earlier from automatically showing the prompt
+//   e.preventDefault();
+//   // Stash the event so it can be triggered later.
+//   deferredPrompt = e;
+//   // Update UI notify the user they can add to home screen
+//   btnAdd.style.display = 'block';
+//
+//   btnAdd.addEventListener('click', (e) => {
+//     // hide our user interface that shows our A2HS button
+//     btnAdd.style.display = 'none';
+//     // Show the prompt
+//     deferredPrompt.prompt();
+//     // Wait for the user to respond to the prompt
+//     deferredPrompt.userChoice
+//       .then((choiceResult) => {
+//         if (choiceResult.outcome === 'accepted') {
+//           console.log('User accepted the A2HS prompt');
+//         } else {
+//           console.log('User dismissed the A2HS prompt');
+//         }
+//         deferredPrompt = null;
+//       });
+//   });
+// });
 
-  btnAdd.addEventListener('click', (e) => {
-    // hide our user interface that shows our A2HS button
-    btnAdd.style.display = 'none';
-    // Show the prompt
-    deferredPrompt.prompt();
-    // Wait for the user to respond to the prompt
-    deferredPrompt.userChoice
-      .then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('User accepted the A2HS prompt');
-        } else {
-          console.log('User dismissed the A2HS prompt');
-        }
-        deferredPrompt = null;
-      });
-  });
-});
+const Installer = function(root) {
+  let promptEvent;
+
+  const install = function(e) {
+    if(promptEvent) {
+      promptEvent.prompt();
+      promptEvent.userChoice
+        .then(function(choiceResult) {
+          // The user actioned the prompt (good or bad).
+          // good is handled in
+          promptEvent = null;
+          // ga('send', 'event', 'install', choiceResult);
+          root.classList.remove('available');
+        })
+        .catch(function(installError) {
+          // Boo. update the UI.
+          promptEvent = null;
+          // ga('send', 'event', 'install', 'errored');
+          root.classList.remove('available');
+        });
+    }
+  };
+
+  const installed = function(e) {
+    promptEvent = null;
+    // This fires after onbeforinstallprompt OR after manual add to homescreen.
+    // ga('send', 'event', 'install', 'installed');
+    root.classList.remove('available');
+  };
+
+  const beforeinstallprompt = function(e) {
+    promptEvent = e;
+    promptEvent.preventDefault();
+    // ga('send', 'event', 'install', 'available');
+    root.classList.add('available');
+    return false;
+  };
+
+  window.addEventListener('beforeinstallprompt', beforeinstallprompt);
+  window.addEventListener('appinstalled', installed);
+
+  root.addEventListener('click', install.bind(this));
+  root.addEventListener('touchend', install.bind(this));
+};
 
 
 window.addEventListener('load', function() {
@@ -37,6 +82,8 @@ window.addEventListener('load', function() {
     $("#splash-content").remove()
     $("#map-page").fadeIn(500, initMap)
   }
+  const installEl = document.getElementById('installer');
+  const installer = new Installer(installEl);
 })
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
