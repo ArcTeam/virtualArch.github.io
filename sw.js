@@ -1,4 +1,4 @@
-importScripts('/cache-polyfill.js');
+importScripts('/virtualArch.github.io/cache-polyfill.js');
 
 
 self.addEventListener('install', function(e) {
