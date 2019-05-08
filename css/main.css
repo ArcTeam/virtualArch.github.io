@@ -59,12 +59,12 @@ html, body { height: 100vh; width: 100vw;background:#fff; font-family: 'Montserr
 /**** map   ****/
 #wrapPoiInfo{position:absolute;top:0;bottom:0;right:0; width:100%;z-index:3000;display: none;}
 #wrapTrackInfo{position:absolute;top:0;bottom:0;left:0;width:100%; z-index:3000;display: none;}
-
+.closePanel{height:45px;}
+.poiContentDiv{position: relative; width: 100%; height: calc(100% - 60px); overflow: auto;}
+.poi-banner,.track-banner{position:relative;width:100%;background-position: center; background-repeat: no-repeat; background-size: cover; }
 #poi-info{position:absolute;top:0;bottom:0;right:0; width:90%;box-shadow: -1rem 0rem 15px rgba(0,0,0,.5)!important;}
 #track-info{position:absolute;top:20%;bottom:0;right:0; width:100%;}
 
-.closePanel{height:45px;}
-.poi-banner,.track-banner{position:relative;width:100%;background-position: center; background-repeat: no-repeat; background-size: cover; }
 .poi-content{ font-size: 12px; text-align: justify; padding: 5px 15px; overflow:auto;}
 .poi-content > img{margin:20px auto;}
 
@@ -197,11 +197,11 @@ html, body { height: 100vh; width: 100vw;background:#fff; font-family: 'Montserr
 
 @media screen /*and (min-aspect-ratio: 1/1)*/ and (max-width: 767px){
   .poi-banner,.track-banner{height:160px; }
-  .poi-content{height: calc(95% - 200px);}
+  /* .poi-content{height: calc(95% - 200px);} */
 }
 
 /* // Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .poi-banner,.track-banner{height:200px; }
-  .poi-content{height: calc(95% - 250px);}
+  /* .poi-content{height: calc(95% - 250px);} */
 }

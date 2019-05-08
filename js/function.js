@@ -159,9 +159,15 @@ function slidePanel(e){
 
 function initVideo(e){
   videoArr = e.layer.feature.properties.video
-  videoList='<ul>'
-  $.each(videoArr,function(i, el) { videoList += "<li><a href='#'>"+el+"</a></li>" })
-  videoList+='</ul>'
+  videoList=''
+  $.each(videoArr,function(i, el) {
+    videoList+="<div class='video-content'>";
+    videoList+="<video width='"+$('.poi-content').width()+"' controls>"
+    videoList+="<source src='video/"+el+"' type='video/mp4'>"
+    videoList+="Your browser does not support HTML5 video."
+    videoList+="</video>"
+    videoList+='</div>'
+  })
   $('.poi-content').html($('.poi-content').html().replace('*VIDEO*',videoList));
 }
 
