@@ -69,35 +69,16 @@ function infoSwitch(type) {
 }
 
 function setInfo(hotspot){
-  var txt;
   switch (hotspot){
-    case "spot1":
-      $('.hs_sub').text("Graduale (Kuttenberger Cantionale)");
-      $('#hs1_img').css("display", "table");
-    break;
-    case "spot2":
-      $('.hs_sub').text("Graduale (Kuttenberger Cantionale)");
-      $('#hs2_img').css("display", "table");
-    break;
-    case "spot3":
-      $('.hs_sub').text("Graduale (Kuttenberger Cantionale)");
-      $('#hs3_img').css("display", "table");
-    break;
-    case "spot4":
-      $('.hs_sub').text("Graduale (Kuttenberger Cantionale)");
-      $('#hs4_img').css("display", "table");
-    break;
-    case "spot5":
-      $('.hs_sub').text("Graduale (Kuttenberger Cantionale)");
-      $('#hs5_img').css("display", "table");
-    break;
-    case "spot6":
-      $('.hs_sub').text("Graduale (Kuttenberger Cantionale)");
-      $('#hs6_img').css("display", "table");
-    break;
-    case "spot7":
-      $('.hs_sub').text("Graduale (Kuttenberger Cantionale)");
-      $('#hs7_img').css("display", "table");
-    break;
+    case "spot1": $('#hs1_img').css("display", "table"); break;
+    case "spot2": $('#hs2_img').css("display", "table"); break;
+    case "spot3": $('#hs3_img').css("display", "table"); break;
+    case "spot4": $('#hs4_img').css("display", "table"); break;
+    case "spot5": $('#hs5_img').css("display", "table"); break;
+    case "spot6": $('#hs6_img').css("display", "table"); break;
+    case "spot7": $('#hs7_img').css("display", "table"); break;
   }
 }
+
+
+// BEPPE HERE

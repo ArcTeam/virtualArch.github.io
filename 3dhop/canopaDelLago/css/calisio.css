@@ -87,7 +87,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 a:link, a:visited {text-decoration:none;font-weight:bold;color:#AEB404;}
 a:hover {text-decoration:none;font-weight:bold;color:#D7DF01;}
 #toolbar  {width:70px; height:415px; margin-left:-70px; padding-top:7px; padding-left:7px; }
-#toolbar img { width:50px; height:50px; }
+#toolbar>img { width:50px; height:50px; }
 #draw-canvas {
   background-image: -ms-radial-gradient(center, circle closest-side, #545353 0%, #1e222d 100%);
   background-image: -moz-radial-gradient(center, circle closest-side, #545353 0%, #1e222d 100%);

@@ -3,6 +3,8 @@ $(document).bind('mobileinit',function(){
   $.mobile.hashListeningEnabled = false;
   $.mobile.pushStateEnabled = false;
 });
+
+const observer = lozad('.lozad', { rootMargin: '10px 0px', threshold: 0.1 });
 const Installer = function(root) {
   let promptEvent;
 
@@ -78,6 +80,7 @@ window.addEventListener("orientationchange", function() {
   window.setTimeout(function() {
     setHeightDiv()
     $("video").css("width",$('.poi-content').width())
+    setGalleryDim()
   }, 200);
 }, false);
 
@@ -164,9 +167,10 @@ function slidePanel(e){
   content = $(".poi-content").html(prop.desc)
   $('#wrapPoiInfo').fadeIn(500)
   $("body").on('click', '.closePanel', function() { $('#wrapPoiInfo').fadeOut(500); });
-  if(prop.slider) {initSlider(e)}
-  if(prop.video){initVideo(e)}
-  if(prop.tredhop){init3dhop(e)}
+  if(prop.slider) {initSlider(e.layer.feature.properties.slider)}
+  if(prop.video){initVideo(e.layer.feature.properties.video)}
+  if(prop.tredhop){init3dhop(e.layer.feature.properties.tredhop)}
+  if(prop.galleria){initGallery(e.layer.feature.properties.galleria)}
 }
 
 function setHeightDiv(){
@@ -174,14 +178,14 @@ function setHeightDiv(){
   $(".poiContentDiv").css("height",$('#wrapPoiInfo').height()-50)
 }
 
-function init3dhop(e){
-  let url= e.layer.feature.properties.tredhop
+function init3dhop(url){
+  // let url= e.layer.feature.properties.tredhop
   let div = $("<div/>",{id:'3dhopWrap',class:'my-3'}).appendTo('.poi-content')
   $("<a/>",{class:'btn btn-success d-block', href:'3dhop/'+url+'/start.html', text:'visualizza 3d'}).appendTo(div)
 }
 
-function initVideo(e){
-  videoArr = e.layer.feature.properties.video
+function initVideo(videoArr){
+  // videoArr = e.layer.feature.properties.video
   videoList=''
   $.each(videoArr,function(i, el) {
     videoList+="<div class='video-content'>";
@@ -194,19 +198,33 @@ function initVideo(e){
   $('.poi-content').html($('.poi-content').html().replace('*VIDEO*',videoList));
 }
 
-function initSlider(e){
-  dati = e.layer.feature.properties
-  slider  = '<div class="js-img-compare">';
-  slider += '<div style="display: none;">';
-  slider += '<span class="images-compare-label">'+dati.slider.bgLabel+'</span>';
-  slider += '<img src="img/poi/slider/'+dati.slider.bgImg+'" alt="'+dati.slider.bgLabel+'">';
-  slider += '</div>';
-  slider += '<div>';
-  slider += '<span class="images-compare-label">'+dati.slider.frontLabel+'</span>';
-  slider += '<img src="img/poi/slider/'+dati.slider.frontImg+'" alt="'+dati.slider.frontLabel+'">';
-  slider += '</div>';
-  slider += '</div>';
-  $('.poi-content').html($('.poi-content').html().replace('*SLIDER*',slider));
+function initGallery(gallery){
+  let dir = "img/gallerie/"+gallery.dir;
+  let wrap = $("<div/>",{id:'galleryWrap', class:'container-fluid'}).appendTo('.poi-content')
+  let rowTitle = $("<div/>",{class:'row mb-2'}).appendTo(wrap)
+  $("<div/>",{class:'col-12'}).appendTo(rowTitle).html('<h3 class="border-bottom pb-1 my-3">Images gallery</h3>')
+  let rowImage = $("<div/>",{class:'row mb-2'}).appendTo(wrap)
+  $.each(gallery.foto, function(i,v){ $("<div/>", {id:"img"+i,class:'lozad col-4 border border-white'}).attr("data-background-image",dir+"/small/"+v).appendTo(rowImage) })
+  $('.poi-content').html().replace('*GALLERIA*','')
+  setGalleryDim()
+  observer.observe();
+}
+function setGalleryDim(){
+  $("#galleryWrap .lozad").height($("#img0").width())
+}
+function initSlider(slider){
+  // dati = e.layer.feature.properties
+  sliderDiv  = '<div class="js-img-compare">';
+  sliderDiv += '<div style="display: none;">';
+  sliderDiv += '<span class="images-compare-label">'+slider.bgLabel+'</span>';
+  sliderDiv += '<img src="img/poi/slider/'+slider.bgImg+'" alt="'+slider.bgLabel+'">';
+  sliderDiv += '</div>';
+  sliderDiv += '<div>';
+  sliderDiv += '<span class="images-compare-label">'+slider.frontLabel+'</span>';
+  sliderDiv += '<img src="img/poi/slider/'+slider.frontImg+'" alt="'+slider.frontLabel+'">';
+  sliderDiv += '</div>';
+  sliderDiv += '</div>';
+  $('.poi-content').html($('.poi-content').html().replace('*SLIDER*',sliderDiv));
   $('.js-img-compare').imagesCompare({
     initVisibleRatio: 0.5,
     interactionMode: "drag",

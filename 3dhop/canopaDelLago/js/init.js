@@ -18,86 +18,70 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 function init3dhop() {
-	if (isIOS()) $('head').append('<meta name="viewport" content="width=device-width">'); //IOS DEVICES CHECK
+  if (isIOS()) $('head').append('<meta name="viewport" content="width=device-width">'); //IOS DEVICES CHECK
 
-	var interval, id, ismousedown;
-	var button = 0;
+  var interval, id, ismousedown;
+  var button = 0;
 
-	$('#toolbar img')
-		.mouseenter(function(e) {
-			id = $(this).attr('id');
-			if(!ismousedown) $(this).css("opacity","0.8");
-			else $(this).css("opacity","1.0");
-		})
-		.mouseout(function(e) {
-			clearInterval(interval);
-			$(this).css("opacity","0.5");
-		})
-		.mousedown(function(e) {
-			id = $(this).attr('id');
-			ismousedown = true;
-			if(e.button==button){
-				actionsToolbar(id);
-				if(id == "zoomin" || id == "zoomout"){
-					interval = setInterval(function(){
-						actionsToolbar(id);
-					}, 100);
-				}
-				else {
-					clearInterval(interval);
-				}
-				$(this).css("opacity","1.0");
-				button=0;
-			}
-		})
-		.mouseup(function(e) {
-			ismousedown = false;
-			if(e.button==button){
-				clearInterval(interval);
-				$(this).css("opacity","0.8");
-				button=0;
-			}
-		})
-		.on('touchstart', function(e) {
-			button=2;
-		})
-		.on('touchend', function(e) {
-			button=0;
-		});
+  $('#toolbar img')
+  // .mouseenter(function(e) {
+  //   id = $(this).attr('id');
+  //   if(!ismousedown) $(this).css("opacity","0.8");
+  //   else $(this).css("opacity","1.0");
+  // })
+  .mouseout(function(e) {
+    clearInterval(interval);
+    // $(this).css("opacity","0.5");
+  })
+  .mousedown(function(e) {
+    id = $(this).attr('id');
+    ismousedown = true;
+    if(e.button==button){
+      actionsToolbar(id);
+      if(id == "zoomin" || id == "zoomout"){
+        interval = setInterval(function(){ actionsToolbar(id); }, 100);
+      } else {
+        clearInterval(interval);
+      }
+      // $(this).css("opacity","1.0");
+      button=0;
+    }
+  })
+  .mouseup(function(e) {
+    ismousedown = false;
+    if(e.button==button){
+      clearInterval(interval);
+      // $(this).css("opacity","1");
+      button=0;
+    }
+  })
+  .on('touchstart', function(e) {button=2;})
+  .on('touchend', function(e) {button=0;});
 
-	$('.output-table td:has(.output-text,.output-input)').css("border-radius", "5px").css("background-color", "rgba(125,125,125,0.25)");
-
-	$('#3dhop')
-		.on('touchstart pointerdown', function(e) {
-			$('#toolbar img').css("opacity","0.5");
-		})
-		.on('touchend pointerup', function(e) {
-			clearInterval(interval);
-		})
-		.on('touchmove', function(e) {
-			clearInterval(interval);
-			$('#toolbar img').css("opacity","0.5");
-		});
+  $('.output-table td:has(.output-text,.output-input)').css("border-radius", "5px").css("background-color", "rgba(125,125,125,0.25)");
+  $('#3dhop')
+  // .on('touchstart pointerdown', function(e) { $('#toolbar img').css("opacity","0.5");})
+  .on('touchend pointerup', function(e) {clearInterval(interval);})
+  .on('touchmove', function(e) {
+    clearInterval(interval);
+    // $('#toolbar img').css("opacity","0.5");
+  });
 
 	$('#3dhop:not(#draw-canvas)').on('contextmenu', function(e) { return false; });
 
-	$('#draw-canvas')
-		.on('contextmenu', function(e) {
-			if (!isMobile()) return false; //MOBILE DEVICES CHECK
-		})
-		.on('touchstart pointerdown', function(e) {
-			$('#toolbar img').css("opacity","0.5");
-		})
-		.mousedown(function(e) {
-			$('#toolbar img').css("opacity","0.5");
-			if(e.preventDefault) e.preventDefault();
-			if (window.getSelection && window.getSelection()!='') window.getSelection().removeAllRanges();
-			else if (document.selection && document.selection.createRange()!='') document.selection.empty();
-		});
+$('#draw-canvas')
+  .on('contextmenu', function(e) {if (!isMobile()) return false;})
+  // .on('touchstart pointerdown', function(e) { $('#toolbar img').css("opacity","0.5"); })
+  .mousedown(function(e) {
+    // $('#toolbar img').css("opacity","0.5");
+    if(e.preventDefault) e.preventDefault();
+    if (window.getSelection && window.getSelection()!='') window.getSelection().removeAllRanges();
+    else if (document.selection && document.selection.createRange()!='') document.selection.empty();
+  });
 
-	$(document).on('MSFullscreenChange mozfullscreenchange webkitfullscreenchange', function(e) { //fullscreen handler
-		if(!document.msFullscreenElement&&!document.mozFullScreen&&!document.webkitIsFullScreen) exitFullscreen();
-	});
+  $(document).on('MSFullscreenChange mozfullscreenchange webkitfullscreenchange', function(e) {
+    if(!document.msFullscreenElement&&!document.mozFullScreen&&!document.webkitIsFullScreen) exitFullscreen();
+  });
 
 	if (window.navigator.userAgent.indexOf('Trident/') > 0) { //IE fullscreen handler
 		$('#full').click(function() {enterFullscreen();});
