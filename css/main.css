@@ -59,10 +59,18 @@ html, body { height: 100vh; width: 100vw;background:#fff; font-family: 'Montserr
 /**** map   ****/
 #wrapPoiInfo{position:absolute;top:0;bottom:0;right:0; width:100%;z-index:3000;display: none;}
 #wrapTrackInfo{position:absolute;top:0;bottom:0;left:0;width:100%; z-index:3000;display: none;}
-.closePanel{height:45px;}
-.poiContentDiv{position: relative; width: 100%; height: calc(100% - 60px); overflow: auto;}
+.closePanel{position: fixed; top: 0; right: 0; width: 90%; height:45px; z-index: 5000;}
+.poiContentDiv{position: relative; margin-top: 45px; width: 100%; height: 500px; overflow: auto;}
 .poi-banner,.track-banner{position:relative;width:100%;background-position: center; background-repeat: no-repeat; background-size: cover; }
-#poi-info{position:absolute;top:0;bottom:0;right:0; width:90%;box-shadow: -1rem 0rem 15px rgba(0,0,0,.5)!important;}
+#poi-info{
+  position:relative;
+  /* top:0;
+  bottom:0;
+  right:0;  */
+  margin-left: 10%;
+  width:90%;
+  box-shadow: -1rem 0rem 15px rgba(0,0,0,.5)!important;
+}
 #track-info{position:absolute;top:20%;bottom:0;right:0; width:100%;}
 
 .poi-content{ font-size: 12px; text-align: justify; padding: 5px 15px; /*overflow:auto;*/}
