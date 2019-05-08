@@ -97,3 +97,24 @@ a:hover {text-decoration:none;font-weight:bold;color:#D7DF01;}
   background-image: radial-gradient(circle closest-side at center, #545353 0%, #1e222d 100%);
 }
 .hs-img{max-width:600px; max-height:400px;dislay:none;}
+
+#wrapImage{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(0,0,0,0.4);
+  z-index:4000;
+  display:none;
+}
+.imgContent{background: #fff;}
+.imgContent > .content{
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+}
+#wrapImage h4,#wrapImage p{margin:0;padding:10px;text-align:center;}

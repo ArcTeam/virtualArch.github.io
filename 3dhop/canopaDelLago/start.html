@@ -9,17 +9,16 @@
     <link type="text/css" rel="stylesheet" href="css/calisio.css">
     <link rel="manifest" href="../../manifest.json">
     <link rel="shortcut icon" href="../../img/ico/favicon.ico">
-    <script type="text/javascript" src="js/spidergl.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/presenter.js"></script>
-    <script type="text/javascript" src="js/nexus.js"></script>
-    <script type="text/javascript" src="js/ply.js"></script>
-    <script type="text/javascript" src="js/trackball_sphere.js"></script>
-    <script type="text/javascript" src="js/trackball_turntable.js"></script>
-    <script type="text/javascript" src="js/trackball_pantilt.js"></script>
-    <script type="text/javascript" src="js/trackball_turntable_pan.js"></script>
-    <script type="text/javascript" src="js/init.js"></script>
-    <script type="text/javascript" src="js/calisio.js"></script>
+    <script src="js/spidergl.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/presenter.js"></script>
+    <script src="js/nexus.js"></script>
+    <script src="js/ply.js"></script>
+    <script src="js/trackball_sphere.js"></script>
+    <script src="js/trackball_turntable.js"></script>
+    <script src="js/trackball_pantilt.js"></script>
+    <script src="js/trackball_turntable_pan.js"></script>
+    <script src="js/init.js"></script>
     <title>VirtualArch - Ecomuseo dell'Argentario</title>
   </head>
   <script type="text/javascript" id="useragent-switcher">
@@ -27,204 +26,41 @@
   </script>
   <body onload="presenter.animateToTrackballPosition([ 20.0, 15.0, 0.0, 0.0, 0.0, 2.0 ])">
     <div id="3dhop" class="tdhop" onmousedown="if (event.preventDefault) event.preventDefault()" style="width: 1366px; height: 625px;">
-      <table id="cover" onclick="if($('#help_pane').css('display')=='table') helpSwitch(); else if ($('#info_pane_horizontal1').css('display')=='table') infoSwitch('horizontal1'); else if ($('#info_pane_horizontal2').css('display')=='table') infoSwitch('horizontal2'); else if ($('#info_pane_horizontal3').css('display')=='table') infoSwitch('horizontal3'); else if ($('#info_pane_horizontal4').css('display')=='table') infoSwitch('horizontal4'); else if ($('#info_pane_horizontal5').css('display')=='table') infoSwitch('horizontal5'); else if ($('#info_pane_horizontal6').css('display')=='table') infoSwitch('horizontal6'); else if ($('#info_pane_horizontal7').css('display')=='table') infoSwitch('horizontal7');">
-        <tbody>
-          <tr align="center">
-            <td valign="center">
-              <table class="panel" id="info_pane_horizontal1" onclick="infoSwitch('horizontal1')" cellspacing="10">
-                <tbody>
-                  <tr>
-                    <td>
-                      <img class="close" id="help_close_on" src="img/close_on.png" onclick="helpSwitch();$('#help').css('opacity','0.5');" style="display:none;">
-                      <img class="close" id="help_close" src="img/close.png">
-                      <hr>
-                    </td>
-                  </tr>
-                  <tr align="center">
-                    <td>
-                      <h4 class="hs_sub">Graduale (Kuttenberger Cantionale)</h4>
-                      <img id="hs1_img" class="hs-img" src="img/minatore1.jpg">
-                      <figcaption style="font-size:80%;font-style:italic;text-align:left;margin-top:5px;margin-left:12px;">Oesterreichischen Nationalbibliothek</figcaption>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p class="scroll" style="max-height:150px; font-style:normal; text-align:justify; margin-left:-10px; padding:15px;"><span class="hs_text"></span></p>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <table class="panel" id="info_pane_horizontal3" onclick="infoSwitch('horizontal3')" cellspacing="10">
-                <tbody>
-                  <tr>
-                    <td>
-                      <img class="close" id="help_close_on" src="img/close_on.png" onclick="helpSwitch();$('#help').css('opacity','0.5');" style="display:none;">
-                      <img class="close" id="help_close" src="img/close.png">
-                      <hr>
-                    </td>
-                  </tr>
-                  <tr align="center">
-                    <td>
-                      <h4 class="hs_sub">Graduale (Kuttenberger Cantionale)</h4>
-                      <img id="hs3_img" class="hs-img" src="img/sacco.jpg">
-                      <figcaption style="font-size:80%;font-style:italic;text-align:left;margin-top:5px;margin-left:12px;">Oesterreichischen Nationalbibliothek</figcaption>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p class="scroll" style="max-height:150px; font-style:normal; text-align:justify; margin-left:-10px; padding:15px;">
-                        <span class="hs_text"></span>
-                      </p>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <table class="panel" id="info_pane_horizontal4" onclick="infoSwitch('horizontal4')" cellspacing="10">
-                <tbody>
-                  <tr>
-                    <td>
-                      <img class="close" id="help_close_on" src="img/close_on.png" onclick="helpSwitch();$('#help').css('opacity','0.5');" style="display:none;">
-                      <img class="close" id="help_close" src="img/close.png">
-                      <hr>
-                    </td>
-                  </tr>
-                  <tr align="center">
-                    <td>
-                      <h4 class="hs_sub">Graduale (Kuttenberger Cantionale)</h4>
-                      <img id="hs4_img" class="hs-img" src="img/minatore2.jpg">
-                      <figcaption style="font-size:80%;font-style:italic;text-align:left;margin-top:5px;margin-left:12px;">Oesterreichischen Nationalbibliothek</figcaption>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p class="scroll" style="max-height:150px; font-style:normal; text-align:justify; margin-left:-10px; padding:15px;">
-                        <span class="hs_text"></span>
-                      </p>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <table class="panel" id="info_pane_horizontal5" onclick="infoSwitch('horizontal5')" cellspacing="10">
-                <tbody>
-                  <tr>
-                    <td>
-                      <img class="close" id="help_close_on" src="img/close_on.png" onclick="helpSwitch();$('#help').css('opacity','0.5');" style="display:none;"><img class="close" id="help_close" src="img/close.png">
-                      <hr>
-                    </td>
-                  </tr>
-                  <tr align="center">
-                    <td>
-                      <h4 class="hs_sub">Graduale (Kuttenberger Cantionale)</h4>
-                      <img id="hs5_img" class="hs-img" src="img/minatore3.jpg">
-                      <figcaption style="font-size:80%;font-style:italic;text-align:left;margin-top:5px;margin-left:12px;">Oesterreichischen Nationalbibliothek</figcaption>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p class="scroll" style="max-height:150px; font-style:normal; text-align:justify; margin-left:-10px; padding:15px;"><span class="hs_text"></span></p>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <table class="panel" id="info_pane_horizontal6" onclick="infoSwitch('horizontal6')" cellspacing="10">
-                <tbody>
-                  <tr>
-                    <td>
-                      <img class="close" id="help_close_on" src="img/close_on.png" onclick="helpSwitch();$('#help').css('opacity','0.5');" style="display:none;">
-                      <img class="close" id="help_close" src="img/close.png">
-                      <hr>
-                    </td>
-                  </tr>
-                  <tr align="center">
-                    <td>
-                      <h4 class="hs_sub">Graduale (Kuttenberger Cantionale)</h4>
-                      <img id="hs6_img" class="hs-img" src="img/secchi.jpg">
-                      <figcaption style="font-size:80%;font-style:italic;text-align:left;margin-top:5px;margin-left:12px;">Oesterreichischen Nationalbibliothek</figcaption>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p class="scroll" style="max-height:150px; font-style:normal; text-align:justify; margin-left:-10px; padding:15px;"><span class="hs_text"></span></p>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <table class="panel" id="info_pane_horizontal7" onclick="infoSwitch('horizontal7')" cellspacing="10">
-                <tbody>
-                  <tr>
-                    <td>
-                      <img class="close" id="help_close_on" src="img/close_on.png" onclick="helpSwitch();$('#help').css('opacity','0.5');" style="display:none;">
-                      <img class="close" id="help_close" src="img/close.png">
-                      <hr>
-                    </td>
-                  </tr>
-                  <tr align="center">
-                    <td>
-                      <h4 class="hs_sub">Graduale (Kuttenberger Cantionale)</h4>
-                      <img id="hs7_img" class="hs-img" src="img/rota.jpg">
-                      <figcaption style="font-size:80%;font-style:italic;text-align:left;margin-top:5px;margin-left:12px;">Oesterreichischen Nationalbibliothek</figcaption>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p class="scroll" style="max-height:150px; font-style:normal; text-align:justify; margin-left:-10px; padding:15px;"><span class="hs_text"></span></p>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <table class="panel" id="info_pane_horizontal2" onclick="infoSwitch('horizontal2')" cellspacing="10">
-                <tbody>
-                  <tr>
-                    <td>
-                      <img class="close" id="help_close_on" src="img/close_on.png" onclick="helpSwitch();$('#help').css('opacity','0.5');" style="display:none;">
-                      <img class="close" id="help_close" src="img/close.png">
-                      <hr>
-                    </td>
-                  </tr>
-                  <tr align="center">
-                    <td>
-                      <h4 class="hs_sub">Graduale (Kuttenberger Cantionale)</h4>
-                      <img id="hs2_img" class="hs-img" src="img/lucerna.jpg">
-                      <figcaption style="font-size:80%;font-style:italic;text-align:left;margin-top:5px;margin-left:12px;">Oesterreichischen Nationalbibliothek</figcaption>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p class="scroll" style="max-height:150px; font-style:normal; text-align:justify; margin-left:-10px; padding:15px;"><span class="hs_text"></span></p>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-        </tbody>
-      </table>
       <div id="toolbar">
         <img id="home" title="Home" src="img/home.png">
         <img id="home1" title="Front" src="img/home1.png">
         <img id="home2" title="Left" src="img/home2.png">
         <img id="home3" title="Right" src="img/home3.png">
-        <img id="hotspot" title="Show Hotspots" src="img/pin.png" style="position: absolute; visibility: hidden;">
-        <img id="hotspot_on" title="Hide Hotspots" src="img/pin_on.png">
-        <img id="full_on" title="Exit Full Screen" src="img/full_on.png" style="position: absolute; visibility: hidden; ">
-        <img id="full" title="Full Screen" src="img/full.png" >
+        <img id="hotspot" title="Show Hotspots" src="img/pin_on.png" data-swap="img/pin.png">
       </div>
       <canvas id="draw-canvas" width="1366" height="625"></canvas>
+      <div id="wrapImage">
+        <div class="imgContent">
+          <div class="header"><h4>Graduale (Kuttenberger Cantionale)</h4></div>
+          <div class="content"></div>
+          <div class="footer"><p>Oesterreichischen Nationalbibliothek</p></div>
+        </div>
+      </div>
     </div>
     <script type="text/javascript">
+    window.addEventListener("orientationchange", function() {
+      window.setTimeout(function() {
+        checkDim()
+      }, 200);
+    }, false);
     var presenter = null;
     function setup3dhop() {
       presenter = new Presenter("draw-canvas");
       presenter.setScene({
         meshes: {
           "totali" : { url: "models/singleres/totale.ply" },
-          "mesh1" : { url: "models/singleres/cube2.ply" },
-          "mesh2" : { url: "models/singleres/cube3.ply" },
-          "mesh3" : { url: "models/singleres/cube1.ply" },
-          "mesh4" : { url: "models/singleres/cube5.ply" },
-          "mesh5" : { url: "models/singleres/cube6.ply" },
-          "mesh6" : { url: "models/singleres/cube7.ply" },
-          "mesh7" : { url: "models/singleres/cube4.ply" }
+          "mesh1" : { url: "models/singleres/cube1.ply" },
+          "mesh2" : { url: "models/singleres/cube2.ply" },
+          "mesh3" : { url: "models/singleres/cube3.ply" },
+          "mesh4" : { url: "models/singleres/cube4.ply" },
+          "mesh5" : { url: "models/singleres/cube5.ply" },
+          "mesh6" : { url: "models/singleres/cube6.ply" },
+          "mesh7" : { url: "models/singleres/cube7.ply" }
         },
         modelInstances : { "totali" : { mesh : "totali" } },
         spots : {
@@ -258,45 +94,45 @@
         case 'home1': presenter.animateToTrackballPosition([0.05,3.0,0.005,0.15,0.0,0.5]); break;
         case 'home2': presenter.animateToTrackballPosition([0.05,7.0,0.12,-0.15,0.0,0.55]); break;
         case 'home3': presenter.animateToTrackballPosition([-30.05,17.0,0.08,-0.22,0.0,0.7]); break;
-        case 'zoomin': presenter.zoomIn(); break;
-        case 'zoomout': presenter.zoomOut(); break;
-        case 'lighting':
-        case 'lighting_off': presenter.enableSceneLighting(!presenter.isSceneLightingEnabled()); lightingSwitch(); break;
-        case 'light':
-        case 'light_on': presenter.enableLightTrackball(!presenter.isLightTrackballEnabled()); lightSwitch(); break;
-        else if(action=='hotspot'|| action=='hotspot_on') { presenter.toggleSpotVisibility(HOP_ALL, true); presenter.enableOnHover(!presenter.isOnHoverEnabled()); hotspotSwitch();}
-        else if(action=='full'  || action=='full_on') fullscreenSwitch();
-        else if(action=='help'|| action=='help_on') helpSwitch();
+        case 'hotspot': presenter.toggleSpotVisibility(HOP_ALL, true); presenter.enableOnHover(!presenter.isOnHoverEnabled()); hotspotSwitch(); break;
+        case 'help': helpSwitch(); break;
       }
-      if(action=='home') {  presenter.animateToTrackballPosition([20.0,15.0,0.0,0.0,0.0,2.0]);}
-      if(action=='home1') { presenter.animateToTrackballPosition([0.05,3.0,0.005,0.15,0.0,0.5]);} //  ?, ?, x,z,?,distanza
-      if(action=='home2') { presenter.animateToTrackballPosition([0.05,7.0,0.12,-0.15,0.0,0.55]);}
-      if(action=='home3') { presenter.animateToTrackballPosition([-30.05,17.0,0.08,-0.22,0.0,0.7]);}
-      else if(action=='zoomin') presenter.zoomIn();
-      else if(action=='zoomout') presenter.zoomOut();
-      else if(action=='lighting' || action=='lighting_off') { presenter.enableSceneLighting(!presenter.isSceneLightingEnabled()); lightingSwitch(); }
-      else if(action=='light' || action=='light_on') { presenter.enableLightTrackball(!presenter.isLightTrackballEnabled()); lightSwitch(); }
-      else if(action=='hotspot'|| action=='hotspot_on') { presenter.toggleSpotVisibility(HOP_ALL, true); presenter.enableOnHover(!presenter.isOnHoverEnabled()); hotspotSwitch();}
-      else if(action=='full'  || action=='full_on') fullscreenSwitch();
-      else if(action=='help'|| action=='help_on') helpSwitch();
     }
 
     function onPickedSpt(id) {
+      $("#wrapImage>.content").html('')
+      let img;
       switch(id) {
-        case 'spot1' : infoSwitch('horizontal1'); setInfo(id); break;
-        case 'spot2' : infoSwitch('horizontal2'); setInfo(id); break;
-        case 'spot3' : infoSwitch('horizontal3'); setInfo(id); break;
-        case 'spot4' : infoSwitch('horizontal4'); setInfo(id); break;
-        case 'spot5' : infoSwitch('horizontal5'); setInfo(id); break;
-        case 'spot6' : infoSwitch('horizontal6'); setInfo(id); break;
-        case 'spot7' : infoSwitch('horizontal7'); setInfo(id); break;
+        case 'spot1' : img = 'minatore1.jpg'; break;
+        case 'spot2' : img = 'lucerna.jpg'; break;
+        case 'spot3' : img = 'sacco.jpg'; break;
+        case 'spot4' : img = 'minatore2.jpg'; break;
+        case 'spot5' : img = 'minatore3.jpg'; break;
+        case 'spot6' : img = 'secchi.jpg'; break;
+        case 'spot7' : img = 'rota.jpg'; break;
+      }
+      $("#wrapImage .content").css("background-image","url('img/"+img+"')")
+      $("#wrapImage").fadeIn('fast');
+      $("#wrapImage").on('click', function(event) {
+        console.log(event);
+        $("#wrapImage").fadeOut('fast');
+      });
+      checkDim()
+    }
+    function checkDim(){
+      var dim
+      if(screen.width > screen.height){
+        $(".imgContent").css({"margin":"20px 15%","width":"70%"})
+        $(".content").css({"height":"70vh"})
+      }else {
+        $(".imgContent").css({"margin":"40% 5%","width":"90%"})
+        $(".content").css({"height":"60vw"})
       }
     }
 
     $(document).ready(function(){
       init3dhop();
       setup3dhop();
-      initPanels();
       moveToolbar(null,(($('#3dhop').parent().height()-415)/2));
       $("#toolbar").animate({ marginLeft: "-10" }, 1000 );
       $(window).on('resize', function () {
@@ -304,21 +140,6 @@
         presenter.ui.postDrawEvent();
       });
     });
-
-    document.addEventListener("MSFullscreenChange", function () {
-      if(!document.msFullscreenElement) { moveToolbar(null,($('#toolbar').parent().height()-$('#toolbar').innerHeight())/2); }
-      else { moveToolbar(null,(screen.height-$('#toolbar').innerHeight())/2); }
-    }, false);
-
-    document.addEventListener("mozfullscreenchange", function () {
-      if(!document.mozFullScreen) { moveToolbar(null,($('#toolbar').parent().height()-$('#toolbar').innerHeight())/2); }
-      else { moveToolbar(null,(screen.height-$('#toolbar').innerHeight())/2); }
-    }, false);
-
-    document.addEventListener("webkitfullscreenchange", function () {
-      if(!document.webkitIsFullScreen) { moveToolbar(null,($('#toolbar').parent().height()-$('#toolbar').innerHeight())/2); }
-      else { moveToolbar(null,(screen.height-$('#toolbar').innerHeight())/2); }
-    }, false);
     </script>
   </body>
 </html>
