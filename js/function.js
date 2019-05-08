@@ -63,6 +63,7 @@ window.addEventListener('load', function() {
   const installEl = document.getElementById('installer');
   const installer = new Installer(installEl);
 })
+
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
     navigator.serviceWorker.register('sw.js').then(function(registration) {
@@ -72,6 +73,15 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
+
+window.addEventListener("orientationchange", function() {
+  window.setTimeout(function() {
+    setHeightDiv()
+    $("video").css("width",$('.poi-content').width())
+  }, 200);
+}, false);
+
+
 $(document).ready(function() {
   $("[name=disclaimer]").on('click', function(){
     localStorage.setItem("disclaimer","ok")
@@ -148,6 +158,7 @@ function initMap(){
 }
 function slidePanel(e){
   prop = e.layer.feature.properties
+  setHeightDiv()
   $(".closePanel>h5").html(prop.nome)
   $(".poi-banner").css("background-image","url('img/poi/banner/"+prop.banner+"')")
   content = $(".poi-content").html(prop.desc)
@@ -156,6 +167,8 @@ function slidePanel(e){
   if(prop.slider) {initSlider(e)}
   if(prop.video){initVideo(e)}
 }
+
+function setHeightDiv(){ $(".poiContentDiv").css("height",$('#wrapPoiInfo').height()-50) }
 
 function initVideo(e){
   videoArr = e.layer.feature.properties.video
