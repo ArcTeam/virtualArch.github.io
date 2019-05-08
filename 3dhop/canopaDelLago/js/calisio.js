@@ -54,7 +54,6 @@ function helpSwitch() {
 function infoSwitch(type) {
   if($('#cover').css("display")=='none') {
     $('#cover').css("display", "table");
-    $('#help_pane').css("display", "none");
     $('#info_pane_horizontal1').css("display", "none");
     $('#info_pane_horizontal2').css("display", "none");
     $('#info_pane_horizontal3').css("display", "none");

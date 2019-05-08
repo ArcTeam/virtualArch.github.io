@@ -166,11 +166,18 @@ function slidePanel(e){
   $("body").on('click', '.closePanel', function() { $('#wrapPoiInfo').fadeOut(500); });
   if(prop.slider) {initSlider(e)}
   if(prop.video){initVideo(e)}
+  if(prop.tredhop){init3dhop(e)}
 }
 
 function setHeightDiv(){
   $("#wrapPoiInfo").css("bottom","0")
   $(".poiContentDiv").css("height",$('#wrapPoiInfo').height()-50)
+}
+
+function init3dhop(e){
+  let url= e.layer.feature.properties.tredhop
+  let div = $("<div/>",{id:'3dhopWrap',class:'my-3'}).appendTo('.poi-content')
+  $("<a/>",{class:'btn btn-success d-block', href:'3dhop/'+url+'/start.html', text:'visualizza 3d'}).appendTo(div)
 }
 
 function initVideo(e){

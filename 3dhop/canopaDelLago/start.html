@@ -27,52 +27,10 @@
   </script>
   <body onload="presenter.animateToTrackballPosition([ 20.0, 15.0, 0.0, 0.0, 0.0, 2.0 ])">
     <div id="3dhop" class="tdhop" onmousedown="if (event.preventDefault) event.preventDefault()" style="width: 1366px; height: 625px;">
-      <div id="tdhlg">Powered by 3DHOP<br>CNR &nbsp;�&nbsp; ISTI</div>
       <table id="cover" onclick="if($('#help_pane').css('display')=='table') helpSwitch(); else if ($('#info_pane_horizontal1').css('display')=='table') infoSwitch('horizontal1'); else if ($('#info_pane_horizontal2').css('display')=='table') infoSwitch('horizontal2'); else if ($('#info_pane_horizontal3').css('display')=='table') infoSwitch('horizontal3'); else if ($('#info_pane_horizontal4').css('display')=='table') infoSwitch('horizontal4'); else if ($('#info_pane_horizontal5').css('display')=='table') infoSwitch('horizontal5'); else if ($('#info_pane_horizontal6').css('display')=='table') infoSwitch('horizontal6'); else if ($('#info_pane_horizontal7').css('display')=='table') infoSwitch('horizontal7');">
         <tbody>
           <tr align="center">
             <td valign="center">
-              <table class="panel" id="help_pane" onclick="helpSwitch()" cellspacing="10">
-                <tbody>
-                  <tr>
-                    <td colspan="3">
-                      <h3>
-                        <img class="close" id="help_close_on" src="img/close_on.png" onclick="helpSwitch();$('#help').css('opacity','0.5');" style="display:none;">
-                        <img class="close" id="help_close" src="img/close.png">
-                        3DHOP Help
-                      </h3>
-                      <hr>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colspan="3">
-                      <h4>Controls</h4>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="width:43%">Mouse Left Button + Drag</td>
-                    <td style="width:4%">-</td>
-                    <td style="width:43%">Rotate The Model</td>
-                  </tr>
-                  <tr>
-                    <td style="width:43%">Mouse Left Button + Drag<br>+ Light Control Enabled</td>
-                    <td style="width:4%">-</td>
-                    <td style="width:43%">Move Light Source</td>
-                  </tr>
-                  <tr>
-                    <td style="width:43%">Mouse Wheel</td>
-                    <td style="width:4%">-</td>
-                    <td style="width:43%">Zoom In And Out</td>
-                  </tr>
-                  <tr>
-                    <td colspan="3">
-                      <h4>Warning</h4>
-                      <p class="scroll" id="help_scroll" style="max-height:200px; margin-bottom:10px;">Depending on your internet connection speed you may have to wait a little<br>
-before to get the full resolution model</p>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
               <table class="panel" id="info_pane_horizontal1" onclick="infoSwitch('horizontal1')" cellspacing="10">
                 <tbody>
                   <tr>
