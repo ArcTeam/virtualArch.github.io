@@ -200,12 +200,11 @@ function initVideo(videoArr){
 
 function initGallery(gallery){
   let dir = "img/gallerie/"+gallery.dir;
-  let wrap = $("<div/>",{id:'galleryWrap', class:'container-fluid'}).appendTo('.poi-content')
-  let rowTitle = $("<div/>",{class:'row mb-2'}).appendTo(wrap)
-  $("<div/>",{class:'col-12'}).appendTo(rowTitle).html('<h3 class="border-bottom pb-1 my-3">Images gallery</h3>')
+  let galleryContent = "<div id='galleryContent'></div>";
+  $('.poi-content').html($('.poi-content').html().replace('*GALLERIA*',galleryContent));
+  let wrap = $("<div/>",{id:'galleryWrap', class:'container-fluid my-3'}).appendTo('#galleryContent')
   let rowImage = $("<div/>",{class:'row mb-2'}).appendTo(wrap)
   $.each(gallery.foto, function(i,v){ $("<div/>", {id:"img"+i,class:'lozad col-4 border border-white'}).attr("data-background-image",dir+"/small/"+v).appendTo(rowImage) })
-  $('.poi-content').html().replace('*GALLERIA*','')
   setGalleryDim()
   observer.observe();
 }
