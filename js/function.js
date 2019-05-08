@@ -140,7 +140,7 @@ function initMap(){
       $("<i/>",{class:'fas fa-minus fa-lg pr-2'}).css("color",p.color).prependTo(li)
     })
     sentieri = L.geoJSON(data,{
-      style: function(feature) { return {color: feature.properties.color,weight:8} }
+      style: function(feature) { return {color: feature.properties.color,weight:5} }
     }).addTo(map).on('click',slideTrackInfo);
   });
 
@@ -154,9 +154,16 @@ function slidePanel(e){
   $('#wrapPoiInfo').fadeIn(500)
   $("body").on('click', '.closePanel', function() { $('#wrapPoiInfo').fadeOut(500); });
   if(prop.slider) {initSlider(e)}
-  if(prop.video){
+  if(prop.video){initVideo(e)}
+}
 
-  }
+function initVideo(e){
+  videoList = e.layer.feature.properties.video
+  video='<ul>'
+  $.each(videoList,function(index, el) {
+    video += '<li>'
+  })
+  console.log(video);
 }
 
 function initSlider(e){
