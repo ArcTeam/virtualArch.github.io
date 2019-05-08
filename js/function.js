@@ -31,6 +31,8 @@ const Installer = function(root) {
     // This fires after onbeforinstallprompt OR after manual add to homescreen.
     // ga('send', 'event', 'install', 'installed');
     root.classList.remove('available');
+    root.classList.add('hide');
+    console.log('installata');
   };
 
   const beforeinstallprompt = function(e) {
@@ -42,7 +44,11 @@ const Installer = function(root) {
   };
 
   window.addEventListener('beforeinstallprompt', beforeinstallprompt);
-  window.addEventListener('appinstalled', installed);
+  // window.addEventListener('appinstalled', installed);
+  window.addEventListener('appinstalled', (evt) => {
+    console.log('installata');
+    root.classList.add('hide');
+  });
 
   root.addEventListener('click', install.bind(this));
   root.addEventListener('touchend', install.bind(this));
@@ -134,7 +140,7 @@ function initMap(){
       $("<i/>",{class:'fas fa-minus fa-lg pr-2'}).css("color",p.color).prependTo(li)
     })
     sentieri = L.geoJSON(data,{
-      style: function(feature) { return {color: feature.properties.color} }
+      style: function(feature) { return {color: feature.properties.color,weight:8} }
     }).addTo(map).on('click',slideTrackInfo);
   });
 
@@ -142,13 +148,15 @@ function initMap(){
 }
 function slidePanel(e){
   prop = e.layer.feature.properties
-  console.log(prop);
   $(".closePanel>h5").html(prop.nome)
   $(".poi-banner").css("background-image","url('img/poi/banner/"+prop.banner+"')")
   content = $(".poi-content").html(prop.desc)
   $('#wrapPoiInfo').fadeIn(500)
   $("body").on('click', '.closePanel', function() { $('#wrapPoiInfo').fadeOut(500); });
-  if (prop.slider) {initSlider(e)}
+  if(prop.slider) {initSlider(e)}
+  if(prop.video){
+
+  }
 }
 
 function initSlider(e){
@@ -163,7 +171,7 @@ function initSlider(e){
   slider += '<img src="img/poi/slider/'+dati.slider.frontImg+'" alt="'+dati.slider.frontLabel+'">';
   slider += '</div>';
   slider += '</div>';
-  $('.poi-content').html($('.poi-content').html().replace('SLIDER',slider));
+  $('.poi-content').html($('.poi-content').html().replace('*SLIDER*',slider));
   $('.js-img-compare').imagesCompare({
     initVisibleRatio: 0.5,
     interactionMode: "drag",
