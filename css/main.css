@@ -65,7 +65,7 @@ html, body { height: 100vh; width: 100vw;background:#fff; font-family: 'Montserr
 #poi-info{position:absolute;top:0;bottom:0;right:0; width:90%;box-shadow: -1rem 0rem 15px rgba(0,0,0,.5)!important;}
 #track-info{position:absolute;top:20%;bottom:0;right:0; width:100%;}
 
-.poi-content{ font-size: 12px; text-align: justify; padding: 5px 15px; overflow:auto;}
+.poi-content{ font-size: 12px; text-align: justify; padding: 5px 15px; /*overflow:auto;*/}
 .poi-content > img{margin:20px auto;}
 
 /****** slider ****/
@@ -185,15 +185,6 @@ html, body { height: 100vh; width: 100vw;background:#fff; font-family: 'Montserr
   -moz-transition: -moz-transform 0.3s 0.7s, opacity 0s 0.7s;
   transition: transform 0.3s 0.7s, opacity 0s 0.7s;
 }
-
-
-
-
-
-
-
-
-
 
 @media screen /*and (min-aspect-ratio: 1/1)*/ and (max-width: 767px){
   .poi-banner,.track-banner{height:160px; }
