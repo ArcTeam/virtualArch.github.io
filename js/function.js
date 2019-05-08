@@ -158,12 +158,11 @@ function slidePanel(e){
 }
 
 function initVideo(e){
-  videoList = e.layer.feature.properties.video
-  video='<ul>'
-  $.each(videoList,function(index, el) {
-    video += '<li>'
-  })
-  console.log(video);
+  videoArr = e.layer.feature.properties.video
+  videoList='<ul>'
+  $.each(videoArr,function(i, el) { videoList += "<li><a href='#'>"+el+"</a></li>" })
+  videoList+='</ul>'
+  $('.poi-content').html($('.poi-content').html().replace('*VIDEO*',videoList));
 }
 
 function initSlider(e){
