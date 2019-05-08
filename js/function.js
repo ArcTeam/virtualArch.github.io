@@ -168,7 +168,10 @@ function slidePanel(e){
   if(prop.video){initVideo(e)}
 }
 
-function setHeightDiv(){ $(".poiContentDiv").css("height",$('#wrapPoiInfo').height()-50) }
+function setHeightDiv(){
+  $("#wrapPoiInfo").css("bottom","0")
+  $(".poiContentDiv").css("height",$('#wrapPoiInfo').height()-50)
+}
 
 function initVideo(e){
   videoArr = e.layer.feature.properties.video
@@ -186,7 +189,7 @@ function initVideo(e){
 
 function initSlider(e){
   dati = e.layer.feature.properties
-  slider = '<div class="js-img-compare">';
+  slider  = '<div class="js-img-compare">';
   slider += '<div style="display: none;">';
   slider += '<span class="images-compare-label">'+dati.slider.bgLabel+'</span>';
   slider += '<img src="img/poi/slider/'+dati.slider.bgImg+'" alt="'+dati.slider.bgLabel+'">';

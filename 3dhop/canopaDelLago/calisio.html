@@ -1,0 +1,351 @@
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="theme-color" content="#98c222">
+    <link type="text/css" rel="stylesheet" href="css/3dhop.css">
+    <link type="text/css" rel="stylesheet" href="css/calisio.css">
+    <link rel="manifest" href="../../manifest.json">
+    <link rel="shortcut icon" href="../../img/ico/favicon.ico">
+    <script type="text/javascript" src="js/spidergl.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/presenter.js"></script>
+    <script type="text/javascript" src="js/nexus.js"></script>
+    <script type="text/javascript" src="js/ply.js"></script>
+    <script type="text/javascript" src="js/trackball_sphere.js"></script>
+    <script type="text/javascript" src="js/trackball_turntable.js"></script>
+    <script type="text/javascript" src="js/trackball_pantilt.js"></script>
+    <script type="text/javascript" src="js/trackball_turntable_pan.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/calisio.js"></script>
+    <title>VirtualArch - Ecomuseo dell'Argentario</title>
+  </head>
+  <script type="text/javascript" id="useragent-switcher">
+    navigator.__defineGetter__("userAgent", function() {return "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:56.0) Gecko/20100101 Firefox/56.0"})
+  </script>
+  <body onload="presenter.animateToTrackballPosition([ 20.0, 15.0, 0.0, 0.0, 0.0, 2.0 ])">
+    <div id="3dhop" class="tdhop" onmousedown="if (event.preventDefault) event.preventDefault()" style="width: 1366px; height: 625px;">
+      <div id="tdhlg">Powered by 3DHOP<br>CNR &nbsp;�&nbsp; ISTI</div>
+      <table id="cover" onclick="if($('#help_pane').css('display')=='table') helpSwitch(); else if ($('#info_pane_horizontal1').css('display')=='table') infoSwitch('horizontal1'); else if ($('#info_pane_horizontal2').css('display')=='table') infoSwitch('horizontal2'); else if ($('#info_pane_horizontal3').css('display')=='table') infoSwitch('horizontal3'); else if ($('#info_pane_horizontal4').css('display')=='table') infoSwitch('horizontal4'); else if ($('#info_pane_horizontal5').css('display')=='table') infoSwitch('horizontal5'); else if ($('#info_pane_horizontal6').css('display')=='table') infoSwitch('horizontal6'); else if ($('#info_pane_horizontal7').css('display')=='table') infoSwitch('horizontal7');">
+        <tbody>
+          <tr align="center">
+            <td valign="center">
+              <table class="panel" id="help_pane" onclick="helpSwitch()" cellspacing="10">
+                <tbody>
+                  <tr>
+                    <td colspan="3">
+                      <h3>
+                        <img class="close" id="help_close_on" src="img/close_on.png" onclick="helpSwitch();$('#help').css('opacity','0.5');" style="display:none;">
+                        <img class="close" id="help_close" src="img/close.png">
+                        3DHOP Help
+                      </h3>
+                      <hr>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="3">
+                      <h4>Controls</h4>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="width:43%">Mouse Left Button + Drag</td>
+                    <td style="width:4%">-</td>
+                    <td style="width:43%">Rotate The Model</td>
+                  </tr>
+                  <tr>
+                    <td style="width:43%">Mouse Left Button + Drag<br>+ Light Control Enabled</td>
+                    <td style="width:4%">-</td>
+                    <td style="width:43%">Move Light Source</td>
+                  </tr>
+                  <tr>
+                    <td style="width:43%">Mouse Wheel</td>
+                    <td style="width:4%">-</td>
+                    <td style="width:43%">Zoom In And Out</td>
+                  </tr>
+                  <tr>
+                    <td colspan="3">
+                      <h4>Warning</h4>
+                      <p class="scroll" id="help_scroll" style="max-height:200px; margin-bottom:10px;">Depending on your internet connection speed you may have to wait a little<br>
+before to get the full resolution model</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="panel" id="info_pane_horizontal1" onclick="infoSwitch('horizontal1')" cellspacing="10">
+                <tbody>
+                  <tr>
+                    <td>
+                      <img class="close" id="help_close_on" src="img/close_on.png" onclick="helpSwitch();$('#help').css('opacity','0.5');" style="display:none;">
+                      <img class="close" id="help_close" src="img/close.png">
+                      <hr>
+                    </td>
+                  </tr>
+                  <tr align="center">
+                    <td>
+                      <h4 class="hs_sub"></h4>
+                      <img id="hs1_img" class="hs-img" src="img/minatore1.jpg">
+                      <figcaption style="font-size:80%;font-style:italic;text-align:left;margin-top:5px;margin-left:12px;">�sterreichischen Nationalbibliothek</figcaption>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="scroll" style="max-height:150px; font-style:normal; text-align:justify; margin-left:-10px; padding:15px;"><span class="hs_text"></span></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="panel" id="info_pane_horizontal3" onclick="infoSwitch('horizontal3')" cellspacing="10">
+                <tbody>
+                  <tr>
+                    <td>
+                      <img class="close" id="help_close_on" src="img/close_on.png" onclick="helpSwitch();$('#help').css('opacity','0.5');" style="display:none;">
+                      <img class="close" id="help_close" src="img/close.png">
+                      <hr>
+                    </td>
+                  </tr>
+                  <tr align="center">
+                    <td>
+                      <h4 class="hs_sub"></h4>
+                      <img id="hs3_img" class="hs-img" src="img/sacco.jpg">
+                      <figcaption style="font-size:80%;font-style:italic;text-align:left;margin-top:5px;margin-left:12px;">�sterreichischen Nationalbibliothek</figcaption>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="scroll" style="max-height:150px; font-style:normal; text-align:justify; margin-left:-10px; padding:15px;">
+                        <span class="hs_text"></span>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="panel" id="info_pane_horizontal4" onclick="infoSwitch('horizontal4')" cellspacing="10">
+                <tbody>
+                  <tr>
+                    <td>
+                      <img class="close" id="help_close_on" src="img/close_on.png" onclick="helpSwitch();$('#help').css('opacity','0.5');" style="display:none;">
+                      <img class="close" id="help_close" src="img/close.png">
+                      <hr>
+                    </td>
+                  </tr>
+                  <tr align="center">
+                    <td>
+                      <h4 class="hs_sub"></h4>
+                      <img id="hs4_img" class="hs-img" src="img/minatore2.jpg">
+                      <figcaption style="font-size:80%;font-style:italic;text-align:left;margin-top:5px;margin-left:12px;">�sterreichischen Nationalbibliothek</figcaption>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="scroll" style="max-height:150px; font-style:normal; text-align:justify; margin-left:-10px; padding:15px;">
+                        <span class="hs_text"></span>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="panel" id="info_pane_horizontal5" onclick="infoSwitch('horizontal5')" cellspacing="10">
+                <tbody>
+                  <tr>
+                    <td>
+                      <img class="close" id="help_close_on" src="img/close_on.png" onclick="helpSwitch();$('#help').css('opacity','0.5');" style="display:none;"><img class="close" id="help_close" src="img/close.png">
+                      <hr>
+                    </td>
+                  </tr>
+                  <tr align="center">
+                    <td>
+                      <h4 class="hs_sub"></h4>
+                      <img id="hs5_img" class="hs-img" src="img/minatore3.jpg">
+                      <figcaption style="font-size:80%;font-style:italic;text-align:left;margin-top:5px;margin-left:12px;">�sterreichischen Nationalbibliothek</figcaption>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="scroll" style="max-height:150px; font-style:normal; text-align:justify; margin-left:-10px; padding:15px;"><span class="hs_text"></span></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="panel" id="info_pane_horizontal6" onclick="infoSwitch('horizontal6')" cellspacing="10">
+                <tbody>
+                  <tr>
+                    <td>
+                      <img class="close" id="help_close_on" src="img/close_on.png" onclick="helpSwitch();$('#help').css('opacity','0.5');" style="display:none;">
+                      <img class="close" id="help_close" src="img/close.png">
+                      <hr>
+                    </td>
+                  </tr>
+                  <tr align="center">
+                    <td>
+                      <h4 class="hs_sub"></h4>
+                      <img id="hs6_img" class="hs-img" src="img/secchi.jpg">
+                      <figcaption style="font-size:80%;font-style:italic;text-align:left;margin-top:5px;margin-left:12px;">�sterreichischen Nationalbibliothek</figcaption>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="scroll" style="max-height:150px; font-style:normal; text-align:justify; margin-left:-10px; padding:15px;"><span class="hs_text"></span></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="panel" id="info_pane_horizontal7" onclick="infoSwitch('horizontal7')" cellspacing="10">
+                <tbody>
+                  <tr>
+                    <td>
+                      <img class="close" id="help_close_on" src="img/close_on.png" onclick="helpSwitch();$('#help').css('opacity','0.5');" style="display:none;">
+                      <img class="close" id="help_close" src="img/close.png">
+                      <hr>
+                    </td>
+                  </tr>
+                  <tr align="center">
+                    <td>
+                      <h4 class="hs_sub"></h4>
+                      <img id="hs7_img" class="hs-img" src="img/rota.jpg">
+                      <figcaption style="font-size:80%;font-style:italic;text-align:left;margin-top:5px;margin-left:12px;">�sterreichischen Nationalbibliothek</figcaption>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="scroll" style="max-height:150px; font-style:normal; text-align:justify; margin-left:-10px; padding:15px;"><span class="hs_text"></span></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="panel" id="info_pane_horizontal2" onclick="infoSwitch('horizontal2')" cellspacing="10">
+                <tbody>
+                  <tr>
+                    <td>
+                      <img class="close" id="help_close_on" src="img/close_on.png" onclick="helpSwitch();$('#help').css('opacity','0.5');" style="display:none;">
+                      <img class="close" id="help_close" src="img/close.png">
+                      <hr>
+                    </td>
+                  </tr>
+                  <tr align="center">
+                    <td>
+                      <h4 class="hs_sub"></h4>
+                      <img id="hs2_img" class="hs-img" src="img/lucerna.jpg">
+                      <figcaption style="font-size:80%;font-style:italic;text-align:left;margin-top:5px;margin-left:12px;">�sterreichischen Nationalbibliothek</figcaption>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="scroll" style="max-height:150px; font-style:normal; text-align:justify; margin-left:-10px; padding:15px;"><span class="hs_text"></span></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="toolbar">
+        <img id="home" title="Home" src="img/home.png" style="opacity: 0.5;"><br>
+        <img id="home1" title="Front" src="img/home1.png" style="opacity: 0.5;"><br>
+        <img id="home2" title="Left" src="img/home2.png" style="opacity: 0.5;"><br>
+        <img id="home3" title="Right" src="img/home3.png" style="opacity: 0.5;"><br>
+        <img id="hotspot" title="Show Hotspots" src="img/pin.png" style="position: absolute; visibility: hidden; opacity: 0.5;">
+        <img id="hotspot_on" title="Hide Hotspots" src="img/pin_on.png" style="opacity: 0.5;"><br>
+        <img id="full_on" title="Exit Full Screen" src="img/full_on.png" style="position: absolute; visibility: hidden; opacity: 0.5;">
+        <img id="full" title="Full Screen" src="img/full.png" style="opacity: 0.5;"><br>
+      </div>
+      <canvas id="draw-canvas" width="1366" height="625"></canvas>
+    </div>
+    <script type="text/javascript">
+    var presenter = null;
+    function setup3dhop() {
+      presenter = new Presenter("draw-canvas");
+      presenter.setScene({
+        meshes: {
+          "villa" : { url: "models/singleres/totale.ply" },
+          "galletto" : { url: "models/singleres/cube2.ply" },
+          "giove" : { url: "models/singleres/cube3.ply" },
+          "maschera" : { url: "models/singleres/cube1.ply" },
+          "struzzo" : { url: "models/singleres/cube5.ply" },
+          "passero" : { url: "models/singleres/cube6.ply" },
+          "anatra" : { url: "models/singleres/cube7.ply" },
+          "merlo" : { url: "models/singleres/cube4.ply" }
+        },
+        modelInstances : { "villa" : { mesh : "villa" } },
+        spots : {
+          "spot1" : { mesh : "maschera", color : [1.0, 0.0, 0.0], alpha : 0.2 },
+          "spot2" : { mesh : "galletto", color : [1.0, 0.0, 0.0], alpha : 0.2 },
+          "spot3" : { mesh : "giove", color : [1.0, 0.0, 0.0], alpha : 0.2 },
+          "spot4" : { mesh : "merlo", color : [1.0, 0.0, 0.0], alpha : 0.2 },
+          "spot5" : { mesh : "struzzo", color : [1.0, 0.0, 0.0], alpha : 0.2 },
+          "spot6" : { mesh : "passero", color : [1.0, 0.0, 0.0], alpha : 0.2 },
+          "spot7" : { mesh : "anatra", color : [1.0, 0.0, 0.0], alpha : 0.2 }
+        },
+        trackball: {
+          type : TurntablePanTrackball,
+          trackOptions: {
+            startPhi: -100.0, // punto di partenza del modello prima di mettersi in posizione home
+            startDistance : 2.0, // distanza di partenza
+            minMaxDist    : [0.0, 3.0], // minima e massima distanza di visualizzazione
+            minMaxTheta   : [-10.0, 70.0] // angolo di rotazione lato verticale
+          }
+        },
+        space: { cameraFOV     : 35.0 }
+      });
+      presenter.setSpotVisibility(HOP_ALL, true, true);
+      //arc-team: cambiare il primo true in false se si vuole spegnere all'inizio gli hotspot
+      presenter._onPickedSpot = onPickedSpt;
+    }
+
+    function actionsToolbar(action) {
+      if(action=='home') { presenter.animateToTrackballPosition([ 20.0, 15.0, 0.0, 0.0, 0.0, 2.0 ]); }
+      if(action=='home1') { presenter.animateToTrackballPosition([0.05,  3.0, 0.005, 0.15, 0.0, 0.5 ]); } //  ?, ?, x,z,?,distanza
+      if(action=='home2') { presenter.animateToTrackballPosition([0.05,  7.0, 0.12, -0.15, 0.0, 0.55 ]); }
+      if(action=='home3') { presenter.animateToTrackballPosition([-30.05,  17.0, 0.08, -0.22, 0.0, 0.7 ]); }
+      else if(action=='zoomin') presenter.zoomIn();
+      else if(action=='zoomout') presenter.zoomOut();
+      else if(action=='lighting' || action=='lighting_off') { presenter.enableSceneLighting(!presenter.isSceneLightingEnabled()); lightingSwitch(); }
+      else if(action=='light' || action=='light_on') { presenter.enableLightTrackball(!presenter.isLightTrackballEnabled()); lightSwitch(); }
+      else if(action=='hotspot'|| action=='hotspot_on') { presenter.toggleSpotVisibility(HOP_ALL, true); presenter.enableOnHover(!presenter.isOnHoverEnabled()); hotspotSwitch();}
+      else if(action=='full'  || action=='full_on') fullscreenSwitch();
+      else if(action=='help'|| action=='help_on') helpSwitch();
+    }
+
+    function onPickedSpt(id) {
+      switch(id) {
+        case 'spot1' : infoSwitch('horizontal1'); setInfo(id); break;
+        case 'spot2' : infoSwitch('horizontal2'); setInfo(id); break;
+        case 'spot3' : infoSwitch('horizontal3'); setInfo(id); break;
+        case 'spot4' : infoSwitch('horizontal4'); setInfo(id); break;
+        case 'spot5' : infoSwitch('horizontal5'); setInfo(id); break;
+        case 'spot6' : infoSwitch('horizontal6'); setInfo(id); break;
+        case 'spot7' : infoSwitch('horizontal7'); setInfo(id); break;
+      }
+    }
+
+    $(document).ready(function(){
+      init3dhop();
+      setup3dhop();
+      initPanels();
+      moveToolbar(null,(($('#3dhop').parent().height()-415)/2));
+      $("#toolbar").animate({ marginLeft: "-10" }, 1000 );
+      $(window).on('resize', function () {
+        moveToolbar(null,(($('#3dhop').parent().height()-415)/2));
+        presenter.ui.postDrawEvent();
+      });
+    });
+
+    document.addEventListener("MSFullscreenChange", function () {
+      if(!document.msFullscreenElement) { moveToolbar(null,($('#toolbar').parent().height()-$('#toolbar').innerHeight())/2); }
+      else { moveToolbar(null,(screen.height-$('#toolbar').innerHeight())/2); }
+    }, false);
+
+    document.addEventListener("mozfullscreenchange", function () {
+      if(!document.mozFullScreen) { moveToolbar(null,($('#toolbar').parent().height()-$('#toolbar').innerHeight())/2); }
+      else { moveToolbar(null,(screen.height-$('#toolbar').innerHeight())/2); }
+    }, false);
+
+    document.addEventListener("webkitfullscreenchange", function () {
+      if(!document.webkitIsFullScreen) { moveToolbar(null,($('#toolbar').parent().height()-$('#toolbar').innerHeight())/2); }
+      else { moveToolbar(null,(screen.height-$('#toolbar').innerHeight())/2); }
+    }, false);
+    </script>
+  </body>
+</html>
