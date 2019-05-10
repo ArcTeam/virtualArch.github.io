@@ -81,6 +81,7 @@ window.addEventListener("orientationchange", function() {
     setHeightDiv()
     $("video").css("width",$('.poi-content').width())
     setGalleryDim()
+    checkDim()
   }, 200);
 }, false);
 
@@ -100,7 +101,19 @@ $(document).ready(function() {
       $("#map-page").fadeIn(500, initMap)
     })
   })
+  $("body").on('click', '#wrapImage', function(event) {
+    $("#wrapImage").toggleClass('flex hide');
+  });
 });
+
+function checkDim(){
+  console.log(screen.width+" "+screen.height);
+  if(screen.width > screen.height){
+    $(".imgContent").css({"width":"70vw","height":"95vh"})
+  }else {
+    $(".imgContent").css({"width":"95vw","height":"auto"})
+  }
+}
 
 function initMap(){
   let punti;
@@ -112,7 +125,7 @@ function initMap(){
     options: { position: 'topright'},
     onAdd: function (map) {
       var container = L.DomUtil.create('div', 'legend');
-      title = $("<p/>",{text:'Sentieri', class:'p-0 mb-1 border-bottom'})
+      title = $("<p/>",{class:'p-0 mb-1 border-bottom'}).html("<span class='pr-3'>Sentieri</span>")
       .appendTo(container)
       .on('click', function(){
         list.slideToggle(250)
@@ -202,13 +215,19 @@ function initGallery(gallery){
   $('.poi-content').html($('.poi-content').html().replace('*GALLERIA*',galleryContent));
   let wrap = $("<div/>",{id:'galleryWrap', class:'container-fluid my-3'}).appendTo('#galleryContent')
   let rowImage = $("<div/>",{class:'row mb-2'}).appendTo(wrap)
-  $.each(gallery.foto, function(i,v){ $("<div/>", {id:"img"+i,class:'lozad col-4 border border-white'}).attr("data-background-image",dir+"/small/"+v).appendTo(rowImage) })
+  $.each(gallery.foto, function(i,v){ $("<div/>", {id:"img"+i,class:'imgCover lozad col-4 col-md-3 border border-white'})
+    .attr("data-background-image",dir+"/small/"+v)
+    .appendTo(rowImage)
+    .on('click', function(){
+      $("#wrapImage").toggleClass('hide flex')
+      $("#galleryImageLarge").attr("src",dir+"/large/"+v)
+      checkDim()
+    })
+  })
   setGalleryDim()
   observer.observe();
 }
-function setGalleryDim(){
-  $("#galleryWrap .lozad").height($("#img0").width())
-}
+function setGalleryDim(){ $("#galleryWrap .lozad").height($("#img0").width()) }
 function initSlider(slider){
   sliderDiv  = '<div class="js-img-compare">';
   sliderDiv += '<div style="display: none;">';

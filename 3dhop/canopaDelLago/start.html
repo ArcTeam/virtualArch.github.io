@@ -112,11 +112,7 @@
         case 'spot7' : img = 'rota.jpg'; break;
       }
       $("#wrapImage .content").css("background-image","url('img/"+img+"')")
-      $("#wrapImage").fadeIn('fast');
-      $("#wrapImage").on('click', function(event) {
-        console.log(event);
-        $("#wrapImage").fadeOut('fast');
-      });
+      $("#wrapImage").fadeIn('fast').on('click', function(event) { $("#wrapImage").fadeOut('fast'); });
       checkDim()
     }
     function checkDim(){

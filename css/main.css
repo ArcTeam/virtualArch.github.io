@@ -37,8 +37,10 @@ html, body { height: 100vh; width: 100vw;background:#fff; font-family: 'Montserr
 .txt-lilla{color:#49657d;}
 
 #installer{ position: absolute; bottom: 20px; right: 5px; z-index: 3000;}
-.installed{display:none;}
+.installed,.hide{display:none;}
 .available{display:block}
+.flex{display:flex;}
+.imgCover{background-position: center; background-repeat: no-repeat; background-size: cover;}
 
 .navigation{position:fixed;top:0;left:0;width:100%;height:40px;margin:0;padding:0;}
 #map-page{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;margin:0;padding:0;}
@@ -60,23 +62,17 @@ html, body { height: 100vh; width: 100vw;background:#fff; font-family: 'Montserr
 /**** map   ****/
 #wrapPoiInfo{position:absolute;top:0;bottom:0;right:0; width:100%;z-index:3000;display: none;}
 #wrapTrackInfo{position:absolute;top:0;bottom:0;left:0;width:100%; z-index:3000;display: none;}
+#poi-info{position:relative; margin-left: 10%; width:90%; box-shadow: -1rem 0rem 15px rgba(0,0,0,.5)!important;}
+#track-info{position:absolute;top:20%;bottom:0;right:0; width:100%;}
 .closePanel{position: fixed; top: 0; right: 0; width: 90%; height:45px; z-index: 5000;}
 .poiContentDiv{position: relative; margin-top: 45px; width: 100%; overflow: auto;}
-.poi-banner,.track-banner{position:relative;width:100%;background-position: center; background-repeat: no-repeat; background-size: cover; }
-#poi-info{
-  position:relative;
-  margin-left: 10%;
-  width:90%;
-  box-shadow: -1rem 0rem 15px rgba(0,0,0,.5)!important;
-}
-#track-info{position:absolute;top:20%;bottom:0;right:0; width:100%;}
-
+.poi-banner,.track-banner{position:relative;width:100%;background-position: center; background-repeat: no-repeat;}
+.poi-banner{background-size: cover; }
+.track-banner{background-size: contain; }
 .poi-content{ font-size: 12px; text-align: justify; padding: 5px 15px; /*overflow:auto;*/}
 .poi-content > img{margin:20px auto;}
-
-/* .lozad:nth-child(even){margin:0 5px}
-.lozad{margin-bottom:5px} */
-
+#wrapImage{ position:absolute; top:0; left:0; bottom:0; right:0; background:rgba(0,0,0,.4); justify-content: center; align-items: center; z-index:4000;}
+/* #wrapImage>.imgContent{width:80vw;} */
 /****** slider ****/
 .slider{position: relative;width: 100%; max-width: 300px; margin: 0 auto;}
 .slider img { display: block; width:300px;}
@@ -120,7 +116,6 @@ html, body { height: 100vh; width: 100vw;background:#fff; font-family: 'Montserr
   width: 0;
   height: 100%;
   overflow: hidden;
-  /* Force Hardware Acceleration in WebKit */
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -141,7 +136,6 @@ html, body { height: 100vh; width: 100vw;background:#fff; font-family: 'Montserr
 .cd-resize-img .cd-image-label { right: auto; left: 0;}
 .is-visible .cd-resize-img {
   width: 50%;
-  /* bounce in animation of the modified image */
   -webkit-animation: cd-bounce-in 0.7s;
   -moz-animation: cd-bounce-in 0.7s;
   animation: cd-bounce-in 0.7s;
@@ -166,7 +160,6 @@ html, body { height: 100vh; width: 100vw;background:#fff; font-family: 'Montserr
   position: absolute;
   height: 44px;
   width: 44px;
-  /* center the element */
   left: 50%;
   top: 50%;
   margin-left: -22px;
@@ -195,13 +188,17 @@ html, body { height: 100vh; width: 100vw;background:#fff; font-family: 'Montserr
   transition: transform 0.3s 0.7s, opacity 0s 0.7s;
 }
 
-@media screen /*and (min-aspect-ratio: 1/1)*/ and (max-width: 767px){
+/* Extra small devices (portrait phones, lblockess than 576px) */
+@media (max-width: 575px){
   .poi-banner,.track-banner{height:160px; }
-  /* .poi-content{height: calc(95% - 200px);} */
 }
 
-/* // Medium devices (tablets, 768px and up) */
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .poi-banner,.track-banner{height:160px; }
+}
+
+/* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .poi-banner,.track-banner{height:200px; }
-  /* .poi-content{height: calc(95% - 250px);} */
 }
