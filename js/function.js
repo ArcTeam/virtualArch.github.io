@@ -34,7 +34,7 @@ const Installer = function(root) {
     // ga('send', 'event', 'install', 'installed');
     root.classList.remove('available');
     root.classList.add('hide');
-    console.log('installata');
+    console.log('installed');
   };
 
   const beforeinstallprompt = function(e) {
@@ -49,7 +49,7 @@ const Installer = function(root) {
   // window.addEventListener('appinstalled', installed);
   window.addEventListener('appinstalled', (evt) => {
     console.log('installata');
-    root.classList.add('hide');
+    root.classList.add('install');
   });
 
   root.addEventListener('click', install.bind(this));
@@ -179,13 +179,11 @@ function setHeightDiv(){
 }
 
 function init3dhop(url){
-  // let url= e.layer.feature.properties.tredhop
   let div = $("<div/>",{id:'3dhopWrap',class:'my-3'}).appendTo('.poi-content')
   $("<a/>",{class:'btn btn-success d-block', href:'3dhop/'+url+'/start.html', text:'visualizza 3d'}).appendTo(div)
 }
 
 function initVideo(videoArr){
-  // videoArr = e.layer.feature.properties.video
   videoList=''
   $.each(videoArr,function(i, el) {
     videoList+="<div class='video-content'>";
@@ -212,7 +210,6 @@ function setGalleryDim(){
   $("#galleryWrap .lozad").height($("#img0").width())
 }
 function initSlider(slider){
-  // dati = e.layer.feature.properties
   sliderDiv  = '<div class="js-img-compare">';
   sliderDiv += '<div style="display: none;">';
   sliderDiv += '<span class="images-compare-label">'+slider.bgLabel+'</span>';
