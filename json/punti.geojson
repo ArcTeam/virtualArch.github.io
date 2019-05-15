@@ -140,6 +140,15 @@
       "desc": "La torbiera de Le Lore è ciò che rimane di un piccolo bacino lacustre, colmatosi per la naturale attività della vegetazione acquatica. Di tale bacino rimangono ancora piccoli specchi d'acqua libera, sparsi sulla superficie della torbiera. Queste pozze prendono il nome di &quot;occhi di torbiera&quot; e rappresentano importanti piccoli habitat per la flora e la fauna locale. Al loro interno si possono trovare esemplari di ninfea bianca e di utricolaria, una pianta carnivora che vive completamente sommersa. La vegetazione della torbiera de Le Lore, che nel complesso è rappresentata da specie caratteristiche di questo tipo di ambienti, è arricchita anche dalla presenza di autentiche rarità botaniche, tra cui alcune varietà di orchidee e lo splendido gladiolo di palude  (nell'immagine in basso illustrato da Otto Wilhelm Thomé nella sua opera &quot;Flora della Germania, Austria e Svizzera&quot;). <img src='img/poi/testo/gliadiolo_palustre.jpg' class='img-fluid'>"
     },
      "geometry": { "type": "Point", "coordinates": [ 11.169056, 46.124339 ] }
+  },
+    {
+    "type": "Feature", "properties": {
+      "id": "15",
+      "banner": "test.jpg",
+      "nome": "Sentiero degli gnomi",
+      "desc": "Il Sentiero degli gnomi è un percorso pensato per le famiglie nel cuore dell’Altipiano del Calisio, in una zona pianeggiante che si presa a lunghe passeggiate tra boschi e ampi prati che si aprono nelle radure. Lungo il sentiero troverete molti tronchi intagliati che danno vita ad altrettanti gnomi, abitanti immaginari del bosco (ognuno con la sua storia). Quasi ogni anno durante la festa di primavera del paese di Fornace vengono intagliati nuovi tronchi da parte di scultori locali. Purtroppo la zona è stata particolarmente colpita dalla tempesta “Vaia” dell’autunno 2018 e molti alberi, soprattutto abeti, sono stati sradicati dalla furia del vento. Il paesaggio è stato fortemente modificato, tanto da somigliare a quello che doveva essere l’ambiente in cui lavoravano i canopi, ovvero i minatori che nel Medioevo cercavano l’argento nel sottosuolo dell’altipiano e che, per il loro vestiario e per la loro attività, nel folklore e nelle tradizioni locali sono spesso connessi al mondo dei nani e degli gnomi, cui è dedicato questo sentiero."
+    },
+     "geometry": { "type": "Point", "coordinates": [ 11.204066, 46.130604 ] }
   }
 ]
 }
