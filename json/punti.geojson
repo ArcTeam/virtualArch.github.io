@@ -149,6 +149,15 @@
       "desc": "Il Sentiero degli gnomi è un percorso pensato per le famiglie nel cuore dell’Altipiano del Calisio, in una zona pianeggiante che si presa a lunghe passeggiate tra boschi e ampi prati che si aprono nelle radure. Lungo il sentiero troverete molti tronchi intagliati che danno vita ad altrettanti gnomi, abitanti immaginari del bosco (ognuno con la sua storia). Quasi ogni anno durante la festa di primavera del paese di Fornace vengono intagliati nuovi tronchi da parte di scultori locali. Purtroppo la zona è stata particolarmente colpita dalla tempesta “Vaia” dell’autunno 2018 e molti alberi, soprattutto abeti, sono stati sradicati dalla furia del vento. Il paesaggio è stato fortemente modificato, tanto da somigliare a quello che doveva essere l’ambiente in cui lavoravano i canopi, ovvero i minatori che nel Medioevo cercavano l’argento nel sottosuolo dell’altipiano e che, per il loro vestiario e per la loro attività, nel folklore e nelle tradizioni locali sono spesso connessi al mondo dei nani e degli gnomi, cui è dedicato questo sentiero."
     },
      "geometry": { "type": "Point", "coordinates": [ 11.204066, 46.130604 ] }
+  },
+   {
+    "type": "Feature", "properties": {
+      "id": "16",
+      "banner": "test.jpg",
+      "nome": "La calcara",
+      "desc": "Le attività umane sull’Altipiano del Calisio sono sempre state molteplici. Oltre all’industria mineraria (di cui vedrete le tracce sul Dos del Raita) e allo sfruttamento dei boschi per la legna, in questa zona abbiamo testimonianza indiretta della presenza di una Malga (toponimo non lontano dal Pian del Gacc) e un esempio di calcara, come quella che vedete qui accanto realizzata in sassi di porfido. La calcara era una fornace per la produzione della calce, utilizzata non solo in edilizia ma fino al secolo scorso anche come disinfettante per gli ambienti e conservante per le uova. Ottenere la calce era un lavoro molto lungo, delicato e pericoloso. Per ogni quintale di rocce calcaree serviva la stessa quantità di fascine di legna: queste alimentavano il fuoco dal basso venendo inserite dall’apertura alla base del cilindro, sotto una grata di ferro su cui si depositava il calcare. La temperatura doveva raggiungere i 900° C e il fuoco doveva ardere giorno e notte per una settimana. Il carbonato di calcio si trasformava così in “calce viva”, estremamente caustica, che veniva raccolta con pesanti guanti e “spenta” con dell’acqua per poter essere utilizzata."
+    },
+     "geometry": { "type": "Point", "coordinates": [ 11.204066, 46.130604 ] }
   }
 ]
 }
