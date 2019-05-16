@@ -78,6 +78,10 @@
       "id": "7",
       "banner": "banner_panorama.jpg",
       "nome": "Belvedere",
+       "galleria":{
+        "dir":"redebus",
+        "foto":["redebus01.jpg","redebus02.jpg","redebus03.jpg","redebus04.jpg","redebus05.jpg","redebus06.jpg","redebus07.jpg","redebus08.jpg","redebus09.jpg"]
+      },
       "desc": "La visuale dal Belvedere del Dos dei Brusadi si apre verso il Dosso di Costalta, il crinale montuosa che divide l’Altopiano di Pinè e la valle dei Mocheni. Quest'ultima località è nota per alcuni siti minerari di epoca pre-protostorica e medievale-moderna. Ad esempio, in località Acqua Fredda, lungo il passo del Redebus, è stata rinvenuta una batteria di forni per la produzione del rame, in funzione tra i secoli XIII-XI avanti Cristo (età del Bronzo Recente - Finale). Si tratta di uno tra i siti fusori più completi e meglio conservati in Europa (oggi musealizzato e liberamente visitabile tutto l’anno). Presso i 15 forni indagati sono stati rinvenuti frammenti di grandi ugelli in ceramica (la parte terminale di mantici per la ventilazione artificiale), resti di pali, travi e tavole (forse pertinenti a coperture o ad altre strutture legate all’attività), nonché diverse macine in pietra per la triturazione del minerale o delle scorie ancora ricche di parti metalliche. Come si vede nella galleriea seguente, il sito è oggi utilizzato anche per attività di ricerca nell’ambito dell’archeologia sperimentale, utile per la ricostruzione delle attività svolte in antichità. *GALLERIA* Sempre in Val dei Mocheni si trova la miniera dell’Erdemolo - Gruab va Hardimbl. Il sito è posizionato ad un’altitudine di 1700 metri, nel territorio di Palù del Fersina (nei pressi del sentiero che porta al Lago di Erdemolo). Questa antico giacimento era coltivato tra il XV e la metà del XVII secolo e, come si può vedere nell’immagine seguente, è oggi musealizzato e visitabile (info Miniera dell’Erdemolo - Gruab va Hardimbl 0461 550053). <img src='img/poi/testo/erdemolo.jpg' class='img-fluid'>"
     },
     "geometry": { "type": "Point", "coordinates": [ 11.186559551745335, 46.125893515737786 ] }
