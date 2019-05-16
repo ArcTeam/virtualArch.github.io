@@ -90,7 +90,7 @@
   {
     "type": "Feature", "properties": {
       "id": "9",
-      "banner": "test.jpg",
+      "banner": "banner_dos_cuz.jpg",
       "nome": "Dos del Cuz",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
@@ -99,7 +99,7 @@
   {
     "type": "Feature", "properties": {
       "id": "10",
-      "banner": "test.jpg",
+      "banner": "banner_canopa_raita.jpg",
       "nome": "Canopa del Raita",
       "desc": "La Canopa del Raita è una delle più estese miniere d’argento medievali dell’Altipiano del Calisio. Ha uno sviluppo di circa 400 m e probabilmente si collega attraverso un passaggio ora ostruito alla Canopa del Dos del Cuz, ancora più estesa e labirintica. I canòpi (i minatori che lavorano in queste miniere nel Medioevo) non dovevano essere molto diversi nell’aspetto dai nostri gnomi incontrati lungo il sentiero. Nelle fiabe antiche spesso gli gnomi si identificano con i nani, creature di bassa statura, talvolta rappresentati con un cappello a punta, che vivono nelle viscere della terra e ne preservano i tesori. Il cappello o cappuccio a punta è una caratteristica comune ai canopi nelle illustrazioni medievali: serviva a proteggere la testa per non batterla contro il basso soffitto delle gallerie. La forma a cono era dovuta all’usanza di riempire il copricapo con paglia per creare una rudimentale imbottitura I canopi vestivano una semplice tunica di lino con un cappuccio, calzamaglie e calzature di cuoio, e a volte un grembiule di cuoio che copriva la parte inferiore del corpo (il cosiddetto “batticulo”)."
     },
@@ -108,7 +108,7 @@
   {
     "type": "Feature", "properties": {
       "id": "11",
-      "banner": "test.jpg",
+      "banner": "banner_montepiano.jpg",
       "nome": "Torbiere di Montepiano",
       "desc": "Il Monte Piano custodisce alcuni dei preziosi ambienti umidi dell’Altipiano del Calisio, habitat rari in Trentino e importantissimi per la presenza di numerose specie vegetali e animali. Queste torbiere e paludi si sono originate per il lento riempimento di laghetti, formatisi in piccole conche scavate dai ghiacciai nel porfido impermeabile. Nel passato diverse paludi sono state drenate per scopi agricoli e la torba utilizzata come combustibile. Qui vivono alcune piante molto rare, tra cui due specie insettivore, alcune orchidee e la splendida Iris sibirica, che fiorisce proprio nel prato di fronte a voi in primavera. Sono ambienti molto delicati che vanno protetti e rispettati: è per questo  vietato raccogliere i fiori."
     },
@@ -144,7 +144,7 @@
     {
     "type": "Feature", "properties": {
       "id": "15",
-      "banner": "test.jpg",
+      "banner": "banner_sentiero_gnomi.jpg",
       "nome": "Sentiero degli gnomi",
       "desc": "Il Sentiero degli gnomi è un percorso pensato per le famiglie nel cuore dell’Altipiano del Calisio, in una zona pianeggiante che si presa a lunghe passeggiate tra boschi e ampi prati che si aprono nelle radure. Lungo il sentiero troverete molti tronchi intagliati che danno vita ad altrettanti gnomi, abitanti immaginari del bosco (ognuno con la sua storia). Quasi ogni anno durante la festa di primavera del paese di Fornace vengono intagliati nuovi tronchi da parte di scultori locali. Purtroppo la zona è stata particolarmente colpita dalla tempesta “Vaia” dell’autunno 2018 e molti alberi, soprattutto abeti, sono stati sradicati dalla furia del vento. Il paesaggio è stato fortemente modificato, tanto da somigliare a quello che doveva essere l’ambiente in cui lavoravano i canopi, ovvero i minatori che nel Medioevo cercavano l’argento nel sottosuolo dell’altipiano e che, per il loro vestiario e per la loro attività, nel folklore e nelle tradizioni locali sono spesso connessi al mondo dei nani e degli gnomi, cui è dedicato questo sentiero."
     },
@@ -153,7 +153,7 @@
    {
     "type": "Feature", "properties": {
       "id": "16",
-      "banner": "test.jpg",
+      "banner": "banner_calcara.jpg",
       "nome": "La calcara",
       "desc": "Le attività umane sull’Altipiano del Calisio sono sempre state molteplici. Oltre all’industria mineraria (di cui vedrete le tracce sul Dos del Raita) e allo sfruttamento dei boschi per la legna, in questa zona abbiamo testimonianza indiretta della presenza di una Malga (toponimo non lontano dal Pian del Gacc) e un esempio di calcara, come quella che vedete qui accanto realizzata in sassi di porfido. La calcara era una fornace per la produzione della calce, utilizzata non solo in edilizia ma fino al secolo scorso anche come disinfettante per gli ambienti e conservante per le uova. Ottenere la calce era un lavoro molto lungo, delicato e pericoloso. Per ogni quintale di rocce calcaree serviva la stessa quantità di fascine di legna: queste alimentavano il fuoco dal basso venendo inserite dall’apertura alla base del cilindro, sotto una grata di ferro su cui si depositava il calcare. La temperatura doveva raggiungere i 900° C e il fuoco doveva ardere giorno e notte per una settimana. Il carbonato di calcio si trasformava così in “calce viva”, estremamente caustica, che veniva raccolta con pesanti guanti e “spenta” con dell’acqua per poter essere utilizzata."
     },
