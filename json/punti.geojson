@@ -118,7 +118,7 @@
       "id": "11",
       "banner": "banner_montepiano.jpg",
       "nome": "Torbiere di Montepiano",
-      "desc": "Il Monte Piano custodisce alcuni dei preziosi ambienti umidi dell’Altipiano del Calisio, habitat rari in Trentino e importantissimi per la presenza di numerose specie vegetali e animali. Queste torbiere e paludi si sono originate per il lento riempimento di laghetti, formatisi in piccole conche scavate dai ghiacciai nel porfido impermeabile. Nel passato diverse paludi sono state drenate per scopi agricoli e la torba utilizzata come combustibile. Qui vivono alcune piante molto rare, tra cui due specie insettivore, alcune orchidee e la splendida Iris sibirica, che fiorisce proprio nel prato di fronte a voi in primavera. Sono ambienti molto delicati che vanno protetti e rispettati: è per questo  vietato raccogliere i fiori."
+      "desc": "Il Monte Piano custodisce alcuni dei preziosi ambienti umidi dell’Altipiano del Calisio, habitat rari in Trentino e importantissimi per la presenza di numerose specie vegetali e animali. Queste torbiere e paludi si sono originate per il lento riempimento di laghetti, formatisi in piccole conche scavate dai ghiacciai nel porfido impermeabile. Nel passato diverse paludi sono state drenate per scopi agricoli e la torba utilizzata come combustibile. Qui vivono alcune piante molto rare, tra cui due specie insettivore, alcune orchidee e la splendida Iris sibirica, che fiorisce proprio nel prato di fronte a voi in primavera (come si vede nella foto seguente). <img src='img/poi/testo/iris.jpg' class='img-fluid'> Sono ambienti molto delicati che vanno protetti e rispettati: è per questo  vietato raccogliere i fiori."
     },
      "geometry": { "type": "Point", "coordinates": [ 11.196664, 46.117496 ] }
   },
