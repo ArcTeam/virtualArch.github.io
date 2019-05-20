@@ -162,7 +162,6 @@
     "type": "Feature", "properties": {
       "id": "9",
       "banner": "banner_dos_cuz.jpg",
-      "video":["poi9.mp4"],
       "nome": "Dos del Cuz",
       "slider":{
         "bgImg":"cuz_dtm.jpg",
