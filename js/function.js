@@ -181,6 +181,7 @@ function slidePanel(e){
   $('#wrapPoiInfo').fadeIn(500)
   $("body").on('click', '.closePanel', function() { $('#wrapPoiInfo').fadeOut(500); });
   if(prop.slider) {initSlider(e.layer.feature.properties.slider)}
+  if(prop.slider2) {beforeAfter(e.layer.feature.properties.slider)}
   if(prop.video){initVideo(e.layer.feature.properties.video)}
   if(prop.tredhop){init3dhop(e.layer.feature.properties.tredhop)}
   if(prop.galleria){initGallery(e.layer.feature.properties.galleria)}
@@ -196,17 +197,15 @@ function init3dhop(url){
   $("<a/>",{class:'btn btn-success d-block', href:'3dhop/'+url+'/start.html', text:'visualizza 3d'}).appendTo(div)
 }
 
-function initVideo(videoArr){
-  videoList=''
-  $.each(videoArr,function(i, el) {
-    videoList+="<div class='video-content'>";
-    videoList+="<video width='"+$('.poi-content').width()+"' controls>"
-    videoList+="<source src='video/"+el+"' type='video/mp4'>"
-    videoList+="Your browser does not support HTML5 video."
-    videoList+="</video>"
-    videoList+='</div>'
-  })
-  $('.poi-content').html($('.poi-content').html().replace('*VIDEO*',videoList));
+function initVideo(video){
+  var videoDiv=''
+  videoDiv+="<div class='video-content'>";
+  videoDiv+="<video width='100%' controls>"
+  videoDiv+="<source src='video/"+video+"' type='video/mp4'>"
+  videoDiv+="Your browser does not support HTML5 video."
+  videoDiv+="</video>"
+  videoDiv+='</div>'
+  $('#videoContent').html(videoDiv)
 }
 
 function initGallery(gallery){
@@ -228,8 +227,9 @@ function initGallery(gallery){
   observer.observe();
 }
 function setGalleryDim(){ $("#galleryWrap .lozad").height($("#img0").width()) }
+
 function initSlider(slider){
-  sliderDiv  = '<div class="js-img-compare">';
+  sliderDiv  = '<div id="'+slider.id+'" class="js-img-compare">';
   sliderDiv += '<div style="display: none;">';
   sliderDiv += '<span class="images-compare-label">'+slider.bgLabel+'</span>';
   sliderDiv += '<img src="img/poi/slider/'+slider.bgImg+'" alt="'+slider.bgLabel+'">';
@@ -239,15 +239,12 @@ function initSlider(slider){
   sliderDiv += '<img src="img/poi/slider/'+slider.frontImg+'" alt="'+slider.frontLabel+'">';
   sliderDiv += '</div>';
   sliderDiv += '</div>';
-  $('.poi-content').html($('.poi-content').html().replace('*SLIDER*',sliderDiv));
-  $('.js-img-compare').imagesCompare({
-    initVisibleRatio: 0.5,
-    interactionMode: "drag",
-    animationDuration: 400,
-    animationEasing: "swing",
-    addSeparator: true,
-    addDragHandle: true,
-    precision: 4
+  $('#sliderContent').html(sliderDiv);
+  var imagesCompareElement = $('.js-img-compare').imagesCompare();
+  var imagesCompare = imagesCompareElement.data('imagesCompare');
+  var events = imagesCompare.events();
+  imagesCompare.on(events.initialised, function (event) {
+    console.log(events.initialised);
   });
 }
 

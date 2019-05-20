@@ -9,6 +9,7 @@
       "nome": "Lago di Santa Colomba",
       "banner": "banner_lago_s_colomba.jpg",
       "slider":{
+        "id":"santaColomba",
         "bgImg":"dtm.jpg",
         "bgLabel":"DTM LIDAR",
         "frontImg":"egeos.jpg",
@@ -98,16 +99,17 @@
   {
     "type": "Feature", "properties": {
       "id": "9",
+      "nome": "Dos del Cuz",
       "banner": "banner_dos_cuz.jpg",
       "slider":{
+        "id":"dosDelCuz",
         "bgImg":"cuz_dtm.jpg",
         "bgLabel":"DTM LIDAR",
         "frontImg":"cuz_foto.jpg",
         "frontLabel":"Foto aerea"
       },
-      "video":["poi9.mp4"],
-      "nome": "Dos del Cuz",
-      "desc": "Il Dos del Cuz è una delle aree più interessanti dell’Altipiano del Calisio dal punto di vista dell’archeologia mineraria. Come si può vedere dall'immagine interattiva sottostante (trascinare con il dito l'icona tonda con le freccette bianche), sotto i vostri piedi si snodano strette e labirintiche gallerie con uno sviluppo di oltre 1 km. *SLIDER* Le numerose depressioni presenti, i cosiddetti cadìni, sono residui della presenza di pozzi che davano accesso alla miniera. La Canopa de Dos del Cuz è anche detta del “Lago Azzurro”, perché in anni molto piovosi la sua parte più profonda è completamente allagata. All’interno si trovano stanze di grandi dimensioni. Uno di questi ambienti è oggi noto come “Inferno”, suggestivo toponimo riportato nelle mappe di G. B. Trener (il geologo che per primo studiò queste miniere). Alcune aree pianeggianti del dosso, risparmiate dagli scavi, fanno ipotizzare la presenza di piccoli insediamenti o di zone deputate alla lavorazione del minerale che i canopi estraevano dal sottosuolo (un paesaggio simile a quello ricostruito nel video seguente, che riprende l'ambiente attorno alla Canopa delle Acque). *VIDEO* Dalla cima si gode di una bella vista sul paese di Civezzano, con le sue numerose frazioni in collina, ma anche sulla Valsugana, con il Lago di Caldonazzo, e sulla Valle dell’Adige, con la città di Trento. In queste zone, a partire dal XII secolo, sorsero numerose fortificazioni, alcune delle quali è probabile costituissero un importante riferimento nella complessa gestione delle miniere da parte del vescovo e dei suoi feudatari."
+      "video":"poi9.mp4",
+      "desc": "Il Dos del Cuz è una delle aree più interessanti dell'Altipiano del Calisio dal punto di vista dell'archeologia mineraria. Come si può vedere dall'immagine interattiva sottostante (trascinare con il dito l'icona tonda con le freccette bianche), sotto i vostri piedi si snodano strette e labirintiche gallerie con uno sviluppo di oltre 1 km. <div class='py-3' id='sliderContent'></div> Le numerose depressioni presenti, i cosiddetti cadìni, sono residui della presenza di pozzi che davano accesso alla miniera. La Canopa de Dos del Cuz è anche detta del &quot;Lago Azzurro&quot;, perché in anni molto piovosi la sua parte più profonda è completamente allagata. All'interno si trovano stanze di grandi dimensioni. Uno di questi ambienti è oggi noto come &quot;Inferno&quot;, suggestivo toponimo riportato nelle mappe di G. B. Trener (il geologo che per primo studiò queste miniere). Alcune aree pianeggianti del dosso, risparmiate dagli scavi, fanno ipotizzare la presenza di piccoli insediamenti o di zone deputate alla lavorazione del minerale che i canopi estraevano dal sottosuolo (un paesaggio simile a quello ricostruito nel video seguente, che riprende l'ambiente attorno alla Canopa delle Acque). <div class='py-3' id='videoContent'></div> Dalla cima si gode di una bella vista sul paese di Civezzano, con le sue numerose frazioni in collina, ma anche sulla Valsugana, con il Lago di Caldonazzo, e sulla Valle dell'Adige, con la città di Trento. In queste zone, a partire dal XII secolo, sorsero numerose fortificazioni, alcune delle quali è probabile costituissero un importante riferimento nella complessa gestione delle miniere da parte del vescovo e dei suoi feudatari."
     },
     "geometry": { "type": "Point", "coordinates": [ 11.18868844712032, 46.109839272642631 ] }
   },
