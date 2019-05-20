@@ -110,13 +110,11 @@
           "4":{"didascalia":"Crogiolo (reperto)","foto":"redebus04.jpg"},
           "5":{"didascalia":"Archeologia sperimentale (strumenti)","foto":"redebus05.jpg"},
           "6":{"didascalia":"Archeologia sperimentale (colata in stampo)","foto":"redebus06.jpg"},
-          "7":{"didascalia":"Ricostruzione archeologica (attività estrattiva, frantumazione e macinazione)","foto":"redebus07.jpg"},
+          "7":{"didascalia":"Ricostruzione archeologica (estrazione, frantumazione e macinazione)","foto":"redebus07.jpg"},
           "8":{"didascalia":"Ricostruzione archeologica (colata in stampo)","foto":"redebus08.jpg"},
-          "9":{"didascalia":"Ricostruzione archeologica (fusione)","foto":"redebus09.jpg"}
+          "9":{"didascalia":"Ricostruzione archeologica (fusione nei forni)","foto":"redebus09.jpg"}
         }
       },
-
-
       "desc": "La visuale dal Belvedere del Dos dei Brusadi si apre verso il Dosso di Costalta, il crinale montuoso che divide l’Altopiano di Pinè e la valle dei Mocheni. Quest'ultima località è nota per le miniere di età medievale e moderna e per i circa 200 &quot;siti fusori&quot;, ossia officine destinate all'estrazione del rame dal minerale cuprifero, di età protostorica (1400 - 800 a.C. circa). Ad Acqua Fredda (presso il passo del Redebus) è stata rinvenuta una batteria di forni per la produzione del rame, in funzione tra il 1300 e il 1000 a.C. circa (età del Bronzo recente e finale). Si tratta di uno tra i siti fusori più completi e meglio conservati in Europa (oggi musealizzato e liberamente visitabile tutto l’anno). Presso i 9 forni indagati sono stati rinvenuti anche resti di strumenti e strutture dell'officina come: ugelli da mantice per la ventilazione artificiale, macine in pietra per la triturazione del minerale e dei semilavorati e infine resti di pali, travi e tavole, forse pertinenti a tettoie. Il residuo delle lavorazioni, ossia le circa 800 tonnellate di scorie gettate poco a valle dei forni, sono il principale indizio della grande attività dei siti fusori del Trentino che studi recenti indicano come una delle maggiori aree minerarie dell’Europa dell’età del Bronzo. Come si vede nella galleria seguente, il sito è oggi utilizzato anche per la ricerca nell’ambito dell’archeologia sperimentale, utile per la ricostruzione delle attività svolte in antichità. <div class='py-2' id='galleryContent'></div> Sempre in Val dei Mocheni si trova la miniera dell’Erdemolo - Gruab va Hardimbl. Il sito è posizionato ad un’altitudine di 1700 metri, nel territorio di Palù del Fersina (nei pressi del sentiero che porta al Lago di Erdemolo). Questa antico giacimento era coltivato tra il XV e la metà del XVII secolo e, come si può vedere nell’immagine seguente, è oggi musealizzato e visitabile (info Miniera dell’Erdemolo - Gruab va Hardimbl 0461 550053). <img src='img/poi/testo/erdemolo.jpg' class='img-fluid'>"
     },
     "geometry": { "type": "Point", "coordinates": [ 11.186559551745335, 46.125893515737786 ] }
