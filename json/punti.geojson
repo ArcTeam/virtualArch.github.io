@@ -26,10 +26,21 @@
       "nome": "Canopa del Lago",
       "galleria":{
         "dir":"metallica",
-        "foto":["metallica01.jpg","metallica02.jpg","metallica03.jpg","metallica04.jpg","metallica05.jpg","metallica06.jpg","metallica07.jpg","metallica08.jpg","metallica09.jpg"]
+        "foto":{
+          "1":{"didascalia":"","foto":"metallica01.jpg"},
+          "2":{"didascalia":"","foto":"metallica02.jpg"},
+          "3":{"didascalia":"","foto":"metallica03.jpg"},
+          "4":{"didascalia":"","foto":"metallica04.jpg"},
+          "5":{"didascalia":"","foto":"metallica05.jpg"},
+          "6":{"didascalia":"","foto":"metallica06.jpg"},
+          "7":{"didascalia":"","foto":"metallica07.jpg"},
+          "8":{"didascalia":"","foto":"metallica08.jpg"},
+          "9":{"didascalia":"","foto":"metallica09.jpg"}
+        }
+
       },
       "tredhop":"canopaDelLago",
-      "desc": "La piccola canopa che avete di fronte ha uno sviluppo di circa 90 m e mostra una fase di scavo medievale, con strumenti manuali, e una del secolo scorso, con l’impiego di esplosivi. Molte delle maestranze che operarono sul Monte Calisio nel Medioevo provenivano da paesi germanici, in particolare dalle attuali Austria, Germania e Repubblica Ceca, regioni in cui l'attività estrattiva era molto fiorente. Per questo motivo i minatori erano chiamati localmente &quot;canopi&quot;, termine che sottende un'italianizzazione della parola tedesca &quot;knappen&quot;. Alcuni testi antichi, prevalentemente di ambito germanico, permettono di ricostruire le tecniche usate per l'estrazione del minerale e la vita dei minatori. La fonte di maggior rilievo è il trattato &quot;De re metallica&quot; scritta dal mineralogista tedesco Georg Agricola nella prima metà del XVI secolo. Il testo è corredato da accurate illustrazioni che mostrano nel dettaglio le varie fasi del lavoro, i macchinari e gli strumenti usati. La seguente galleria fotografica ripropone alcune delle immagini più significative. *GALLERIA* Al 1509 risale invece il &quot;Kuttenberger Kantionale&quot; conservata presso la Biblioteca Nazionale di Vienna (un particolare del quale è visibile nell'immagine sottostante). <img src='img/poi/testo/kuttenberg.jpg' class='img-fluid'> Si tratta di una raccolta di canti corali preceduta da una dettagliata miniatura con scene legate all'attività mineraria (estrazione, lavorazione e vendita). Il modello tridimensionale sottostante permette la visione di uno spaccato della Canopa delle Acque, con la possibilità di visualizzare le immagini tratte dal Kuttenberger Kantionale utilizzate per la ricostruzione storica dei modelli (cliccare sui minatori al lavoro). *3DHOP*"
+      "desc": "La piccola canopa che avete di fronte ha uno sviluppo di circa 90 m e mostra una fase di scavo medievale, con strumenti manuali, e una del secolo scorso, con l’impiego di esplosivi. Molte delle maestranze che operarono sul Monte Calisio nel Medioevo provenivano da paesi germanici, in particolare dalle attuali Austria, Germania e Repubblica Ceca, regioni in cui l'attività estrattiva era molto fiorente. Per questo motivo i minatori erano chiamati localmente &quot;canopi&quot;, termine che sottende un'italianizzazione della parola tedesca &quot;knappen&quot;. Alcuni testi antichi, prevalentemente di ambito germanico, permettono di ricostruire le tecniche usate per l'estrazione del minerale e la vita dei minatori. La fonte di maggior rilievo è il trattato &quot;De re metallica&quot; scritta dal mineralogista tedesco Georg Agricola nella prima metà del XVI secolo. Il testo è corredato da accurate illustrazioni che mostrano nel dettaglio le varie fasi del lavoro, i macchinari e gli strumenti usati. La seguente galleria fotografica ripropone alcune delle immagini più significative. <div class='py-2' id='galleryContent'></div> Al 1509 risale invece il &quot;Kuttenberger Kantionale&quot; conservata presso la Biblioteca Nazionale di Vienna (un particolare del quale è visibile nell'immagine sottostante). <img src='img/poi/testo/kuttenberg.jpg' class='img-fluid'> Si tratta di una raccolta di canti corali preceduta da una dettagliata miniatura con scene legate all'attività mineraria (estrazione, lavorazione e vendita). Il modello tridimensionale sottostante permette la visione di uno spaccato della Canopa delle Acque, con la possibilità di visualizzare le immagini tratte dal Kuttenberger Kantionale utilizzate per la ricostruzione storica dei modelli (cliccare sui minatori al lavoro). *3DHOP*"
     },
     "geometry": { "type": "Point", "coordinates": [ 11.180667900665879, 46.122686910752314 ] }
   },
@@ -59,9 +70,19 @@
       "nome": "Canopa dell'Uccello",
       "galleria":{
         "dir":"minerali",
-        "foto":["argentite_calisio.jpg","azzurrite_brusadi01.jpg","azzurrite_brusadi02.jpg","azzurrite_lavis.jpg","barite_furli_lavis.jpg","galena_furli.jpg","malachite_lavis.jpg","mimetite_slacche.jpg","minerali_rame_slacche.jpg"]
+        "foto":{
+          "1":{"didascalia":"","foto":"argentite_calisio.jpg"},
+          "2":{"didascalia":"","foto":"azzurrite_brusadi01.jpg"},
+          "3":{"didascalia":"","foto":"azzurrite_brusadi02.jpg"},
+          "4":{"didascalia":"","foto":"azzurrite_lavis.jpg"},
+          "5":{"didascalia":"","foto":"barite_furli_lavis.jpg"},
+          "6":{"didascalia":"","foto":"galena_furli.jpg"},
+          "7":{"didascalia":"","foto":"malachite_lavis.jpg"},
+          "8":{"didascalia":"","foto":"mimetite_slacche.jpg"},
+          "9":{"didascalia":"","foto":"minerali_rame_slacche.jpg"}
+        }
       },
-      "desc": "Ad oggi non si conoscono le circostanze esatte da cui deriva il nome della Canopa dell’Uccello: in esso vi si potrebbe ravvisare un semplice richiamo ad un fatto naturale, come quello che potrebbe aver portato un qualche rapace notturno (un gufo, una civetta o un allocco) ad eleggere la miniera a sua dimora, legandone il ricordo alla sua presenza (e al suo suggestivo verso). La canopa ha uno sviluppo totale di circa 140 m ed è attualmente chiusa per motivi di sicurezza, visto che al suo interno vi sono alcuni pozzi verticali, scavati con l’esplosivo nel secolo scorso (per la ricerca della barite). In base ad analisi recenti, la galena proveniente da queste gallerie è risultata la più ricca di argento tra quelle studiate all’interno del sistema minerario del Calisio. In generale, comunque, la montagna non appare oggi caratterizzato dalla presenza di minerali cristallizzati di grandi dimensioni, nonostante in passato siano stati rinvenuti campioni anche di un certo pregio (in particolare di galena, barite e aragonite). In traccia sono stati rilevati anche altri minerali, che possono dare origine a cristalli microscopici, ma molto ben formati. Tra questi vi sono soprattutto minerali di rame come malachite e azzurrite, rinvenuti ad esempio sul Dos dei Brusadi e nella canopa del Dosso dei Furli di Lavis. Un’area molto interessante dal punto di vista mineralogico è anche quella delle Slacche di Civezzano, mentre nella zona del Dosso di Penedallo si trovano vene di agata multicolori. La seguente galleria fotografica mostra alcune immagini di minerali e cristalli provenienti dall’area del Calisio. *GALLERIA*"
+      "desc": "Ad oggi non si conoscono le circostanze esatte da cui deriva il nome della Canopa dell’Uccello: in esso vi si potrebbe ravvisare un semplice richiamo ad un fatto naturale, come quello che potrebbe aver portato un qualche rapace notturno (un gufo, una civetta o un allocco) ad eleggere la miniera a sua dimora, legandone il ricordo alla sua presenza (e al suo suggestivo verso). La canopa ha uno sviluppo totale di circa 140 m ed è attualmente chiusa per motivi di sicurezza, visto che al suo interno vi sono alcuni pozzi verticali, scavati con l’esplosivo nel secolo scorso (per la ricerca della barite). In base ad analisi recenti, la galena proveniente da queste gallerie è risultata la più ricca di argento tra quelle studiate all’interno del sistema minerario del Calisio. In generale, comunque, la montagna non appare oggi caratterizzato dalla presenza di minerali cristallizzati di grandi dimensioni, nonostante in passato siano stati rinvenuti campioni anche di un certo pregio (in particolare di galena, barite e aragonite). In traccia sono stati rilevati anche altri minerali, che possono dare origine a cristalli microscopici, ma molto ben formati. Tra questi vi sono soprattutto minerali di rame come malachite e azzurrite, rinvenuti ad esempio sul Dos dei Brusadi e nella canopa del Dosso dei Furli di Lavis. Un’area molto interessante dal punto di vista mineralogico è anche quella delle Slacche di Civezzano, mentre nella zona del Dosso di Penedallo si trovano vene di agata multicolori. La seguente galleria fotografica mostra alcune immagini di minerali e cristalli provenienti dall’area del Calisio. <div class='py-2' id='galleryContent'></div>"
     },
     "geometry": { "type": "Point", "coordinates": [ 11.18597760087037, 46.120843448002724 ] }
   },
@@ -75,15 +96,28 @@
     "geometry": { "type": "Point", "coordinates": [ 11.186219763076034, 46.125700436306133 ] }
   },
   {
-    "type": "Feature", "properties": {
+    "type": "Feature",
+    "properties": {
       "id": "7",
       "banner": "banner_panorama.jpg",
       "nome": "Belvedere",
-       "galleria":{
+      "galleria":{
         "dir":"redebus",
-        "foto":["redebus01.jpg","redebus02.jpg","redebus03.jpg","redebus04.jpg","redebus05.jpg","redebus06.jpg","redebus07.jpg","redebus08.jpg","redebus09.jpg"]
+        "foto":{
+          "1":{"didascalia":"L'area archeologica","foto":"redebus01.jpg"},
+          "2":{"didascalia":"La batteria di forni (particolare)","foto":"redebus02.jpg"},
+          "3":{"didascalia":"La batteria di forni (particolare)","foto":"redebus03.jpg"},
+          "4":{"didascalia":"Crogiolo (reperto)","foto":"redebus04.jpg"},
+          "5":{"didascalia":"Archeologia sperimentale (strumenti)","foto":"redebus05.jpg"},
+          "6":{"didascalia":"Archeologia sperimentale (colata in stampo)","foto":"redebus06.jpg"},
+          "7":{"didascalia":"Ricostruzione archeologica (attività estrattiva, frantumazione e macinazione)","foto":"redebus07.jpg"},
+          "8":{"didascalia":"Ricostruzione archeologica (colata in stampo)","foto":"redebus08.jpg"},
+          "9":{"didascalia":"Ricostruzione archeologica (fusione)","foto":"redebus09.jpg"}
+        }
       },
-      "desc": "La visuale dal Belvedere del Dos dei Brusadi si apre verso il Dosso di Costalta, il crinale montuoso che divide l’Altopiano di Pinè e la valle dei Mocheni. Quest'ultima località è nota per le miniere di età medievale e moderna e per i circa 200 &quot;siti fusori&quot;, ossia officine destinate all'estrazione del rame dal minerale cuprifero, di età protostorica (1400 - 800 a.C. circa). Ad Acqua Fredda (presso il passo del Redebus) è stata rinvenuta una batteria di forni per la produzione del rame, in funzione tra il 1300 e il 1000 a.C. circa (età del Bronzo recente e finale). Si tratta di uno tra i siti fusori più completi e meglio conservati in Europa (oggi musealizzato e liberamente visitabile tutto l’anno). Presso i 9 forni indagati sono stati rinvenuti anche resti di strumenti e strutture dell'officina come: ugelli da mantice per la ventilazione artificiale, macine in pietra per la triturazione del minerale e dei semilavorati e infine resti di pali, travi e tavole, forse pertinenti a tettoie. Il residuo delle lavorazioni, ossia le circa 800 tonnellate di scorie gettate poco a valle dei forni, sono il principale indizio della grande attività dei siti fusori del Trentino che studi recenti indicano come una delle maggiori aree minerarie dell’Europa dell’età del Bronzo. Come si vede nella galleria seguente, il sito è oggi utilizzato anche per la ricerca nell’ambito dell’archeologia sperimentale, utile per la ricostruzione delle attività svolte in antichità. *GALLERIA* Sempre in Val dei Mocheni si trova la miniera dell’Erdemolo - Gruab va Hardimbl. Il sito è posizionato ad un’altitudine di 1700 metri, nel territorio di Palù del Fersina (nei pressi del sentiero che porta al Lago di Erdemolo). Questa antico giacimento era coltivato tra il XV e la metà del XVII secolo e, come si può vedere nell’immagine seguente, è oggi musealizzato e visitabile (info Miniera dell’Erdemolo - Gruab va Hardimbl 0461 550053). <img src='img/poi/testo/erdemolo.jpg' class='img-fluid'>"
+
+
+      "desc": "La visuale dal Belvedere del Dos dei Brusadi si apre verso il Dosso di Costalta, il crinale montuoso che divide l’Altopiano di Pinè e la valle dei Mocheni. Quest'ultima località è nota per le miniere di età medievale e moderna e per i circa 200 &quot;siti fusori&quot;, ossia officine destinate all'estrazione del rame dal minerale cuprifero, di età protostorica (1400 - 800 a.C. circa). Ad Acqua Fredda (presso il passo del Redebus) è stata rinvenuta una batteria di forni per la produzione del rame, in funzione tra il 1300 e il 1000 a.C. circa (età del Bronzo recente e finale). Si tratta di uno tra i siti fusori più completi e meglio conservati in Europa (oggi musealizzato e liberamente visitabile tutto l’anno). Presso i 9 forni indagati sono stati rinvenuti anche resti di strumenti e strutture dell'officina come: ugelli da mantice per la ventilazione artificiale, macine in pietra per la triturazione del minerale e dei semilavorati e infine resti di pali, travi e tavole, forse pertinenti a tettoie. Il residuo delle lavorazioni, ossia le circa 800 tonnellate di scorie gettate poco a valle dei forni, sono il principale indizio della grande attività dei siti fusori del Trentino che studi recenti indicano come una delle maggiori aree minerarie dell’Europa dell’età del Bronzo. Come si vede nella galleria seguente, il sito è oggi utilizzato anche per la ricerca nell’ambito dell’archeologia sperimentale, utile per la ricostruzione delle attività svolte in antichità. <div class='py-2' id='galleryContent'></div> Sempre in Val dei Mocheni si trova la miniera dell’Erdemolo - Gruab va Hardimbl. Il sito è posizionato ad un’altitudine di 1700 metri, nel territorio di Palù del Fersina (nei pressi del sentiero che porta al Lago di Erdemolo). Questa antico giacimento era coltivato tra il XV e la metà del XVII secolo e, come si può vedere nell’immagine seguente, è oggi musealizzato e visitabile (info Miniera dell’Erdemolo - Gruab va Hardimbl 0461 550053). <img src='img/poi/testo/erdemolo.jpg' class='img-fluid'>"
     },
     "geometry": { "type": "Point", "coordinates": [ 11.186559551745335, 46.125893515737786 ] }
   },

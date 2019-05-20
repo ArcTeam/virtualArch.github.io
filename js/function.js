@@ -103,6 +103,7 @@ $(document).ready(function() {
   })
   $("body").on('click', '#wrapImage', function(event) {
     $("#wrapImage").toggleClass('flex hide');
+    $("#galleryImageLarge").removeAttr('src');
   });
 });
 
@@ -209,24 +210,26 @@ function initVideo(video){
 }
 
 function initGallery(gallery){
+  console.log(gallery);
   let dir = "img/gallerie/"+gallery.dir;
-  let galleryContent = "<div id='galleryContent'></div>";
-  $('.poi-content').html($('.poi-content').html().replace('*GALLERIA*',galleryContent));
   let wrap = $("<div/>",{id:'galleryWrap', class:'container-fluid my-3'}).appendTo('#galleryContent')
   let rowImage = $("<div/>",{class:'row mb-2'}).appendTo(wrap)
-  $.each(gallery.foto, function(i,v){ $("<div/>", {id:"img"+i,class:'imgCover lozad col-4 col-md-3 border border-white'})
-    .attr("data-background-image",dir+"/small/"+v)
+  $.each(gallery.foto, function(i,v){
+    console.log(v.foto);
+    $("<div/>", {id:"img"+i,class:'imgCover lozad col-4 col-md-3 border border-white'})
+    .attr("data-background-image",dir+"/small/"+v.foto)
     .appendTo(rowImage)
     .on('click', function(){
       $("#wrapImage").toggleClass('hide flex')
-      $("#galleryImageLarge").attr("src",dir+"/large/"+v)
+      $("#galleryImageLarge").attr("src",dir+"/large/"+v.foto)
+      $(".didascalia").text(v.didascalia)
       checkDim()
     })
   })
   setGalleryDim()
   observer.observe();
 }
-function setGalleryDim(){ $("#galleryWrap .lozad").height($("#img0").width()) }
+function setGalleryDim(){ $("#galleryWrap .lozad").height($("#img1").width()) }
 
 function initSlider(slider){
   sliderDiv  = '<div id="'+slider.id+'" class="js-img-compare">';
