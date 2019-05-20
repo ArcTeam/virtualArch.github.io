@@ -163,6 +163,7 @@
       "id": "9",
       "banner": "banner_dos_cuz.jpg",
       "nome": "Dos del Cuz",
+      "video":["poi9.mp4"],
       "slider":{
         "bgImg":"cuz_dtm.jpg",
         "bgLabel":"DTM LIDAR",
