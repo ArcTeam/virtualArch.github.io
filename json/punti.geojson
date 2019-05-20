@@ -97,22 +97,6 @@
   },
   {
     "type": "Feature", "properties": {
-      "id": "9",
-      "banner": "banner_dos_cuz.jpg",
-      "slider":{
-        "bgImg":"cuz_dtm.jpg",
-        "bgLabel":"DTM LIDAR",
-        "frontImg":"cuz_foto.jpg",
-        "frontLabel":"Foto aerea"
-      },
-      "video":["poi9.mp4"],
-      "nome": "Dos del Cuz",
-      "desc": "Il Dos del Cuz è una delle aree più interessanti dell’Altipiano del Calisio dal punto di vista dell’archeologia mineraria. Come si può vedere dall'immagine interattiva sottostante (trascinare con il dito l'icona tonda con le freccette bianche), sotto i vostri piedi si snodano strette e labirintiche gallerie con uno sviluppo di oltre 1 km. *SLIDER* Le numerose depressioni presenti, i cosiddetti cadìni, sono residui della presenza di pozzi che davano accesso alla miniera. La Canopa de Dos del Cuz è anche detta del “Lago Azzurro”, perché in anni molto piovosi la sua parte più profonda è completamente allagata. All’interno si trovano stanze di grandi dimensioni. Uno di questi ambienti è oggi noto come “Inferno”, suggestivo toponimo riportato nelle mappe di G. B. Trener (il geologo che per primo studiò queste miniere). Alcune aree pianeggianti del dosso, risparmiate dagli scavi, fanno ipotizzare la presenza di piccoli insediamenti o di zone deputate alla lavorazione del minerale che i canopi estraevano dal sottosuolo (un paesaggio simile a quello ricostruito nel video seguente, che riprende l'ambiente attorno alla Canopa delle Acque). *VIDEO* Dalla cima si gode di una bella vista sul paese di Civezzano, con le sue numerose frazioni in collina, ma anche sulla Valsugana, con il Lago di Caldonazzo, e sulla Valle dell’Adige, con la città di Trento. In queste zone, a partire dal XII secolo, sorsero numerose fortificazioni, alcune delle quali è probabile costituissero un importante riferimento nella complessa gestione delle miniere da parte del vescovo e dei suoi feudatari."
-    },
-    "geometry": { "type": "Point", "coordinates": [ 11.18868844712032, 46.109839272642631 ] }
-  },
-  {
-    "type": "Feature", "properties": {
       "id": "10",
       "banner": "banner_canopa_raita.jpg",
       "video":["poi10.mp4"],
@@ -173,7 +157,22 @@
       "nome": "La calcara",
       "desc": "Le attività umane sull’Altipiano del Calisio sono sempre state molteplici. Oltre all’industria mineraria (di cui vedrete le tracce sul Dos del Raita) e allo sfruttamento dei boschi per la legna, in questa zona abbiamo testimonianza indiretta della presenza di una Malga (toponimo non lontano dal Pian del Gacc) e un esempio di calcara, come quella che vedete qui accanto realizzata in sassi di porfido. La calcara era una fornace per la produzione della calce, utilizzata non solo in edilizia ma fino al secolo scorso anche come disinfettante per gli ambienti e conservante per le uova. Ottenere la calce era un lavoro molto lungo, delicato e pericoloso. Per ogni quintale di rocce calcaree serviva la stessa quantità di fascine di legna: queste alimentavano il fuoco dal basso venendo inserite dall’apertura alla base del cilindro, sotto una grata di ferro su cui si depositava il calcare. La temperatura doveva raggiungere i 900° C e il fuoco doveva ardere giorno e notte per una settimana. Il carbonato di calcio si trasformava così in “calce viva”, estremamente caustica, che veniva raccolta con pesanti guanti e “spenta” con dell’acqua per poter essere utilizzata. L'immagine seguente mostra lo spaccato di una calcara a pieno carico, con le pietre calcaree che venivano adagiate direttamente sopra alle fascine, nella camera di combusionte. <img src='img/poi/testo/calcara.jpg' class='img-fluid'>"
     },
-     "geometry": { "type": "Point", "coordinates": [ 11.200273, 46.120510 ] }
+     "geometry": { "type": "Point", "coordinates": [ 11.200273, 46.120510 ] },
+     {
+    "type": "Feature", "properties": {
+      "id": "9",
+      "banner": "banner_dos_cuz.jpg",
+      "slider":{
+        "bgImg":"cuz_dtm.jpg",
+        "bgLabel":"DTM LIDAR",
+        "frontImg":"cuz_foto.jpg",
+        "frontLabel":"Foto aerea"
+      },
+      "video":["poi9.mp4"],
+      "nome": "Dos del Cuz",
+      "desc": "Il Dos del Cuz è una delle aree più interessanti dell’Altipiano del Calisio dal punto di vista dell’archeologia mineraria. Come si può vedere dall'immagine interattiva sottostante (trascinare con il dito l'icona tonda con le freccette bianche), sotto i vostri piedi si snodano strette e labirintiche gallerie con uno sviluppo di oltre 1 km. *SLIDER* Le numerose depressioni presenti, i cosiddetti cadìni, sono residui della presenza di pozzi che davano accesso alla miniera. La Canopa de Dos del Cuz è anche detta del “Lago Azzurro”, perché in anni molto piovosi la sua parte più profonda è completamente allagata. All’interno si trovano stanze di grandi dimensioni. Uno di questi ambienti è oggi noto come “Inferno”, suggestivo toponimo riportato nelle mappe di G. B. Trener (il geologo che per primo studiò queste miniere). Alcune aree pianeggianti del dosso, risparmiate dagli scavi, fanno ipotizzare la presenza di piccoli insediamenti o di zone deputate alla lavorazione del minerale che i canopi estraevano dal sottosuolo (un paesaggio simile a quello ricostruito nel video seguente, che riprende l'ambiente attorno alla Canopa delle Acque). *VIDEO* Dalla cima si gode di una bella vista sul paese di Civezzano, con le sue numerose frazioni in collina, ma anche sulla Valsugana, con il Lago di Caldonazzo, e sulla Valle dell’Adige, con la città di Trento. In queste zone, a partire dal XII secolo, sorsero numerose fortificazioni, alcune delle quali è probabile costituissero un importante riferimento nella complessa gestione delle miniere da parte del vescovo e dei suoi feudatari."
+    },
+    "geometry": { "type": "Point", "coordinates": [ 11.18868844712032, 46.109839272642631 ] }
   }
 ]
 }
