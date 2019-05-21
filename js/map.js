@@ -1,7 +1,14 @@
+var marker=''
+var circle=''
+var map;
+var punti;
+var sentieri;
 function initMap(){
-  let punti;
-  let sentieri;
-  let map = new L.Map('map', { minZoom: 13 }).setView([46.1220, 11.1876], 13);
+  // let map = new L.Map('map', { minZoom: 13 }).setView([46.1220, 11.1876], 13);
+  map = new L.Map('map').setView([46.1220, 11.1876], 8);
+  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
   let imageUrl = './map/baseWgs84.png'
   let imageBounds = [[46.06050, 11.08906], [46.16670, 11.23860]]
   let base = L.imageOverlay(imageUrl, imageBounds).addTo(map)
@@ -76,8 +83,6 @@ function getLocation(){
   map.on('locationfound', onLocationFound);
 }
 
-var marker=''
-var circle=''
 function onLocationFound(e) {
   var radius = e.accuracy / 2;
   if (marker) {

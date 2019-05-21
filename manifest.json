@@ -16,7 +16,6 @@
   "scope": "/virtualArch.github.io/",
   "start_url": "/virtualArch.github.io/",
   "display": "standalone",
-  "orientation": "portrait",
   "background_color": "#98c222",
   "theme_color": "#98c222",
   "prefer_related_applications": false

@@ -3,9 +3,14 @@ $(document).bind('mobileinit',function(){
   $.mobile.hashListeningEnabled = false;
   $.mobile.pushStateEnabled = false;
 });
-window.addEventListener('beforeunload', (event) => {
-  event.preventDefault;
-  event.returnValue = `Are you sure you want to leave?`;
+$(document).keypress(function(e){
+    if(e.keyCode == 8){
+      if(confirm('sicuro?')){
+        console.log('ciao');
+      }else {
+        e.preventDefault()
+      }
+    }
 });
 
 const observer = lozad('.lozad', { rootMargin: '10px 0px', threshold: 0.1 });
@@ -104,7 +109,6 @@ $(document).ready(function() {
 });
 
 function checkDim(){
-  console.log(screen.width+" "+screen.height);
   if(screen.width > screen.height){
     $(".imgContent").css({"width":"70vw","height":"95vh"})
   }else {
@@ -149,12 +153,10 @@ function initVideo(video){
 }
 
 function initGallery(gallery){
-  console.log(gallery);
   let dir = "img/gallerie/"+gallery.dir;
   let wrap = $("<div/>",{id:'galleryWrap', class:'container-fluid my-3'}).appendTo('#galleryContent')
   let rowImage = $("<div/>",{class:'row mb-2'}).appendTo(wrap)
   $.each(gallery.foto, function(i,v){
-    console.log(v.foto);
     $("<div/>", {id:"img"+i,class:'imgCover lozad col-4 col-md-3 border border-white'})
     .attr("data-background-image",dir+"/small/"+v.foto)
     .appendTo(rowImage)
@@ -185,9 +187,9 @@ function initSlider(slider){
   var imagesCompareElement = $('.js-img-compare').imagesCompare();
   var imagesCompare = imagesCompareElement.data('imagesCompare');
   var events = imagesCompare.events();
-  imagesCompare.on(events.initialised, function (event) {
-    console.log(events.initialised);
-  });
+  // imagesCompare.on(events.initialised, function (event) {
+  //   console.log(events.initialised);
+  // });
 }
 
 function slideTrackInfo(e){
