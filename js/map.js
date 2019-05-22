@@ -100,12 +100,7 @@ function getLocation(func){
 
 function onLocationFound(e) {
   var radius = e.accuracy / 2;
-  var markerCss = {
-    color: "#fff",
-    fillColor: "#98c222",
-    fillOpacity: 1,
-    radius: 5
-  }
+  var markerCss = {color: "#fff", fillColor: "#98c222", fillOpacity: 0.9, radius: 5 }
   if (marker) {
     map.removeLayer(marker);
     map.removeLayer(circle);
