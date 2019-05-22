@@ -3,15 +3,13 @@ $(document).bind('mobileinit',function(){
   $.mobile.hashListeningEnabled = false;
   $.mobile.pushStateEnabled = false;
 });
-$(document).keypress(function(e){
-    if(e.keyCode == 8){
-      if(confirm('sicuro?')){
-        console.log('ciao');
-      }else {
-        e.preventDefault()
-      }
-    }
-});
+handleBackEvents();
+function handleBackEvents() {
+  window.history.pushState({}, '');
+  window.addEventListener('popstate', () => {
+    $("#exitPrompt").toggleClass('hide flex');
+  });
+}
 
 const observer = lozad('.lozad', { rootMargin: '10px 0px', threshold: 0.1 });
 const Installer = function(root) {
@@ -120,6 +118,10 @@ $(document).ready(function() {
     $("#wrapImage").toggleClass('flex hide');
     $("#galleryImageLarge").removeAttr('src');
   });
+  $("[name=noExit]").on('click', function(){ $("#exitPrompt").toggleClass('flex hide')})
+  $("[name=confirmExit]").on('click', function(){
+    close();
+  })
 });
 
 function checkDim(){
