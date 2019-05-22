@@ -120,7 +120,7 @@ $(document).ready(function() {
   });
   $("[name=noExit]").on('click', function(){ $("#exitPrompt").toggleClass('flex hide')})
   $("[name=confirmExit]").on('click', function(){
-    close();
+    open(location, '_self').close();
   })
 });
 
