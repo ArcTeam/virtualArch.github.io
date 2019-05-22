@@ -37,7 +37,7 @@ html, body { height: 100vh; width: 100vw;background:#fff; font-family: 'Montserr
 .splashLogo{ top:22%; width:126px; height:126px; left:calc(50% - 63px); border-width: 5px !important; background-image: url('../img/ico/interreg_icon.png'); background-position: center; background-repeat: no-repeat; background-size: contain; z-index: 2;}
 .splashBottom{top:30%;left:0;width:100%;height:70%;margin:0;padding:0;z-index: 1}
 .splashBottom .disclaimer{position:relative;margin-top:30px; width:100%;}
-.splashBottom .warnings{width: 100%; height: 350px; overflow: auto;}
+.splashBottom .warnings{width: 100%; height: 250px; overflow: auto;}
 
 /**** map   ****/
 #wrapPoiInfo{position:absolute;top:0;bottom:0;right:0; width:100%;z-index:3000;display: none;}

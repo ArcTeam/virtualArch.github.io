@@ -3,13 +3,13 @@ $(document).bind('mobileinit',function(){
   $.mobile.hashListeningEnabled = false;
   $.mobile.pushStateEnabled = false;
 });
-handleBackEvents();
-function handleBackEvents() {
-  window.history.pushState({}, '');
-  window.addEventListener('popstate', () => {
-    $("#exitPrompt").toggleClass('hide flex');
-  });
-}
+// handleBackEvents();
+// function handleBackEvents() {
+//   window.history.pushState({}, '');
+//   window.addEventListener('popstate', () => {
+//     $("#exitPrompt").toggleClass('hide flex');
+//   });
+// }
 
 const observer = lozad('.lozad', { rootMargin: '10px 0px', threshold: 0.1 });
 const Installer = function(root) {
@@ -119,9 +119,6 @@ $(document).ready(function() {
     $("#galleryImageLarge").removeAttr('src');
   });
   $("[name=noExit]").on('click', function(){ $("#exitPrompt").toggleClass('flex hide')})
-  $("[name=confirmExit]").on('click', function(){
-    open(location, '_self').close();
-  })
 });
 
 function checkDim(){
