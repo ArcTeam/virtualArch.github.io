@@ -47,7 +47,6 @@ const Installer = function(root) {
   };
 
   window.addEventListener('beforeinstallprompt', beforeinstallprompt);
-  // window.addEventListener('appinstalled', installed);
   window.addEventListener('appinstalled', (evt) => {
     console.log('installata');
     root.classList.add('install');
@@ -59,9 +58,19 @@ const Installer = function(root) {
 
 
 window.addEventListener('load', function() {
-  if (localStorage.disclaimer && localStorage.go) {
+  if (localStorage.lang) {
+    $(".lang").remove()
+    $(".disclaimer > p").text(gui.disclaimer[localStorage.lang])
+    $(".disclaimer").fadeIn('fast')
+  }
+  if (localStorage.disclaimer) {
+    $(".disclaimer,.appTitle").remove()
+    $(".warning-"+localStorage.lang).show()
+    $(".warnings").fadeIn('fast')
+  }
+  if (localStorage.length == 3) {
     $("#splash-content").remove()
-    $("#map-page").fadeIn(500, initMap)
+    initMap()
   }
   const installEl = document.getElementById('installer');
   const installer = new Installer(installEl);
@@ -88,19 +97,24 @@ window.addEventListener("orientationchange", function() {
 
 
 $(document).ready(function() {
+  $("[name=chooseLang]").on('click', function(){
+    localStorage.setItem("lang",$(this).val());
+    $(".lang").fadeOut('fast', function(){
+      $(".disclaimer > p").text(gui.disclaimer[localStorage.lang])
+      $(".disclaimer").fadeIn('fast')
+    })
+  })
   $("[name=disclaimer]").on('click', function(){
     localStorage.setItem("disclaimer","ok")
-    $(".blk1").fadeOut(500, function(){
-      $(this).remove()
-      $(".blk2").fadeIn(500)
+    $(".disclaimer,.appTitle").fadeOut('fast', function(){
+      $(".warning-"+localStorage.lang).show()
+      $(".warnings").fadeIn('fast')
     })
   })
   $("[name=okGo]").on('click', function(){
-    localStorage.setItem("go","ok")
-    $("#splash-content").fadeOut(500, function(){
-      $(this).remove()
-      $("#map-page").fadeIn(500, initMap)
-    })
+    localStorage.setItem("warning","ok")
+    $("#splash-content").remove()
+    initMap()
   })
   $("body").on('click', '#wrapImage', function(event) {
     $("#wrapImage").toggleClass('flex hide');

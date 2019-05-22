@@ -8,18 +8,19 @@
     <meta name="theme-color" content="#98c222">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="asset/leaflet/leaflet.css">
-    <link rel="stylesheet" type="text/css" href="css/images-compare.css">
     <link rel="stylesheet" type="text/css" href="css/fa.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="manifest" href="manifest.json">
     <script type="text/javascript" src="cache-polyfill.js"></script>
     <script type="text/javascript" src="asset/jquery.min.js"></script>
     <script type="text/javascript" src="asset/jquery.images-compare.js"></script>
     <script type="text/javascript" src="asset/hammer.min.js"></script>
     <script type="text/javascript" src="asset/bootstrap.min.js"></script>
     <script type="text/javascript" src="asset/leaflet/leaflet.js"></script>
+    <script type="text/javascript" src="asset/spin.min.js"></script>
+    <script type="text/javascript" src="asset/leaflet.spin.min.js"></script>
     <script type="text/javascript" src="asset/lozad.min.js"></script>
     <link rel="shortcut icon" href="img/ico/favicon.ico">
+    <link rel="manifest" href="manifest.json">
     <title>VirtualArch - Ecomuseo dell'Argentario</title>
   </head>
   <body class="splash">
@@ -27,38 +28,71 @@
       <div class="splashTop bg-white"></div>
       <div class="splashLogo rounded-circle border border-white bg-green"></div>
       <div class="splashBottom bg-green text-white">
-        <div class="mt-5 pt-5 text-center blk1">
-          <h1 class='font-weight-bold'>VirtualArch</h1>
-          <h4>Medieval mines of Civezzano</h4>
-          <div class="disclaimer">
-            <p>Prima di avviare l'app leggi i nostri consigli sulla sicurezza</p>
-            <button type="button" class="btn btn-secondary" name="disclaimer">ok, procedi</button>
+        <div class="mt-5 pt-5 text-center">
+          <div class="appTitle">
+            <h1 class='font-weight-bold'>VirtualArch</h1>
+            <h4>Medieval mines of Civezzano</h4>
+          </div>
+          <div class="lang mt-5">
+            <p>imposta la lingua / select language</p>
+            <div>
+              <button type="button" class="btn btn-primary" name="chooseLang" value="ita">italiano</button>
+              <button type="button" class="btn btn-primary" name="chooseLang" value="eng">english</button>
+              <small class="d-block mt-3">Puoi cambiare le impostazioni anche in seguito <br> you can change your selection in every moment</small>
+            </div>
+          </div>
+          <div class="disclaimer hide">
+            <p></p>
+            <button type="button" class="btn btn-primary" name="disclaimer">ok</button>
           </div>
         </div>
-        <div class="mt-5 pt-5 blk2">
-          <p class="px-3">Le escursioni in montagna nascondono insidie e pericoli che si possono evitare seguendo alcune regole basilari:</p>
-          <ol>
-            <li>indossa scarpe e vestiti adeguati</li>
-            <li>valuta attentamente le condizioni meteorologiche prima di partire e continua a monitorarle durante l'escursione</li>
-            <li>scegli l'itinerario più adatto alle tue capacità fisiche (mancanza di allenamento, deficit motori...) e tecniche (esperienza)</li>
-            <li>resta sui sentieri segnalati, evitando le scorciatoie e i punti particolarmente esposti</li>
-          </ol>
-          <h2 class="text-danger text-center">
-            <i class="fas fa-exclamation-triangle"></i> ATTENZIONE!
-          </h2>
-          <ul>
-            <li class="text-danger">Presenza di cavità e pozzi aperti:<br>rischio di cadute</li>
-            <li class="text-danger">Presenza di sporgenze rocciose:<br>attenzione alla testa</li>
-            <li class="text-danger">Presenza di animali selvatici:<br>tenetevi a distanza e non disturbateli</li>
-          </ul>
-          <div class="text-center">
-            <p class="font-weight-bold">Si declina ogni responsabilità per l'uso inappropriato delle informazioni qui contenute.</p>
-            <button type="button" class="btn btn-danger" name="okGo">ok, ho capito</button>
+        <div class="warnings hide">
+          <div class="warning-ita hide">
+            <p class="px-3">Le escursioni in montagna nascondono insidie e pericoli che si possono evitare seguendo alcune regole basilari:</p>
+            <ol>
+              <li>indossa scarpe e vestiti adeguati</li>
+              <li>valuta attentamente le condizioni meteorologiche prima di partire e continua a monitorarle durante l'escursione</li>
+              <li>scegli l'itinerario più adatto alle tue capacità fisiche (mancanza di allenamento, deficit motori...) e tecniche (esperienza)</li>
+              <li>resta sui sentieri segnalati, evitando le scorciatoie e i punti particolarmente esposti</li>
+            </ol>
+            <h2 class="text-danger text-center">
+              <i class="fas fa-exclamation-triangle"></i> ATTENZIONE!
+            </h2>
+            <ul>
+              <li class="text-danger">Presenza di cavità e pozzi aperti:<br>rischio di cadute</li>
+              <li class="text-danger">Presenza di sporgenze rocciose:<br>attenzione alla testa</li>
+              <li class="text-danger">Presenza di animali selvatici:<br>tenetevi a distanza e non disturbateli</li>
+            </ul>
+            <div class="text-center">
+              <p class="font-weight-bold">Si declina ogni responsabilità per l'uso inappropriato delle informazioni qui contenute.</p>
+              <button type="button" class="btn btn-danger" name="okGo">ok, ho capito</button>
+            </div>
+          </div>
+          <div class="warning-eng hide">
+            <p class="px-3">Mountain hikes hide pitfalls and dangers that can be avoided by following some basic rules:</p>
+            <ol>
+              <li>wear appropriate shoes and clothes</li>
+              <li>pay attention to the weather conditions before you leave and continue to monitor them during the excursion</li>
+              <li>choose the route best suited to your physical abilities (lack of training, motor deficits ...) and techniques (experience)</li>
+              <li>stay on the marked paths, avoiding shortcuts and exposed points</li>
+            </ol>
+            <h2 class="text-danger text-center">
+              <i class="fas fa-exclamation-triangle"></i> WARNING!
+            </h2>
+            <ul>
+              <li class="text-danger">Presence of open cavities and wells:<br>risk of falls</li>
+              <li class="text-danger">Presence of rock ledges: <br> attention to the head</li>
+              <li class="text-danger">Presence of wild animals: <br> keep at a distance and do not disturb them</li>
+            </ul>
+            <div class="text-center">
+              <p class="font-weight-bold">No liability is assumed for inappropriate use of the information contained herein.</p>
+              <button type="button" class="btn btn-danger" name="okGo">ok, I understood the risks</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div id="map-page">
+    <div id="map-page hide">
       <div id="installer" class="available">
         <button type="button" class="btn btn-success hide">Installa app</button>
       </div>
@@ -86,6 +120,7 @@
         </div>
       </div>
     </div>
+    <script type="text/javascript" src="js/lang.js"></script>
     <script type="text/javascript" src="js/map.js"></script>
     <script type="text/javascript" src="js/function.js"></script>
   </body>

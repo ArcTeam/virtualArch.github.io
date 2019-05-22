@@ -4,8 +4,10 @@ var map;
 var punti;
 var sentieri;
 function initMap(){
+  $("#map-page").fadeIn('fast')
   // let map = new L.Map('map', { minZoom: 13 }).setView([46.1220, 11.1876], 13);
   map = new L.Map('map').setView([46.1220, 11.1876], 8);
+  map.spin(true);
   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
@@ -44,9 +46,13 @@ function initMap(){
     options: { position: 'topleft'},
     onAdd: function (map) {
       var container = L.DomUtil.create('div', 'extentControl leaflet-bar leaflet-control leaflet-touch');
-      btn=$("<a/>",{href:'#'}).appendTo(container);
+      btn=$("<a/>",{href:'#',class:'stopLoc'}).appendTo(container);
       $("<i/>",{class:'fas fa-location-arrow'}).appendTo(btn)
-      btn.on('click', function () {getLocation()});
+      btn.on('click', function () {
+        $(this).toggleClass('startLoc stopLoc');
+        $(this).find('i').toggleClass('fa-location-arrow fa-stop');
+        getLocation(this.className)
+      });
       return container;
     }
   })
@@ -74,21 +80,36 @@ function initMap(){
       style: function(feature) { return {color: feature.properties.color,weight:5} }
     }).addTo(map).on('click',slideTrackInfo);
   });
-
+  map.on('load',hideSpin())
   map.setMaxBounds(map.getBounds());
 }
 
-function getLocation(){
-  map.locate({setView: true, maxZoom: 18, watch:true, timeout: 60000,enableHighAccuracy:true});
-  map.on('locationfound', onLocationFound);
+function hideSpin(){map.spin(false)}
+
+function getLocation(func){
+  if (func == 'startLoc') {
+    map.locate({setView: false, maxZoom: 18, watch:true, timeout: 60000,enableHighAccuracy:true});
+    map.on('locationfound', onLocationFound);
+  }else {
+    map.stopLocate()
+    map.removeLayer(marker);
+    map.removeLayer(circle);
+    map.fitBounds(punti.getBounds());
+  }
 }
 
 function onLocationFound(e) {
   var radius = e.accuracy / 2;
+  var markerCss = {
+    color: "#fff",
+    fillColor: "#98c222",
+    fillOpacity: 1,
+    radius: 5
+  }
   if (marker) {
     map.removeLayer(marker);
     map.removeLayer(circle);
   }
-  marker = L.marker(e.latlng).addTo(map);
+  marker = L.circleMarker(e.latlng,markerCss).addTo(map);
   circle = L.circle(e.latlng, radius).addTo(map);
 }
