@@ -6,11 +6,11 @@ var sentieri;
 function initMap(){
   $("#map-page").fadeIn('fast')
   // let map = new L.Map('map', { minZoom: 13 }).setView([46.1220, 11.1876], 13);
-  map = new L.Map('map').setView([46.1220, 11.1876], 8);
+  map = new L.Map('map', { minZoom: 13 }).setView([46.1220, 11.1876], 13);
   map.spin(true);
-  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
+  // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  //   attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  // }).addTo(map);
   let imageUrl = './map/baseWgs84.png'
   let imageBounds = [[46.06050, 11.08906], [46.16670, 11.23860]]
   let base = L.imageOverlay(imageUrl, imageBounds).addTo(map)

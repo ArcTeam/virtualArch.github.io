@@ -66,7 +66,7 @@ window.addEventListener('load', function() {
     $(".warning-"+localStorage.lang).show()
     $(".warnings").fadeIn('fast')
   }
-  if (localStorage.length == 3) {
+  if (localStorage.length >= 3) {
     $("#splash-content").remove()
     initMap()
   }
@@ -118,8 +118,23 @@ $(document).ready(function() {
     $("#wrapImage").toggleClass('flex hide');
     $("#galleryImageLarge").removeAttr('src');
   });
+  $("body").on('click','.360view', function(e){
+    e.preventDefault()
+    initPano()
+  })
   $("[name=noExit]").on('click', function(){ $("#exitPrompt").toggleClass('flex hide')})
 });
+function initPano(src){
+  $("#panoElem").remove()
+  content = $("<div/>",{id:"panoElem"}).appendTo('body')
+  header = $("<header/>")
+    .html('close window <i class="fas fa-times"></i>')
+    .appendTo(content)
+    .on('click',function(){
+      $("#panoElem").remove()
+    })
+  iframe = $("<iframe/>",{src:'gnomi360.html'}).appendTo(content)
+}
 
 function checkDim(){
   if(screen.width > screen.height){
