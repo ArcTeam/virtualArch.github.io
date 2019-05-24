@@ -32,6 +32,7 @@
         <img id="home2" title="Left" src="img/home2.png">
         <img id="home3" title="Right" src="img/home3.png">
         <img id="hotspot" title="Show Hotspots" src="img/pin_on.png" data-swap="img/pin.png">
+        <img id="back" title="Back to main app" src="img/back.png">
       </div>
       <canvas id="draw-canvas" width="1366" height="625"></canvas>
       <div id="wrapImage">
@@ -135,6 +136,7 @@
         moveToolbar(null,(($('#3dhop').parent().height()-415)/2));
         presenter.ui.postDrawEvent();
       });
+      $("#back").on('click', function(){window.history.back();})
     });
     </script>
   </body>

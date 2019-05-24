@@ -124,17 +124,27 @@ $(document).ready(function() {
   })
   $("[name=noExit]").on('click', function(){ $("#exitPrompt").toggleClass('flex hide')})
 });
-function initPano(src){
+function initPano(){
   $("#panoElem").remove()
   content = $("<div/>",{id:"panoElem"}).appendTo('body')
   header = $("<header/>")
     .html('close window <i class="fas fa-times"></i>')
     .appendTo(content)
-    .on('click',function(){
-      $("#panoElem").remove()
-    })
+    .on('click',function(){ $("#panoElem").remove() })
   iframe = $("<iframe/>",{src:'gnomi360.html'}).appendTo(content)
 }
+// TODO apertura realtà aumentata
+// function initAr(){
+//   $("#arElem").remove()
+//   content = $("<div/>",{id:"arElem"}).appendTo('body')
+//   header = $("<header/>")
+//     .html('close window <i class="fas fa-times"></i>')
+//     .appendTo(content)
+//     .on('click',function(){
+//       $("#panoElem").remove()
+//     })
+//   iframe = $("<iframe/>",{src:'gnomi360.html'}).appendTo(content)
+// }
 
 function checkDim(){
   if(screen.width > screen.height){
