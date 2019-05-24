@@ -68,11 +68,13 @@ html, body { height: 100vh; width: 100vw;background:#fff; font-family: 'Montserr
 .images-compare-before .images-compare-label {left: 10px;}
 .images-compare-after .images-compare-label {left: auto; right: 10px;}
 
-#panoElem{position:fixed; top:0; bottom:0; left:0; right:0; z-index: 5000;}
-#panoElem>header{position:absolute; top:0; left:0; width:100%; height:30px; background:rgba(0,0,0,.6); padding:5px 20px; text-align: right; color:#fff; z-index:5001;}
-#panoElem>iframe{position:absolute; top:0; left:0; width: 100vw; height:100vh;}
+.extraElem{position:fixed; top:0; bottom:0; left:0; right:0; z-index: 5000;}
+.extraElem>header{position:absolute; top:0; left:0; width:100%; height:30px; background:rgba(0,0,0,.6); padding:5px 20px; text-align: right; color:#fff; z-index:5001;}
+.extraElem>iframe{position:absolute; top:0; left:0; width: 100vw; height:100vh;}
 
-
+#iframeWrap,#icoArWrap{position:fixed;margin:0;padding:0;}
+#iframeWrap{top:0;left:0;}
+#icoArWrap{right:0;background: #fff;}
 /* Extra small devices (portrait phones, lblockess than 576px) */
 @media (max-width: 575px){
   .poi-banner,.track-banner{height:160px; }
@@ -86,4 +88,19 @@ html, body { height: 100vh; width: 100vw;background:#fff; font-family: 'Montserr
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .poi-banner,.track-banner{height:200px; }
+}
+
+@media only screen and (orientation: portrait) {
+  #iframeWrap,#iframeWrap>iframe{width:100%;height:85vh;}
+  #icoArWrap{bottom:0;width:100%;}
+  #icoArWrap>div{width:24%;height:15vh;padding:10px;display:inline-block;border-right: 1px solid #ddd;text-align:center;}
+  #icoArWrap>div:last-child{border:none;}
+  #icoArWrap>div>img{max-height: 10vh;}
+}
+@media only screen and (orientation: landscape) {
+  #iframeWrap,#iframeWrap>iframe{width:85vw;height:100vh;}
+  #icoArWrap{right:0;height:100vh;}
+  #icoArWrap>div{width:15vw;height:25vh;padding:10px;border-bottom: 1px solid #ddd;text-align:center;}
+  #icoArWrap>div:last-child{border:none;}
+  #icoArWrap>div>img{max-width: 15vh;}
 }

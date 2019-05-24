@@ -122,30 +122,45 @@ $(document).ready(function() {
     e.preventDefault()
     initPano()
   })
+  $("body").on('click','.arView', function(e){
+    e.preventDefault()
+    initAr()
+  })
+  $("body").on('click','.modelAr',function(){
+    model = $(this).data('model')
+    loadObject(model)
+  })
   $("[name=noExit]").on('click', function(){ $("#exitPrompt").toggleClass('flex hide')})
 });
 function initPano(){
   $("#panoElem").remove()
-  content = $("<div/>",{id:"panoElem"}).appendTo('body')
-  header = $("<header/>")
+  var content = $("<div/>",{id:"panoElem", class:'extraElem'}).appendTo('body')
+  var header = $("<header/>")
     .html('close window <i class="fas fa-times"></i>')
     .appendTo(content)
     .on('click',function(){ $("#panoElem").remove() })
-  iframe = $("<iframe/>",{src:'gnomi360.html'}).appendTo(content)
+  var iframe = $("<iframe/>",{src:'gnomi360.html'}).appendTo(content)
 }
-// TODO apertura realtà aumentata
-// function initAr(){
-//   $("#arElem").remove()
-//   content = $("<div/>",{id:"arElem"}).appendTo('body')
-//   header = $("<header/>")
-//     .html('close window <i class="fas fa-times"></i>')
-//     .appendTo(content)
-//     .on('click',function(){
-//       $("#panoElem").remove()
-//     })
-//   iframe = $("<iframe/>",{src:'gnomi360.html'}).appendTo(content)
-// }
 
+function initAr(){
+  $("#arElem").remove()
+  var content = $("<div/>",{id:"arElem", class:'extraElem'}).appendTo('body')
+  var header = $("<header/>")
+    .html('close window <i class="fas fa-times"></i>')
+    .appendTo(content)
+    .on('click',function(){
+      $("#arElem").remove()
+    })
+  var iframeWrap = $("<div/>",{id:'iframeWrap'}).appendTo(content)
+  var iframe = $("<iframe/>",{id:'arFrame',src:'ar.html'}).appendTo(iframeWrap)
+  var icoArWrap = $("<div/>",{id:'icoArWrap'})
+    .html('<div><img src="model/luce.png" class="img-fluid modelAr" data-model="luce2"></div><div><img src="model/martello.png" class="img-fluid modelAr" data-model="martello2"></div><div><img src="model/pala.png" class="img-fluid modelAr" data-model="pala2"></div><div><img src="model/vaschetta.png" class="img-fluid modelAr" data-model="vaschetta"></div>')
+    .appendTo(content)
+}
+function loadObject(model) {
+  var iFrame = document.getElementById("arFrame");
+  iFrame.contentWindow.postMessage(model, '*');
+}
 function checkDim(){
   if(screen.width > screen.height){
     $(".imgContent").css({"width":"70vw","height":"95vh"})
