@@ -62,6 +62,7 @@ function initMap(){
   map.addControl(new geoLocBtn());
 
   $.getJSON('json/punti.geojson',function (data) {
+    console.log(data);
     if (!data.features) {
       map.setView(new L.LatLng(46.1220, 11.1876), 13);
     }else {

@@ -158,9 +158,9 @@ function checkDim(){
 function slidePanel(e){
   prop = e.layer.feature.properties
   setHeightDiv()
-  $(".closePanel>h5").html(prop.nome)
+  $(".closePanel>h5").html(prop.nome[localStorage.lang])
   $(".poi-banner").css("background-image","url('img/poi/banner/"+prop.banner+"')")
-  content = $(".poi-content").html(prop.desc)
+  content = $(".poi-content").html(prop.desc[localStorage.lang])
   $('#wrapPoiInfo').fadeIn(500)
   $("body").on('click', '.closePanel', function() { $('#wrapPoiInfo').fadeOut(500); });
   if(prop.slider) {initSlider(e.layer.feature.properties.slider)}
