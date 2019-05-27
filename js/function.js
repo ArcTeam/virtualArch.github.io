@@ -1,17 +1,13 @@
-$(document).bind('mobileinit',function(){
-  $.mobile.changePage.defaults.changeHash = false;
-  $.mobile.hashListeningEnabled = false;
-  $.mobile.pushStateEnabled = false;
-});
-// handleBackEvents();
-// function handleBackEvents() {
-//   window.history.pushState({}, '');
-//   window.addEventListener('popstate', () => {
-//     $("#exitPrompt").toggleClass('hide flex');
-//   });
-// }
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('sw.js')
+      .then(registration => {
+        console.log('ServiceWorker registration successful: ', registration);
+      })
+      .catch(err => console.error('ServiceWorker registration failed', err));
+  });
+}
 
-const observer = lozad('.lozad', { rootMargin: '10px 0px', threshold: 0.1 });
 const Installer = function(root) {
   let promptEvent;
 
@@ -54,7 +50,6 @@ const Installer = function(root) {
   root.addEventListener('touchend', install.bind(this));
 };
 
-
 window.addEventListener('load', function() {
   if (localStorage.lang) {
     $(".lang").remove()
@@ -74,16 +69,6 @@ window.addEventListener('load', function() {
   const installer = new Installer(installEl);
 })
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('sw.js').then(function(registration) {
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function(err) {
-      console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
-
 window.addEventListener("orientationchange", function() {
   window.setTimeout(function() {
     setHeightDiv()
@@ -95,6 +80,7 @@ window.addEventListener("orientationchange", function() {
 
 
 $(document).ready(function() {
+  $("#updateAppContent").html(gui.updateAvailable[localStorage.lang])
   $("[name=chooseLang]").on('click', function(){
     localStorage.setItem("lang",$(this).val());
     $(".lang").fadeOut('fast', function(){
@@ -205,6 +191,7 @@ function initVideo(video){
   $('#videoContent').html(videoDiv)
 }
 
+const observer = lozad('.lozad', { rootMargin: '10px 0px', threshold: 0.1 });
 function initGallery(gallery){
   let dir = "img/gallerie/"+gallery.dir;
   let wrap = $("<div/>",{id:'galleryWrap', class:'container-fluid my-3'}).appendTo('#galleryContent')

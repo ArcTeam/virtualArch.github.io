@@ -1,6 +1,8 @@
 const version = "0.0.1";
 const cacheName = `virtualArch-${version}`;
-const cacheFile = ['/virtualArch.github.io/'];
+// const cacheFile = ['/virtualArch.github.io/'];
+const cacheFile = ['./'];
+
 self.addEventListener('install', e => {
   const timeStamp = Date.now();
   e.waitUntil(

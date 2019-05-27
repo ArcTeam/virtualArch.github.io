@@ -19,7 +19,7 @@
     <script type="text/javascript" src="asset/spin.min.js"></script>
     <script type="text/javascript" src="asset/leaflet.spin.min.js"></script>
     <script type="text/javascript" src="asset/lozad.min.js"></script>
-    
+
     <link rel="shortcut icon" href="img/ico/favicon.ico">
     <link rel="manifest" href="manifest.json">
     <title>VirtualArch - Ecomuseo dell'Argentario</title>
@@ -94,9 +94,6 @@
       </div>
     </div>
     <div id="map-page hide">
-      <div id="installer" class="available">
-        <button type="button" class="btn btn-success hide">Installa app</button>
-      </div>
       <div id="map"></div>
       <div id="wrapPoiInfo">
         <div id="poi-info" class="bg-white">
@@ -122,13 +119,17 @@
       </div>
     </div>
 
-    <div id="exitPrompt" class="hide">
-      <div class="">
-        <h5>vuoi davvero uscire?</h5>
-        <p>Per chiudere l'app clicca di nuovo sul tasto "back"<br>altrimenti annulla chiusura</p>
-        <button type="button" class="btn btn-primary" name="noExit">annulla</button>
+    <div id="installer" class="appBtn available">
+      <div class="appBtnContent bg-green text-white">
+        <button type="button" class="btn btn-primary">Install app</button>
+        <button type="button" class="btn btn-danger"><i class='fas fa-times'></i></button>
       </div>
     </div>
+
+    <div id="updateApp" class="appBtn animation hide">
+      <div id="updateAppContent" class="appBtnContent bg-green text-white"></div>
+    </div>
+
     <script type="text/javascript" src="js/lang.js"></script>
     <script type="text/javascript" src="js/map.js"></script>
     <script type="text/javascript" src="js/function.js"></script>
