@@ -116,6 +116,9 @@ $(document).ready(function() {
     model = $(this).data('model')
     loadObject(model)
   })
+  $("body").on('click', '.setlangPopOver', function() {
+    $("#setLangDiv").toggleClass('hide flex');
+  });
   $("[name=noExit]").on('click', function(){ $("#exitPrompt").toggleClass('flex hide')})
 });
 function initPano(){

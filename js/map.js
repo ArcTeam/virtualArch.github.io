@@ -31,38 +31,32 @@ function initMap(){
     }
   })
 
-  let startView = L.Control.extend({
+  let myControl = L.Control.extend({
     options: { position: 'topleft'},
     onAdd: function (map) {
       var container = L.DomUtil.create('div', 'extentControl leaflet-bar leaflet-control leaflet-touch');
-      btn=$("<a/>",{href:'#'}).appendTo(container);
-      $("<i/>",{class:'fas fa-home'}).appendTo(btn)
-      btn.on('click', function () {map.fitBounds(punti.getBounds());});
-      return container;
-    }
-  })
+      btnHome=$("<a/>",{href:'#'}).appendTo(container);
+      $("<i/>",{class:'fas fa-home'}).appendTo(btnHome)
+      btnHome.on('click', function () {map.fitBounds(punti.getBounds());});
 
-  let geoLocBtn = L.Control.extend({
-    options: { position: 'topleft'},
-    onAdd: function (map) {
-      var container = L.DomUtil.create('div', 'extentControl leaflet-bar leaflet-control leaflet-touch');
-      btn=$("<a/>",{href:'#',class:'stopLoc'}).appendTo(container);
-      $("<i/>",{class:'fas fa-location-arrow'}).appendTo(btn)
-      btn.on('click', function () {
+      btnGeoLoc=$("<a/>",{href:'#',class:'stopLoc'}).appendTo(container);
+      $("<i/>",{class:'fas fa-location-arrow'}).appendTo(btnGeoLoc)
+      btnGeoLoc.on('click', function () {
         $(this).toggleClass('startLoc stopLoc');
         $(this).find('i').toggleClass('fa-location-arrow fa-stop');
         getLocation(this.className)
       });
+
+      btnOption=$("<a/>",{href:'#',class:'setlangPopOver'}).appendTo(container)
+      $("<i/>",{class:'fas fa-cog'}).appendTo(btnOption)
       return container;
     }
   })
 
   map.addControl(new legend());
-  map.addControl(new startView());
-  map.addControl(new geoLocBtn());
+  map.addControl(new myControl());
 
   $.getJSON('json/punti.geojson',function (data) {
-    console.log(data);
     if (!data.features) {
       map.setView(new L.LatLng(46.1220, 11.1876), 13);
     }else {
