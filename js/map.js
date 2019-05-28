@@ -84,28 +84,3 @@ function initMap(){
   map.on('load',hideSpin())
   map.setMaxBounds(map.getBounds());
 }
-
-function hideSpin(){map.spin(false)}
-
-function getLocation(func){
-  if (func == 'startLoc') {
-    map.locate({setView: false, maxZoom: 18, watch:true, timeout: 60000,enableHighAccuracy:true});
-    map.on('locationfound', onLocationFound);
-  }else {
-    map.stopLocate()
-    map.removeLayer(marker);
-    map.removeLayer(circle);
-    map.fitBounds(punti.getBounds());
-  }
-}
-
-function onLocationFound(e) {
-  var radius = e.accuracy / 2;
-  var markerCss = {color: "#fff", fillColor: "#98c222", fillOpacity: 0.9, radius: 5 }
-  if (marker) {
-    map.removeLayer(marker);
-    map.removeLayer(circle);
-  }
-  marker = L.circleMarker(e.latlng,markerCss).addTo(map);
-  circle = L.circle(e.latlng, radius).addTo(map);
-}

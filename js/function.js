@@ -155,21 +155,6 @@ function checkDim(){
   }
 }
 
-function slidePanel(e){
-  prop = e.layer.feature.properties
-  setHeightDiv()
-  $(".closePanel>h5").html(prop.nome[localStorage.lang])
-  $(".poi-banner").css("background-image","url('img/poi/banner/"+prop.banner+"')")
-  content = $(".poi-content").html(prop.desc[localStorage.lang])
-  $('#wrapPoiInfo').fadeIn(500)
-  $("body").on('click', '.closePanel', function() { $('#wrapPoiInfo').fadeOut(500); });
-  if(prop.slider) {initSlider(e.layer.feature.properties.slider)}
-  if(prop.slider2) {beforeAfter(e.layer.feature.properties.slider)}
-  if(prop.video){initVideo(e.layer.feature.properties.video)}
-  if(prop.tredhop){init3dhop(e.layer.feature.properties.tredhop)}
-  if(prop.galleria){initGallery(e.layer.feature.properties.galleria)}
-}
-
 function setHeightDiv(){
   $("#wrapPoiInfo").css("bottom","0")
   $(".poiContentDiv").css("height",$('#wrapPoiInfo').height()-50)
@@ -232,10 +217,56 @@ function initSlider(slider){
   // });
 }
 
+// FUNZIONI MAPPA
+function hideSpin(){map.spin(false)}
+
+function getLocation(func){
+  if (func == 'startLoc') {
+    map.locate({setView: false, maxZoom: 18, watch:true, timeout: 60000,enableHighAccuracy:true});
+    map.on('locationfound', onLocationFound);
+  }else {
+    map.stopLocate()
+    map.removeLayer(marker);
+    map.removeLayer(circle);
+    map.fitBounds(punti.getBounds());
+  }
+}
+
+function onLocationFound(e) {
+  var radius = e.accuracy / 2;
+  var markerCss = {color: "#fff", fillColor: "#98c222", fillOpacity: 0.9, radius: 5 }
+  if (marker) {
+    map.removeLayer(marker);
+    map.removeLayer(circle);
+  }
+  marker = L.circleMarker(e.latlng,markerCss).addTo(map);
+  circle = L.circle(e.latlng, radius).addTo(map);
+}
+
+function slidePanel(e){
+  prop = e.layer.feature.properties
+  setHeightDiv()
+  $(".closePanel>h5").html(prop.nome[localStorage.lang])
+  $(".poi-banner").css("background-image","url('img/poi/banner/"+prop.banner+"')")
+  content = $(".poi-content").html(prop.desc[localStorage.lang])
+  $('#wrapPoiInfo').fadeIn(500)
+  $("body").on('click', '.closePanel', function() { $('#wrapPoiInfo').fadeOut(500); });
+  if(prop.slider) {initSlider(e.layer.feature.properties.slider)}
+  if(prop.slider2) {beforeAfter(e.layer.feature.properties.slider)}
+  if(prop.video){initVideo(e.layer.feature.properties.video)}
+  if(prop.tredhop){init3dhop(e.layer.feature.properties.tredhop)}
+  if(prop.galleria){initGallery(e.layer.feature.properties.galleria)}
+}
+
 function slideTrackInfo(e){
   prop = e.layer.feature.properties
   $(".closeTrackPanel>h5").html(prop.nome)
   $(".track-banner").css("background-image","url('img/sentieri/banner/"+prop.banner+"')")
+  $("#pathLength").text(prop.km)
+  $("#pathDrop").text(prop.dislivello)
+  $("#pathTime").text(prop.percorrenza)
+  $("#pathWear").text(prop.abbigliamento)
+  $("#pathStroller").text(prop.bambini)
   $('#wrapTrackInfo').fadeIn(500)
   $("body").on('click', '.closeTrackPanel', function() { $('#wrapTrackInfo').fadeOut(500); });
 }

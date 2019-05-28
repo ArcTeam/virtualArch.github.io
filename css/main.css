@@ -42,10 +42,12 @@ html, body { height: 100vh; width: 100vw;background:#fff; font-family: 'Montserr
 .splashBottom .warnings{width: 100%; height: 250px; overflow: auto;}
 
 /**** map   ****/
-#wrapPoiInfo{position:absolute;top:0;bottom:0;right:0; width:100%;z-index:3000;display: none;}
-#wrapTrackInfo{position:absolute;top:0;bottom:0;left:0;width:100%; z-index:3000;display: none;}
+#wrapPoiInfo, #wrapTrackInfo{position:absolute;top:0;bottom:0; width:100%;z-index:3000;display: none;}
+#wrapPoiInfo{right:0;}
+#wrapTrackInfo{left:0;}
+
 #poi-info{position:relative; margin-left: 10%; width:90%; box-shadow: -1rem 0rem 15px rgba(0,0,0,.5)!important;}
-#track-info{position:absolute;top:20%;bottom:0;right:0; width:100%;}
+#track-info{position:absolute;bottom:0;left:0; width:100%;max-width: 500px;}
 .closePanel{position: fixed; top: 0; right: 0; width: 90%; height:45px; z-index: 5000;}
 .poiContentDiv{position: relative; margin-top: 45px; width: 100%; overflow: auto;}
 .poi-banner,.track-banner{position:relative;width:100%;background-position: center; background-repeat: no-repeat;}
@@ -98,6 +100,7 @@ html, body { height: 100vh; width: 100vw;background:#fff; font-family: 'Montserr
   #icoArWrap>div{width:24%;height:15vh;padding:10px;display:inline-block;border-right: 1px solid #ddd;text-align:center;}
   #icoArWrap>div:last-child{border:none;}
   #icoArWrap>div>img{max-height: 10vh;}
+  #track-info{top:20%;box-shadow: 0rem -1rem 15px rgba(0,0,0,.5)!important;}
 }
 @media only screen and (orientation: landscape) {
   #iframeWrap,#iframeWrap>iframe{width:85vw;height:100vh;}
@@ -105,4 +108,6 @@ html, body { height: 100vh; width: 100vw;background:#fff; font-family: 'Montserr
   #icoArWrap>div{width:15vw;height:25vh;padding:10px;border-bottom: 1px solid #ddd;text-align:center;}
   #icoArWrap>div:last-child{border:none;}
   #icoArWrap>div>img{max-width: 15vh;}
+  #track-info{top:0;box-shadow: 1rem 0rem 15px rgba(0,0,0,.5)!important;}
+  .track-content{height: calc(100% - 215px); overflow: auto;}
 }
