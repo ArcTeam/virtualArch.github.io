@@ -286,7 +286,7 @@ self.addEventListener('fetch', event => {
     //     return response || fetch(event.request)
     //   })
   );
-  event.waitUntil(update(evt.request));
+  event.waitUntil(update(event.request));
 });
 
 function fromCache(request) {
