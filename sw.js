@@ -1,7 +1,8 @@
-const version = "1";
+const version = "v2";
 const cacheName = `virtualArch-${version}`;
 // const cacheFile = ['/virtualArch.github.io/'];
 const cacheFile = [
+  './',
   './3dhop/canopaDelLago/css/3dhop.css',
   './3dhop/canopaDelLago/css/calisio.css',
   './3dhop/canopaDelLago/img/back.png',
@@ -243,14 +244,20 @@ const cacheFile = [
 ];
 
 self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(cacheName).then(cache => {
-      return cache.addAll(cacheFile).then(() => self.skipWaiting());
-    })
-  );
+  console.log('The service worker is being installed.');
+  e.waitUntil(precache())
+  // e.waitUntil(
+  //   caches.open(cacheName).then(cache => {
+  //     return cache.addAll(cacheFile).then(() => self.skipWaiting());
+  //   })
+  // );
 });
 
-// self.addEventListener('activate', event => { event.waitUntil(self.clients.claim()); });
+function precache() {
+  return caches.open(cacheName).then(function (cache) {
+    return cache.addAll(cacheFile);
+  });
+}
 
 self.addEventListener('activate', event => {
   console.log('Activating new service worker...');
@@ -269,13 +276,30 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  console.log('Fetch event for ', event.request.url);
+  console.log('The service worker is serving the asset.');
   event.respondWith(
-    caches.open(cacheName)
-      .then(cache => cache.match(event.request, {ignoreSearch: true}))
-      .then(response => {
-        console.log('response ', event.request.url);
-        return response || fetch(event.request)
-      })
+    fromCache(event.request)
+    // caches.open(cacheName)
+    //   .then(cache => cache.match(event.request, {ignoreSearch: true}))
+    //   .then(response => {
+    //     console.log('response ', event.request.url);
+    //     return response || fetch(event.request)
+    //   })
   );
+  event.waitUntil(update(evt.request));
 });
+
+function fromCache(request) {
+  return caches.open(cacheName).then(function (cache) {
+    return cache.match(request).then(function (matching) {
+      return matching || Promise.reject('no-match');
+    });
+  });
+}
+function update(request) {
+  return caches.open(cacheName).then(function (cache) {
+    return fetch(request).then(function (response) {
+      return cache.put(request, response);
+    });
+  });
+}

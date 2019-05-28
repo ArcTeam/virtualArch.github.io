@@ -36,7 +36,8 @@ const Installer = function(root) {
   const beforeinstallprompt = function(e) {
     promptEvent = e;
     promptEvent.preventDefault();
-    root.classList.add('available');
+    // root.classList.remove('hide');
+    // root.classList.add('available');
     return false;
   };
 
@@ -65,8 +66,8 @@ window.addEventListener('load', function() {
     $("#splash-content").remove()
     initMap()
   }
-  const installEl = document.getElementById('installer');
-  const installer = new Installer(installEl);
+  // const installEl = document.getElementById('installer');
+  // const installer = new Installer(installEl);
 })
 
 window.addEventListener("orientationchange", function() {
