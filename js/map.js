@@ -3,23 +3,19 @@ var circle=''
 var map;
 var punti;
 var sentieri;
+var pathTitle = localStorage.lang == 'ita' ? 'Sentieri' : 'Track';
 function initMap(){
   $("#map-page").fadeIn('fast')
-  // let map = new L.Map('map', { minZoom: 13 }).setView([46.1220, 11.1876], 13);
   map = new L.Map('map', { minZoom: 13 }).setView([46.1220, 11.1876], 13);
-  map.spin(true);
-  // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-  //   attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  // }).addTo(map);
+  toggleSpin(true)
   let imageUrl = './map/baseWgs84.png'
   let imageBounds = [[46.06050, 11.08906], [46.16670, 11.23860]]
   let base = L.imageOverlay(imageUrl, imageBounds).addTo(map)
-
   let legend = L.Control.extend({
     options: { position: 'topright'},
     onAdd: function (map) {
       var container = L.DomUtil.create('div', 'legend');
-      title = $("<p/>",{class:'p-0 mb-1 border-bottom'}).html("<span class='pr-3'>Sentieri</span>")
+      title = $("<p/>",{class:'p-0 mb-1 border-bottom'}).html("<span id='pathTitle' class='pr-3'>"+pathTitle+"</span>")
       .appendTo(container)
       .on('click', function(){
         list.slideToggle(250)
@@ -69,12 +65,16 @@ function initMap(){
     $.each(data.features, function(i,v){
       p = v.properties
       li = $("<li/>",{text:p.nome+" ("+p.km+" km.)"}).appendTo('#sentieri-legend')
+      .on('click',function(){ slideTrackInfo(v.properties) });
       $("<i/>",{class:'fas fa-minus fa-lg pr-2'}).css("color",p.color).prependTo(li)
+      $("<i/>",{class:'fas fa-info pl-2 float-right'}).appendTo(li)
     })
     sentieri = L.geoJSON(data,{
       style: function(feature) { return {color: feature.properties.color,weight:5} }
-    }).addTo(map).on('click',slideTrackInfo);
+    }).addTo(map)
+    .on('click',function(e){ slideTrackInfo(e.layer.feature.properties) });
   });
-  map.on('load',hideSpin())
+
   map.setMaxBounds(map.getBounds());
+  map.on('load',toggleSpin(false))
 }

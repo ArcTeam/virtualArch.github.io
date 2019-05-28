@@ -7,7 +7,7 @@
   "type": "Feature",
   "properties": {
     "id": 1,
-    "nome": "Sentiero degli Gnomi",
+    "nome": "Gnomi",
     "banner": "pendenza_gnomi.jpg",
     "color": "#c30003",
     "km": 6.61,
@@ -22,7 +22,7 @@
   "type": "Feature",
   "properties": {
     "id": 2,
-    "nome": "Sentiero delle Canope",
+    "nome": "Canope",
     "banner": "pendenza_canope.jpg",
     "color": "#cccc00",
     "km": 3.64,
@@ -37,7 +37,7 @@
   "type": "Feature",
   "properties": {
     "id": 3,
-    "nome": "Sentiero delle Grave",
+    "nome": "Grave",
     "banner": "pendenza_grave.jpg",
     "color": "#009204",
     "km": 2.98,

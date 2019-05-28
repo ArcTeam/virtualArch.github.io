@@ -116,7 +116,7 @@
                 </div>
                 <div class="col-11">
                   <small class="pathLabel">Lunghezza / length</small>
-                  <small class="pathData d-block" id="pathLength"></small>
+                  <small class="pathData d-block font-weight-bold" id="pathLength"></small>
                 </div>
               </div>
               <div class="row py-1 border-top">
@@ -125,7 +125,7 @@
                 </div>
                 <div class="col-11">
                   <small class="pathLabel">Dislivello / Drop</small>
-                  <small class="pathData d-block" id="pathDrop"></small>
+                  <small class="pathData d-block font-weight-bold" id="pathDrop"></small>
                 </div>
               </div>
               <div class="row py-1 border-top">
@@ -134,7 +134,7 @@
                 </div>
                 <div class="col-11">
                   <small class="pathLabel">Percorrenza / Time</small>
-                  <small class="pathData d-block" id="pathTime"></small>
+                  <small class="pathData d-block font-weight-bold" id="pathTime"></small>
                 </div>
               </div>
               <div class="row py-1 border-top">
@@ -143,7 +143,7 @@
                 </div>
                 <div class="col-11">
                   <small class="pathLabel">Abbigliamento / Wear</small>
-                  <small class="pathData d-block" id="pathWear"></small>
+                  <small class="pathData d-block font-weight-bold" id="pathWear"></small>
                 </div>
               </div>
               <div class="row py-1 border-top">
@@ -152,7 +152,7 @@
                 </div>
                 <div class="col-11">
                   <small class="pathLabel">Bambini / Children</small>
-                  <small class="pathData d-block" id="pathStroller"></small>
+                  <small class="pathData d-block font-weight-bold" id="pathStroller"></small>
                 </div>
               </div>
             </div>
@@ -179,15 +179,15 @@
     </div>
 
     <div id="setLangDiv" class="hide">
-      <form class="p-4 bg-white shadow rounded">
-        <h1>Set language</h1>
+      <form class="p-4 bg-white shadow rounded" name="setLangForm" style="width:300px;">
+        <p class="pb-2 border-bottom font-weight-bold">Set language <span class="float-right"><i class="fas fa-times"></i></span></p>
         <div class="custom-control custom-radio">
-          <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-          <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
+          <input type="radio" id="langIta" name="setLang" class="custom-control-input" value="ita">
+          <label class="custom-control-label" for="langIta">italiano</label>
         </div>
         <div class="custom-control custom-radio">
-          <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-          <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
+          <input type="radio" id="lanEng" name="setLang" class="custom-control-input" value="eng">
+          <label class="custom-control-label" for="lanEng">english</label>
         </div>
       </form>
     </div>

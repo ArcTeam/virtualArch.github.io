@@ -117,10 +117,25 @@ $(document).ready(function() {
     loadObject(model)
   })
   $("body").on('click', '.setlangPopOver', function() {
-    $("#setLangDiv").toggleClass('hide flex');
+    actLang = localStorage.getItem('lang')
+    $("[name=setLang][value="+actLang+"]").prop('checked',true)
+    toggleElem("#setLangDiv")
   });
+  $("body").on('change','[name=setLang]',function(){
+    l = $(this).val()
+    pathTitle = l == 'ita' ? 'Sentieri' : 'Track';
+    $("#pathTitle").text(pathTitle)
+    localStorage.setItem('lang',l)
+    window.setTimeout(function() {
+      toggleElem("#setLangDiv")
+    }, 1000);
+  })
+  $("#setLangDiv>form>p").on('click', function(){
+    toggleElem("#setLangDiv")
+  })
   $("[name=noExit]").on('click', function(){ $("#exitPrompt").toggleClass('flex hide')})
 });
+function toggleElem(el){ $(el).toggleClass('hide flex'); }
 function initPano(){
   $("#panoElem").remove()
   var content = $("<div/>",{id:"panoElem", class:'extraElem'}).appendTo('body')
@@ -213,15 +228,11 @@ function initSlider(slider){
   sliderDiv += '</div>';
   $('#sliderContent').html(sliderDiv);
   var imagesCompareElement = $('.js-img-compare').imagesCompare();
-  var imagesCompare = imagesCompareElement.data('imagesCompare');
-  var events = imagesCompare.events();
-  // imagesCompare.on(events.initialised, function (event) {
-  //   console.log(events.initialised);
-  // });
 }
 
 // FUNZIONI MAPPA
-function hideSpin(){map.spin(false)}
+function toggleSpin(condition){map.spin(condition)}
+// function showSpin(){map.spin(true)}
 
 function getLocation(func){
   if (func == 'startLoc') {
@@ -261,8 +272,8 @@ function slidePanel(e){
   if(prop.galleria){initGallery(e.layer.feature.properties.galleria)}
 }
 
-function slideTrackInfo(e){
-  prop = e.layer.feature.properties
+function slideTrackInfo(prop){
+  // prop = e.layer.feature.properties
   $(".closeTrackPanel>h5").html(prop.nome)
   $(".track-banner").css("background-image","url('img/sentieri/banner/"+prop.banner+"')")
   $("#pathLength").text(prop.km)
