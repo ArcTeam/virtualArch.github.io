@@ -37,15 +37,51 @@
       "galleria":{
         "dir":"metallica",
         "foto":{
-          "1":{"didascalia":"Lavoro in miniera","foto":"metallica01.jpg"},
-          "2":{"didascalia":"Strumenti per lo scavo","foto":"metallica02.jpg"},
-          "3":{"didascalia":"Carrucola per il materiale (rota)","foto":"metallica03.jpg"},
-          "4":{"didascalia":"Secchi per il trasporto","foto":"metallica04.jpg"},
-          "5":{"didascalia":"Riduzione del minerale","foto":"metallica05.jpg"},
-          "6":{"didascalia":"Zappe, pale e picconi","foto":"metallica06.jpg"},
-          "7":{"didascalia":"Strumenti di misura","foto":"metallica07.jpg"},
-          "8":{"didascalia":"Scavo di una canopa","foto":"metallica08.jpg"},
-          "9":{"didascalia":"Scavo di un cadino","foto":"metallica09.jpg"}
+          "1":{
+            "didaita":"Lavoro in miniera",
+            "didaeng":"Mine work",
+            "foto":"metallica01.jpg"
+          },
+          "2":{
+            "didaita":"Strumenti per lo scavo",
+            "didaeng":"Excavation tools",
+            "foto":"metallica02.jpg"
+          },
+          "3":{
+            "didaita":"Carrucola per il materiale (rota)",
+            "didaeng":"Pulley for the material (rota)",
+            "foto":"metallica03.jpg"
+          },
+          "4":{
+            "didaita":"Secchi per il trasporto",
+            "didaeng":"Transport buckets",
+            "foto":"metallica04.jpg"
+          },
+          "5":{
+            "didaita":"Riduzione del minerale",
+            "didaeng":"Mineral reduction",
+            "foto":"metallica05.jpg"
+          },
+          "6":{
+            "didaita":"Zappe, pale e picconi",
+            "didaeng":"Shovels, hoes and pickaxes",
+            "foto":"metallica06.jpg"
+          },
+          "7":{
+            "didaita":"Strumenti di misura",
+            "didaeng":"Measurement tools",
+            "foto":"metallica07.jpg"
+          },
+          "8":{
+            "didaita":"Scavo di una canopa",
+            "didaeng":"Excavating a canopa",
+            "foto":"metallica08.jpg"
+          },
+          "9":{
+            "didaita":"Scavo di un cadino",
+            "didaeng":"Excavating a cadino",
+            "foto":"metallica09.jpg"
+          }
         }
       },
       "tredhop":"canopaDelLago",
@@ -99,15 +135,51 @@
       "galleria":{
         "dir":"minerali",
         "foto":{
-          "1":{"didascalia":"Argentite (Calisio)","foto":"argentite_calisio.jpg"},
-          "2":{"didascalia":"Azzurrite (Dos dei Brusadi)","foto":"azzurrite_brusadi01.jpg"},
-          "3":{"didascalia":"Azzurrite (Dos dei Brusadi)","foto":"azzurrite_brusadi02.jpg"},
-          "4":{"didascalia":"Azzurrite (Lavis)","foto":"azzurrite_lavis.jpg"},
-          "5":{"didascalia":"Barite (Lavis, loc. Furli)","foto":"barite_furli_lavis.jpg"},
-          "6":{"didascalia":"Galena (Lavis, loc. Furli)","foto":"galena_furli.jpg"},
-          "7":{"didascalia":"Malachite (Lavis)","foto":"malachite_lavis.jpg"},
-          "8":{"didascalia":"Mimetite (loc. Slacche)","foto":"mimetite_slacche.jpg"},
-          "9":{"didascalia":"Minerali di rame (loc. Slacche)","foto":"minerali_rame_slacche.jpg"}
+          "1":{
+            "didaita":"Argentite (Calisio)",
+            "didaeng":"Argentite (Calisio)",
+            "foto":"argentite_calisio.jpg"
+          },
+          "2":{
+            "didaita":"Azzurrite (Dos dei Brusadi)",
+            "didaeng":"Azurite (Dos dei Brusadi)",
+            "foto":"azzurrite_brusadi01.jpg"
+          },
+          "3":{
+            "didaita":"Azzurrite (Dos dei Brusadi)",
+            "didaeng":"Azurite (Dos dei Brusadi)",
+            "foto":"azzurrite_brusadi02.jpg"
+          },
+          "4":{
+            "didaita":"Azzurrite (Lavis)",
+            "didaeng":"Azurite (Lavis)",
+            "foto":"azzurrite_lavis.jpg"
+          },
+          "5":{
+            "didaita":"Barite (Lavis, loc. Furli)",
+            "didaeng":"Baryte (Furli, near Lavis)",
+            "foto":"barite_furli_lavis.jpg"
+          },
+          "6":{
+            "didaita":"Galena (Lavis, loc. Furli)",
+            "didaeng":"Galena (Furli, near Lavis)",
+            "foto":"galena_furli.jpg"
+          },
+          "7":{
+            "didaita":"Malachite (Lavis)",
+            "didaeng":"Malachite (Lavis)",
+            "foto":"malachite_lavis.jpg"
+          },
+          "8":{
+            "didaita":"Mimetite (loc. Slacche)",
+            "didaeng":"Mimetite (Slacche)",
+            "foto":"mimetite_slacche.jpg"
+          },
+          "9":{
+            "didaita":"Minerali di rame (loc. Slacche)",
+            "didaeng":"Copper ores (Slacche)",
+            "foto":"minerali_rame_slacche.jpg"
+          }
         }
       },
       "desc":{
@@ -146,15 +218,51 @@
       "galleria":{
         "dir":"redebus",
         "foto":{
-          "1":{"didascalia":"L'area archeologica","foto":"redebus01.jpg"},
-          "2":{"didascalia":"La batteria di forni (particolare)","foto":"redebus02.jpg"},
-          "3":{"didascalia":"La batteria di forni (particolare)","foto":"redebus03.jpg"},
-          "4":{"didascalia":"Crogiolo (reperto)","foto":"redebus04.jpg"},
-          "5":{"didascalia":"Archeologia sperimentale (strumenti)","foto":"redebus05.jpg"},
-          "6":{"didascalia":"Archeologia sperimentale (colata in stampo)","foto":"redebus06.jpg"},
-          "7":{"didascalia":"Ricostruzione archeologica (estrazione, frantumazione e macinazione)","foto":"redebus07.jpg"},
-          "8":{"didascalia":"Ricostruzione archeologica (colata in stampo)","foto":"redebus08.jpg"},
-          "9":{"didascalia":"Ricostruzione archeologica (fusione nei forni)","foto":"redebus09.jpg"}
+          "1":{
+            "didaita":"L'area archeologica",
+            "didaeng":"The archaeological area",
+            "foto":"redebus01.jpg"
+          },
+          "2":{
+            "didaita":"La batteria di forni (particolare)",
+            "didaeng":"Ovens (detail)",
+            "foto":"redebus02.jpg"
+          },
+          "3":{
+            "didaita":"La batteria di forni (particolare)",
+            "didaeng":"Ovens (detail)",
+            "foto":"redebus03.jpg"
+          },
+          "4":{
+            "didaita":"Crogiolo (reperto)",
+            "didaeng":"Crucible (find)",
+            "foto":"redebus04.jpg"
+          },
+          "5":{
+            "didaita":"Archeologia sperimentale (strumenti)",
+            "didaeng":"Experimental archeology (tools)",
+            "foto":"redebus05.jpg"
+          },
+          "6":{
+            "didaita":"Archeologia sperimentale (colata in stampo)",
+            "didaeng":"Experimental archeology (mold casting)",
+            "foto":"redebus06.jpg"
+          },
+          "7":{
+            "didaita":"Ricostruzione archeologica (estrazione, frantumazione e macinazione)",
+            "didaeng":"Archaeological reconstruction (extraction, crushing and grinding)",
+            "foto":"redebus07.jpg"
+          },
+          "8":{
+            "didaita":"Ricostruzione archeologica (colata in stampo)",
+            "didaeng":"Archaeological reconstruction (mold casting)",
+            "foto":"redebus08.jpg"
+          },
+          "9":{
+            "didaita":"Ricostruzione archeologica (fusione nei forni)",
+            "didaeng":"Archaeological reconstruction (melting in the ovens)",
+            "foto":"redebus09.jpg"
+          }
         }
       },
       "desc":{

@@ -119,13 +119,14 @@ function initGallery(gallery){
   let wrap = $("<div/>",{id:'galleryWrap', class:'container-fluid my-3'}).appendTo('#galleryContent')
   let rowImage = $("<div/>",{class:'row mb-2'}).appendTo(wrap)
   $.each(gallery.foto, function(i,v){
+    didascalia = localStorage.getItem('lang') == 'ita' ? v.didaita : v.didaeng
     $("<div/>", {id:"img"+i,class:'imgCover lozad col-4 col-md-3 border border-white'})
     .attr("data-background-image",dir+"/small/"+v.foto)
     .appendTo(rowImage)
     .on('click', function(){
       $("#wrapImage").toggleClass('hide flex')
       $("#galleryImageLarge").attr("src",dir+"/large/"+v.foto)
-      $(".didascalia").text(v.didascalia)
+      $(".didascalia").text(didascalia)
       checkDim()
     })
   })
