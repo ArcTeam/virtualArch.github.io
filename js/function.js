@@ -47,7 +47,7 @@ $(document).ready(function() {
     localStorage.setItem('lang',l)
     window.setTimeout(function() {
       toggleElem("#setLangDiv")
-    }, 1000);
+    }, 500);
   })
   $("#setLangDiv>form>p").on('click', function(){
     toggleElem("#setLangDiv")
