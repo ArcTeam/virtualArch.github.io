@@ -8,7 +8,7 @@
     </style>
   </head>
   <body>
-    <a-scene embedded arjs='sourceType: webcam;'>
+    <a-scene embedded arjs="sourceType: webcam; cameraParametersUrl: ./asset/camera_para.dat;">
       <a-marker type="pattern" url="patt/pattern-logo_va_bw.patt">
         <a-entity id="entity">
           <a-animation attribute="rotation" to="360 360 360" dur="10000" easing='linear' repeat="indefinite"></a-animation>

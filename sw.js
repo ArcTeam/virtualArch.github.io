@@ -1,6 +1,5 @@
-const version = "v2";
+const version = "190830.v3";
 const cacheName = `virtualArch-${version}`;
-// const cacheFile = ['/virtualArch.github.io/'];
 const cacheFile = [
   './',
   './3dhop/canopaDelLago/css/3dhop.css',
@@ -53,6 +52,7 @@ const cacheFile = [
   './asset/aframe-master.js',
   './asset/aframe.min.js',
   './asset/bootstrap.min.js',
+  './asset/camera_para.dat',
   './asset/hammer.min.js',
   './asset/jquery.images-compare.js',
   './asset/jquery.min.js',
