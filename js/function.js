@@ -119,11 +119,11 @@ function initGallery(gallery){
   let wrap = $("<div/>",{id:'galleryWrap', class:'container-fluid my-3'}).appendTo('#galleryContent')
   let rowImage = $("<div/>",{class:'row mb-2'}).appendTo(wrap)
   $.each(gallery.foto, function(i,v){
-    didascalia = localStorage.getItem('lang') == 'ita' ? v.didaita : v.didaeng
     $("<div/>", {id:"img"+i,class:'imgCover lozad col-4 col-md-3 border border-white'})
     .attr("data-background-image",dir+"/small/"+v.foto)
     .appendTo(rowImage)
     .on('click', function(){
+      didascalia = localStorage.getItem('lang') == 'ita' ? v.didaita : v.didaeng
       $("#wrapImage").toggleClass('hide flex')
       $("#galleryImageLarge").attr("src",dir+"/large/"+v.foto)
       $(".didascalia").text(didascalia)
@@ -179,6 +179,7 @@ function onLocationFound(e) {
 
 function slidePanel(e){
   prop = e.layer.feature.properties
+  // console.log(prop);
   setHeightDiv()
   $(".closePanel>h5").html(prop.nome[localStorage.lang])
   $(".poi-banner").css("background-image","url('img/poi/banner/"+prop.banner+"')")
