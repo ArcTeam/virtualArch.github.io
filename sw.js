@@ -1,5 +1,5 @@
 const version = "190830.v3";
-const cacheName = `virtualArch-${version}`;
+const cacheName = "virtualArch-190830.v3";
 const cacheFile = [
   './',
   './3dhop/canopaDelLago/css/3dhop.css',
