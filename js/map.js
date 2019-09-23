@@ -8,8 +8,11 @@ function initMap(){
   $("#map-page").fadeIn('fast')
   map = new L.Map('map', { minZoom: 13 }).setView([46.1220, 11.1876], 13);
   toggleSpin(true)
-  let imageUrl = './map/baseWgs84.png'
-  let imageBounds = [[46.06050, 11.08906], [46.16670, 11.23860]]
+  //let imageUrl = './map/baseWgs84.png'
+  //let imageBounds = [[46.06050, 11.08906], [46.16670, 11.23860]]
+  let imageUrl = './map/virtualarch.jpg'
+  let imageBounds = [[46.08861, 11.16279], [46.15817, 11.21197]]
+  //11.1627957447909996,46.0886127499950007 : 11.2119788220709999,46.1581716751650006
   let base = L.imageOverlay(imageUrl, imageBounds).addTo(map)
   let legend = L.Control.extend({
     options: { position: 'topright'},
