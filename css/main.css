@@ -112,7 +112,7 @@ html, body { height: 100vh; width: 100vw;background:#fff; font-family: 'Montserr
   #icoArWrap>div{width:24%;height:15vh;padding:10px;display:inline-block;border-right: 1px solid #ddd;text-align:center;}
   #icoArWrap>div:last-child{border:none;}
   #icoArWrap>div>img{max-height: 10vh;}
-  #track-info{top:20%;box-shadow: 0rem -1rem 15px rgba(0,0,0,.5)!important;}
+  #track-info{top:5%;box-shadow: 0rem -1rem 15px rgba(0,0,0,.5)!important;}
 }
 @media only screen and (orientation: landscape) {
   #iframeWrap,#iframeWrap>iframe{width:85vw;height:100vh;}

@@ -47,7 +47,7 @@ $(document).ready(function() {
     localStorage.setItem('lang',l)
     window.setTimeout(function() {
       toggleElem("#setLangDiv")
-    }, 1000);
+    }, 500);
   })
   $("#setLangDiv>form>p").on('click', function(){
     toggleElem("#setLangDiv")
@@ -123,9 +123,10 @@ function initGallery(gallery){
     .attr("data-background-image",dir+"/small/"+v.foto)
     .appendTo(rowImage)
     .on('click', function(){
+      didascalia = localStorage.getItem('lang') == 'ita' ? v.didaita : v.didaeng
       $("#wrapImage").toggleClass('hide flex')
       $("#galleryImageLarge").attr("src",dir+"/large/"+v.foto)
-      $(".didascalia").text(v.didascalia)
+      $(".didascalia").text(didascalia)
       checkDim()
     })
   })
@@ -178,6 +179,7 @@ function onLocationFound(e) {
 
 function slidePanel(e){
   prop = e.layer.feature.properties
+  // console.log(prop);
   setHeightDiv()
   $(".closePanel>h5").html(prop.nome[localStorage.lang])
   $(".poi-banner").css("background-image","url('img/poi/banner/"+prop.banner+"')")
