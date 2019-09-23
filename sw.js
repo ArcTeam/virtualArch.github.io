@@ -1,4 +1,4 @@
-const version = "190830.v3";
+const version = "190923.v4";
 const cacheName = `virtualArch-${version}`;
 const cacheFile = [
   './',
@@ -182,7 +182,7 @@ const cacheFile = [
   './json/sentieri.geojson',
   './LICENSE',
   './manifest.json',
-  './map/baseWgs84.png',
+  './map/map.jpg',
   './model/luce2.mtl',
   './model/luce2.obj',
   './model/luce.png',
