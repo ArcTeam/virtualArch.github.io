@@ -1,4 +1,4 @@
-const version = "190923.v4";
+const version = "200331.v4.1";
 const cacheName = `virtualArch-${version}`;
 const cacheFile = [
   './',
@@ -170,6 +170,7 @@ const cacheFile = [
   './img/poi/testo/stemma_pergine.jpg',
   './img/poi/testo/trener.jpg',
   './img/poi/testo/vaia.jpg',
+  './img/poi/testo/tempesta-vaia.jpg',
   './img/sentieri/banner/pendenza_canope.jpg',
   './img/sentieri/banner/pendenza_gnomi.jpg',
   './img/sentieri/banner/pendenza_grave.jpg',
