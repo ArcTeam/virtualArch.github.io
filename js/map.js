@@ -51,17 +51,26 @@ function initMap(){
     }
   })
 
-  map.addControl(new legend());
-  map.addControl(new myControl());
+  punti = L.geoJSON([]).addTo(map).on('click',slidePanel);
 
   $.getJSON('json/punti.geojson',function (data) {
     if (!data.features) {
       map.setView(new L.LatLng(46.1220, 11.1876), 13);
     }else {
-      punti = L.geoJSON(data).addTo(map).on('click',slidePanel);
+      punti.addData(data);
       map.fitBounds(punti.getBounds());
     }
   });
+
+  var searchControl = new L.Control.Search({
+    //position: 
+    layer: punti,
+    propertyName: 'nome.'+localStorage.lang,
+  });
+  
+  map.addControl(new legend());
+  map.addControl(new myControl());
+  map.addControl(searchControl);
 
   $.getJSON('json/sentieri.geojson',function (data) {
     $.each(data.features, function(i,v){
