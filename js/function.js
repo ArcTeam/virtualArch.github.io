@@ -179,7 +179,7 @@ function onLocationFound(e) {
 
 function slidePanel(e){
   prop = e.layer.feature.properties
-  // console.log(prop);
+  console.log(prop);
   setHeightDiv()
   $(".closePanel>h5").html(prop.nome[localStorage.lang])
   $(".poi-banner").css("background-image","url('img/poi/banner/"+prop.banner+"')")
